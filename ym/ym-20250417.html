@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聊天分析报告 2025-04-17</title>
+  <!-- Prism.js 语法高亮 CSS (选择一个主题, 例如 Okaidia) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+  <!-- 核心样式 -->
+  <style>
+    /* 基本重置与排版系统 */
+    :root {
+      --primary-color: #2c3e50; /* 主题色 */
+      --text-color: #333;
+      --bg-color: #fff;
+      --link-color: #007bff;
+      --border-color: #eee;
+      --code-bg: #f8f8f8;
+      --table-stripe-bg: #f9f9f9;
+      --table-hover-bg: #f1f1f1;
+      --heading-font-weight: 600;
+      --body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      --code-font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      --max-width: 800px;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: var(--body-font-family);
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    article.markdown-body {
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    /* 标题与段落 */
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.5em;
+      margin-bottom: 0.8em;
+      font-weight: var(--heading-font-weight);
+      line-height: 1.3;
+      color: var(--primary-color);
+    }
+    h1 { font-size: 2.2em; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3em; }
+    h2 { font-size: 1.8em; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3em; }
+    h3 { font-size: 1.5em; }
+    h4 { font-size: 1.2em; }
+    p { margin-bottom: 1em; }
+
+    /* 列表 */
+    ul, ol { padding-left: 2em; margin-bottom: 1em; }
+    li { margin-bottom: 0.5em; }
+    li > ul, li > ol { margin-top: 0.5em; margin-bottom: 0.5em; }
+
+    /* 链接 */
+    a { color: var(--link-color); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* 代码 */
+    code { /* Inline code */
+      font-family: var(--code-font-family);
+      background-color: var(--code-bg);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-size: 0.9em;
+      color: #d63384; /* Bootstrap-like pink */
+    }
+    pre { /* Block code */
+      background-color: #272822; /* Default Prism Okaidia background */
+      color: #f8f8f2; /* Default Prism Okaidia text */
+      padding: 1em;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-bottom: 1em;
+    }
+    pre code { /* Reset styles for code inside pre */
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.9em;
+      color: inherit;
+      word-break: normal; /* Prevent breaking inside code block */
+      word-wrap: normal; /* Prevent wrapping */
+      white-space: pre; /* Maintain whitespace and prevent wrapping */
+    }
+
+    /* 表格 (如果存在) */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1em;
+      border: 1px solid var(--border-color);
+    }
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.6em 0.8em;
+      text-align: left;
+    }
+    thead th {
+      background-color: var(--code-bg);
+      font-weight: var(--heading-font-weight);
+    }
+    tbody tr:nth-child(odd) {
+      background-color: var(--table-stripe-bg);
+    }
+    tbody tr:hover {
+      background-color: var(--table-hover-bg);
+    }
+
+    /* 目录 */
+    #toc {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 1em 1.5em;
+      margin-bottom: 2em;
+      border-radius: 5px;
+    }
+    #toc h2 {
+       margin-top: 0;
+       margin-bottom: 0.5em;
+       font-size: 1.2em;
+       border-bottom: none;
+    }
+    #toc ul {
+       padding-left: 1.5em;
+       margin-bottom: 0;
+    }
+    #toc ul li {
+       margin-bottom: 0.3em;
+       list-style-type: disc;
+    }
+    #toc ul ul {
+      padding-left: 1.5em;
+      margin-top: 0.3em;
+      list-style-type: circle;
+    }
+
+    /* 黑暗模式 */
+    .dark-mode {
+      --text-color: #ccc;
+      --bg-color: #1a1a1a;
+      --primary-color: #6fa3e0; /* Lighter blue for dark bg */
+      --link-color: #80bfff;
+      --border-color: #444;
+      --code-bg: #2b2b2b;
+      --table-stripe-bg: #252525;
+      --table-hover-bg: #333;
+    }
+    .dark-mode #toc {
+       background: #252525;
+       border-color: #444;
+    }
+    .dark-mode code { /* Inline code dark */
+       background-color: var(--code-bg);
+       color: #ff79c6; /* Lighter pink for dark */
+    }
+    /* Prism Okaidia theme generally works well in dark mode, no major overrides needed for pre */
+    .dark-mode table { border-color: var(--border-color); }
+    .dark-mode th, .dark-mode td { border-color: var(--border-color); }
+    .dark-mode thead th { background-color: #333; }
+    .dark-mode tbody tr:nth-child(odd) { background-color: var(--table-stripe-bg); }
+    .dark-mode tbody tr:hover { background-color: var(--table-hover-bg); }
+
+    /* 黑暗模式切换按钮 */
+    .dark-mode-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 8px 12px;
+      background-color: var(--code-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      z-index: 1000;
+       transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+     .dark-mode .dark-mode-toggle {
+       background-color: #333;
+       color: #eee;
+       border-color: #555;
+     }
+
+     /* 响应式 */
+    @media (max-width: 600px) {
+      body { font-size: 14px; }
+      h1 { font-size: 1.8em; }
+      h2 { font-size: 1.5em; }
+      h3 { font-size: 1.3em; }
+      pre { white-space: pre-wrap; word-wrap: break-word; } /* Allow wrapping in code blocks on small screens */
+      .dark-mode-toggle { font-size: 0.8em; padding: 6px 10px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <button id="darkModeToggle" class="dark-mode-toggle">切换模式</button>
+
+  <!-- 转换后的内容 -->
+  <article class="markdown-body">
+
+    <!-- 自动生成的目录 -->
+    <nav id="toc">
+      <h2>目录</h2>
+      <ul>
+        <li><a href="#%E5%9F%BA%E7%A1%80%E7%BB%9F%E8%AE%A1">基础统计</a></li>
+        <li><a href="#%E6%A0%B8%E5%BF%83%E6%B4%9E%E5%AF%9F">核心洞察</a>
+          <ul>
+            <li><a href="#%E4%BB%8A%E6%97%A5top5%E8%AF%9D%E9%A2%98">今日TOP5话题</a>
+              <ul>
+                <li><a href="#1-%E9%87%91%E8%9E%8D--dbs-%E9%93%B6%E8%A1%8C-s300-%E6%96%B0%E5%B8%81%E5%B7%A5%E8%B5%84%E8%BD%AC%E5%85%A5%E6%B4%BB%E5%8A%A8-%E4%BC%98%E5%85%88%E7%BA%A7%E9%AB%98">1. 金融 | DBS 银行 S$300 新币工资转入活动 (优先级：高)</a></li>
+                <li><a href="#2-%E9%87%91%E8%9E%8D--ocbc-360-%E8%B4%A6%E6%88%B7%E5%88%A9%E7%8E%87%E8%B0%83%E6%95%B4%E5%8F%8A-unit-trust-ut-%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5-%E4%BC%98%E5%85%88%E7%BA%A7%E9%AB%98">2. 金融 | OCBC 360 账户利率调整及 Unit Trust (UT) 投资策略 (优先级：高)</a></li>
+                <li><a href="#3-%E9%87%91%E8%9E%8D--%E6%96%B0%E5%8A%A0%E5%9D%A1%E4%B8%AA%E4%BA%BA%E6%89%80%E5%BE%97%E7%A8%8E%E7%94%B3%E6%8A%A5-rental-income--mortgage-interest-%E4%BC%98%E5%85%88%E7%BA%A7%E4%B8%AD">3. 金融 | 新加坡个人所得税申报 (Rental Income & Mortgage Interest) (优先级：中)</a></li>
+                <li><a href="#4-%E7%94%9F%E6%B4%BB--%E6%96%B0%E5%8A%A0%E5%9D%A1%E8%88%AA%E7%A9%BA-sia-%E6%9C%BA%E4%B8%8A%E4%BD%93%E9%AA%8C-wifi--singapore-sling-%E4%BC%98%E5%85%88%E7%BA%A7%E4%BD%8E">4. 生活 | 新加坡航空 (SIA) 机上体验 (WiFi & Singapore Sling) (优先级：低)</a></li>
+                <li><a href="#5-%E9%87%91%E8%9E%8D--%E5%AE%8F%E8%A7%82%E5%8F%8A%E5%B8%82%E5%9C%BA%E5%8A%A8%E6%80%81-unh-%E8%82%A1%E4%BB%B7-%E9%BB%84%E9%87%91-%E6%B1%87%E7%8E%87-sora-%E4%BC%98%E5%85%88%E7%BA%A7%E4%B8%AD">5. 金融 | 宏观及市场动态 (UNH 股价, 黄金, 汇率, SORA) (优先级：中)</a></li>
+              </ul>
+            </li>
+            <li><a href="#%E5%A4%9A%E5%AA%92%E4%BD%93%E8%A7%A3%E6%9E%90">多媒体解析</a></li>
+          </ul>
+        </li>
+        <li><a href="#%E9%99%84%E5%BD%95">附录</a>
+          <ul>
+            <li><a href="#%E6%9C%AF%E8%AF%AD%E8%AF%8D%E5%85%B8-%E9%83%A8%E5%88%86">术语词典 (部分)：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <h1 id="%E8%81%8A%E5%A4%A9%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A-2025-04-17">聊天分析报告 2025-04-17</h1>
+    <h2 id="%E5%9F%BA%E7%A1%80%E7%BB%9F%E8%AE%A1">基础统计</h2>
+    <ul>
+    <li>时间范围：2025-04-17 00:30:14 至 2025-04-17 23:30:52 (SG时区)</li>
+    <li>消息总量：约 150+ 条（基于页面内容估算，含 8 张有效图片）</li>
+    <li>参与人数：32 人</li>
+    </ul>
+    <h2 id="%E6%A0%B8%E5%BF%83%E6%B4%9E%E5%AF%9F">核心洞察</h2>
+    <h3 id="%E4%BB%8A%E6%97%A5top5%E8%AF%9D%E9%A2%98">今日TOP5话题</h3>
+    <h4 id="1-%E9%87%91%E8%9E%8D--dbs-%E9%93%B6%E8%A1%8C-s300-%E6%96%B0%E5%B8%81%E5%B7%A5%E8%B5%84%E8%BD%AC%E5%85%A5%E6%B4%BB%E5%8A%A8-%E4%BC%98%E5%85%88%E7%BA%A7%E9%AB%98">1. 金融 | DBS 银行 S$300 新币工资转入活动 (优先级：高)</h4>
+    <ul>
+    <li>
+    <p><strong>关键策略 (SOP)：</strong></p>
+    <ol>
+    <li><strong>注册：</strong> 于 2025年6月30日 前完成活动注册。</li>
+    <li><strong>转账：</strong> 连续 3 个月，每月转入至少 S$1600 工资至 DBS/POSB 账户。</li>
+    <li><strong>可选：</strong> 将 PayNow 关联至 DBS 账户可额外获得 S$5。</li>
+    <li><strong>注意：</strong> 用户在 2024年9月至2025年2月期间，不得有工资存入 DBS/POSB 账户记录。参与过上一轮类似活动的用户（如 <strong><code>坡坡小绵羊</code></strong> 分享的 S$600 到账 经验）不符合此次活动资格。</li>
+    </ol>
+    </li>
+    <li>
+    <p><strong>风险提示：</strong></p>
+    <ul>
+    <li>严格的资格审查期，不适用于现有或近期工资账户持有者。</li>
+    <li>“自己转账”是否符合“工资”定义存疑，<strong><code>且薅且珍惜</code></strong> 提到 T&amp;C 可能规定个人转账不算，建议确认。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>优化建议 (AI)：</strong></p>
+    <ul>
+    <li><strong>触发条件：</strong> 寻求银行新户或转户奖励，且满足非现有工资账户条件。</li>
+    <li><strong>执行路径：</strong> ①仔细阅读官方 T&amp;C 确认“工资”定义；②如符合，按时注册并设置连续达标转账；③考虑 PayNow 绑定获取额外奖励。</li>
+    <li><strong>预期效果：</strong> 成功执行可在 3 个月后获得 S$300 或 S$305 奖励。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>讨论氛围：</strong> 积极分享信息，但也关注活动细则与资格限制。</p>
+    </li>
+    </ul>
+    <h4 id="2-%E9%87%91%E8%9E%8D--ocbc-360-%E8%B4%A6%E6%88%B7%E5%88%A9%E7%8E%87%E8%B0%83%E6%95%B4%E5%8F%8A-unit-trust-ut-%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5-%E4%BC%98%E5%85%88%E7%BA%A7%E9%AB%98">2. 金融 | OCBC 360 账户利率调整及 Unit Trust (UT) 投资策略 (优先级：高)</h4>
+    <ul>
+    <li>
+    <p><strong>关键策略 (SOP)：</strong></p>
+    <ul>
+    <li><strong>背景：</strong> <strong><code>小岛</code></strong> 指出 OCBC 360 账户从 5月1日起利息下调至 3.3%（原 4.65%）。</li>
+    <li><strong>替代方案：</strong> 通过购买理财产品（Unit Trust, 简称 UT）获取 1.5% 奖励利息。</li>
+    <li><strong>操作步骤：</strong>
+    <ol>
+    <li>在 OCBC App 内购买至少 S$20,000 的 UT。</li>
+    <li>支付 0.88% 的手续费 (约 S$176 for S$20k)。</li>
+    <li>购买后第 14 个工作日所在月份起，之后 12 个月可享 1.5% 奖励利息。</li>
+    </ol>
+    </li>
+    <li><strong>讨论点：</strong> <strong><code>赚点钱不易</code></strong> 提出买入14天后即卖出的策略以快速获取12个月利息资格，但 <strong><code>happyworld</code></strong> 警示 UT 存在短期内（如14天）下跌 10% 的市场风险，<strong><code>42号</code></strong> 形容此为“要你利息，要我本金”。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>风险提示：</strong></p>
+    <ul>
+    <li>UT 投资风险：本金可能亏损，尤其在短期持有情况下。</li>
+    <li>手续费成本：0.88% 的申购费需计入成本。</li>
+    <li>流动性：UT 赎回可能需要时间，并非活期存款。</li>
+    <li>替代品：<strong><code>接 bug 或超级 promotion 商务舱机票</code></strong> 提到 Money Market Fund (MMF) 也是一种 UT，风险较低，可作比较。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>优化建议 (AI)：</strong></p>
+    <ul>
+    <li><strong>触发条件：</strong> OCBC 360 账户持有者，不满利率下调，寻求更高回报且愿承担相应风险。</li>
+    <li><strong>执行路径：</strong> ①评估自身风险承受能力；②研究 UT 产品波动性，或选择低风险 MMF；③计算 手续费+潜在本金波动 vs 1.5% 奖励利息 的损益平衡点；④若决定投资，通过 OCBC App 操 作。</li>
+    <li><strong>预期效果：</strong> 可能获得高于 3.3% 的总回报，但需承担市场风险和交易成本。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>讨论氛围：</strong> 热烈讨论策略可行性，风险意识较高，用户间互相提醒潜在陷阱。</p>
+    </li>
+    </ul>
+    <h4 id="3-%E9%87%91%E8%9E%8D--%E6%96%B0%E5%8A%A0%E5%9D%A1%E4%B8%AA%E4%BA%BA%E6%89%80%E5%BE%97%E7%A8%8E%E7%94%B3%E6%8A%A5-rental-income--mortgage-interest-%E4%BC%98%E5%85%88%E7%BA%A7%E4%B8%AD">3. 金融 | 新加坡个人所得税申报 (Rental Income & Mortgage Interest) (优先级：中)</h4>
+    <ul>
+    <li>
+    <p><strong>关键策略 (SOP)：</strong></p>
+    <ul>
+    <li><strong>核心问题：</strong> <strong><code>羊毛毡</code></strong> 询问房贷利息 (Mortgage Loan Interest) 高于租金收入 (Rental Income) 时如何报税。</li>
+    <li><strong>IRAS 规则：</strong>
+    <ul>
+    <li>出租整个单位：租金计入 <code>Other Income</code> 下的 <code>Rent from Property</code>；房贷利息等符合条件的费用可在 <code>Expenses</code> 中扣除。系统会自动计算净租金收入/亏损。<strong><code>盛夏零度</code></strong> 指出系统会自动计算。</li>
+    <li>出租部分房间 (Sublet)：<strong><code>我就是&lt;0xF0&gt;&lt;0x9F&gt;&lt;0x8C&gt;&lt;0x88&gt;</code></strong> 引用 PropertyGuru 指南截图（Page 28），显示可以按比例扣除费用（Deemed Expenses based on the room）。<strong><code>我就是&lt;0xF0&gt;&lt;0x9F&gt;&lt;0x8C&gt;&lt;0x88&gt;</code></strong> 分享的 Amortization Schedule (Page 21) 可用于计算利息部分。</li>
+    <li>税务年度结束日：报税截止日期临近（<strong><code>四个煎蛋🍳</code></strong> 提及 4月17日为最后一天 23:59，<strong><code>Nora 漫天羊毛</code></strong> 确认 18 日仍可报）。</li>
+    <li>修改申报：<strong><code>集毛成球</code></strong> 提到提交后仍可 Amend 或 Object to assessment。</li>
+    </ul>
+    </li>
+    <li><strong>计算细节：</strong> 区分房贷还款中的利息 (Interest) 和本金 (Principal) 部分，只有利息可用于抵扣。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>风险提示：</strong></p>
+    <ul>
+    <li>申报准确性：错误申报可能导致罚款。区分整租和分租的费用扣除规则不同。</li>
+    <li>时间限制：务必在截止日期前完成申报或设置 GIRO 自动扣款 (**<code>四个煎蛋🍳</code>** 问及 set up giro 时间）。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>优化建议 (AI)：</strong></p>
+    <ul>
+    <li><strong>触发条件：</strong> 在新加坡拥有房产并出租（全部或部分），需要进行年度个人所得税申报。</li>
+    <li><strong>执行路径：</strong> ①参考 IRAS 官网指南 (如 <strong><code>我就是&lt;0xF0&gt;&lt;0x9F&gt;&lt;0x8C&gt;&lt;0x88&gt;</code></strong> 分享的链接) 和银行提供的年度房贷利息汇总 (Statement)；②准确填写 <code>Income</code> 和 <code>Expenses</code> 部分，利用系统自动计算；③如有疑问，寻求专业税务建议或联系 IRAS。</li>
+    <li><strong>预期效果：</strong> 合法合规完成税务申报，准确计算应缴税款或利用租金亏损抵扣其他收入。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>讨论氛围：</strong> 互助解决报税疑问，分享官方资源和个人经验，关注细节和截止日期。</p>
+    </li>
+    <li>
+    <p><strong>免责声明：</strong> [推测]税务讨论仅为信息分享，不构成专业税务建议。请咨询合格税务顾问或参考 IRAS 官方指南。</p>
+    </li>
+    </ul>
+    <h4 id="4-%E7%94%9F%E6%B4%BB--%E6%96%B0%E5%8A%A0%E5%9D%A1%E8%88%AA%E7%A9%BA-sia-%E6%9C%BA%E4%B8%8A%E4%BD%93%E9%AA%8C-wifi--singapore-sling-%E4%BC%98%E5%85%88%E7%BA%A7%E4%BD%8E">4. 生活 | 新加坡航空 (SIA) 机上体验 (WiFi & Singapore Sling) (优先级：低)</h4>
+    <ul>
+    <li>
+    <p><strong>关键策略 (SOP)：</strong></p>
+    <ul>
+    <li><strong>WiFi：</strong> <strong><code>倾青恋叶</code></strong> 询问新航 WiFi 是否支持 GPT。<strong><code>Shepherd</code></strong> 确认能用，但 <strong><code>薅点羊肉涮着吃</code></strong> 反馈网速慢且信号不稳定（巴黎-新加坡航线 14 小时中断 9 小时）。<strong><code>啃了个&lt;0xF0&gt;&lt;0x9F&gt;&lt;0xA9&gt;&lt;0xAB&gt;</code></strong> 指出飞越欧洲某段 WiFi 有限。</li>
+    <li><strong>Singapore Sling：</strong> <strong><code>倾青恋叶</code></strong> 感觉新航上的新加坡司令鸡尾酒 (Singapore Sling) 供应商更换，颜色从水红色变橙红，味道偏甜。<strong><code>四个煎蛋🍳</code></strong> 和 <strong><code>Nora 漫天羊毛</code></strong> 认为是现调，但 <strong><code>Shania 骆骆🍀</code></strong> 和 <strong><code>一碗咖喱</code></strong> 觉得现在很难喝，“淡出鸟来”。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>风险提示：</strong> 机上 WiFi 覆盖和速度受航段影响，并非全程保证。机上餐饮口味可能随时间或航班批次变化。</p>
+    </li>
+    <li>
+    <p><strong>优化建议 (AI)：</strong></p>
+    <ul>
+    <li><strong>触发条件：</strong> 即将乘坐新加坡航空，关注机上网络和餐饮服务。</li>
+    <li><strong>执行路径：</strong> ①如需稳定网络，提前下载所需内容或降低期望；②对于餐饮，可尝试不同选择或自带部分零食；③如对服务不满意，可通过官方渠道反馈。</li>
+    <li><strong>预期效果：</strong> 管理机上体验预期，做出更合适的行前准备。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>讨论氛围：</strong> 分享个人体验，略带吐槽。</p>
+    </li>
+    </ul>
+    <h4 id="5-%E9%87%91%E8%9E%8D--%E5%AE%8F%E8%A7%82%E5%8F%8A%E5%B8%82%E5%9C%BA%E5%8A%A8%E6%80%81-unh-%E8%82%A1%E4%BB%B7-%E9%BB%84%E9%87%91-%E6%B1%87%E7%8E%87-sora-%E4%BC%98%E5%85%88%E7%BA%A7%E4%B8%AD">5. 金融 | 宏观及市场动态 (UNH 股价, 黄金, 汇率, SORA) (优先级：中)</h4>
+    <ul>
+    <li>
+    <p><strong>关键策略 (SOP)：</strong></p>
+    <ul>
+    <li><strong>UNH 股价：</strong> <strong><code>接 bug 或超级 promotion 商务舱机票</code></strong> 分享 UNH (UnitedHealth Group) 股价截图（Page 26），显示盘前大跌近 17%。<strong><code>剪 羊毛</code></strong> 确认是联合健康，并提及美日关税谈判。<strong><code>yuqian</code></strong> 将其与“老头乐”（美国医保）关联。</li>
+    <li><strong>黄金：</strong> <strong><code>✂️剪羊毛</code></strong> 提及黄金价格“涨飞了”。</li>
+    <li><strong>汇率：</strong> <strong><code>trust 申请码 QQDD***CH</code></strong> 查询 SGD 对 RMB 汇率 (Page 13)，显示为 5.60。<strong><code>接 bug 或超级 promotion 商务舱机票</code></strong> 评论 RMB 贬值厉害，关注 SGD 对 USD。</li>
+    <li><strong>SORA：</strong> <strong><code>羊毛小白</code></strong> 询问 SORA (Singapore Overnight Rate Average) 走势，关心 3M SORA 是否会继续下跌。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>风险提示：</strong> 市场波动剧烈，单一信息可能无法反映全貌。投资决策需谨慎。</p>
+    </li>
+    <li>
+    <p><strong>优化建议 (AI)：</strong></p>
+    <ul>
+    <li><strong>触发条件：</strong> 关注宏观经济、外汇及特定股票/商品市场动态。</li>
+    <li><strong>执行路径：</strong> ①通过可靠财经渠道（如 Bloomberg, Reuters, Moomoo/Tiger 等券商 App）获取实时数据和分析；②结合自身投资组合和风险偏好进行判断；③咨询专业投资顾问。</li>
+    <li><strong>预期效果：</strong> 提升市场认知，为投资决策提供参考信息。</li>
+    </ul>
+    </li>
+    <li>
+    <p><strong>讨论氛围：</strong> 快速传递市场异动信息，互相询问背景知识。</p>
+    </li>
+    </ul>
+    <h3 id="%E5%A4%9A%E5%AA%92%E4%BD%93%E8%A7%A3%E6%9E%90">多媒体解析</h3>
+    <ol>
+    <li><strong><code>坡坡小绵羊</code></strong> 分享图片 (Page 1)：DBS 银行 App 截图，显示收到 S$600 活动奖励 (SalSpdPromo-Spend)，关联 <strong>DBS 银行 S$300/S$600 工资转入活动</strong>  话题。</li>
+    <li><strong><code>剪刀手✌️</code></strong> 分享图片 (Page 3)：超市（[推测] 可能是 NTUC FairPrice 或 Cold Storage，因出现 JOYVIO 蓝莓品牌）蓝莓促销照片（S$5.45/盒），关联 <strong>生活消费 (超市购物)</strong> 话题，与 <strong><code>42号</code></strong> 等讨论苹果种类和价格的上下文相关。</li>
+    <li><strong><code>小岛</code></strong> 分享图片 (Page 9)：[推测] OCBC 银行 App 截图，解释通过购买 UT (Unit Trust) 可获得额外利息的方案，关联 <strong>OCBC 360 利率调整及 UT 策略</strong> 话题。</li>
+    <li><strong><code>trust 申请码 QQDD***CH</code></strong> 分享图片 (Page 13)：Google 搜索结果截图，显示 SGD 对 RMB 汇率为 5.60，关联 <strong>宏观及市场动态 (汇率)</strong> 话题。</li>
+    <li><strong><code>我就是&lt;0xF0&gt;&lt;0x9F&gt;&lt;0x8C&gt;&lt;0x88&gt;</code></strong> 分享图片 (Page 21)：房贷摊销表 (Amortization Schedule) 截图，显示每月还款额中利息和本金的构成， 关联 <strong>新加坡个人所得税申报 (Rental Income & Mortgage Interest)</strong> 话题。</li>
+    <li><strong><code>小羔羊</code></strong> 分享图片 (Page 24)：[推测] 银行转账 App 截图 (可能是 SCB)，展示转账目的选择 “Salary Payment SALA”，用于说明如何操作符合银行“工资转账”定义， 关联 <strong>DBS/OCBC 工资转入活动</strong> 及 <strong>OCBC 转 UOB 工资方式</strong> 讨论。</li>
+    <li><strong><code>接 bug 或超级 promotion 商务舱机票</code></strong> 分享图片 (Page 26)：Moomoo 股票 App 截图，显示 UNH (联合健康) 股价盘前大跌，关联 <strong>宏观及市场动态 (UNH 股价)</strong> 话题。</li>
+    <li><strong><code>我就是&lt;0xF0&gt;&lt;0x9F&gt;&lt;0x8C&gt;&lt;0x88&gt;</code></strong> 分享图片 (Page 28)：PropertyGuru 网站关于租金收入税务减免指南的截图，关联 <strong>新加坡个人所得税申报 (Rental Income & Mortgage Interest)</strong> 话题。</li>
+    </ol>
+    <h2 id="%E9%99%84%E5%BD%95">附录</h2>
+    <h3 id="%E6%9C%AF%E8%AF%AD%E8%AF%8D%E5%85%B8-%E9%83%A8%E5%88%86">术语词典 (部分)：</h3>
+    <ul>
+    <li><strong>DBS/POSB:</strong> 星展银行/邮政储蓄银行 (新加坡本地银行)</li>
+    <li><strong>OCBC:</strong> 华侨银行 (Oversea-Chinese Banking Corporation)</li>
+    <li><strong>UOB:</strong> 大华银行 (United Overseas Bank)</li>
+    <li><strong>SCB:</strong> 渣打银行 (Standard Chartered Bank)</li>
+    <li><strong>UT:</strong> Unit Trust (单位信托基金)</li>
+    <li><strong>MMF:</strong> Money Market Fund (货币市场基金)</li>
+    <li><strong>SORA:</strong> Singapore Overnight Rate Average (新加坡隔夜平均利率)</li>
+    <li><strong>IRAS:</strong> Inland Revenue Authority of Singapore (新加坡国内税务局)</li>
+    <li><strong>Singpass:</strong> 新加坡电子政府密码</li>
+    <li><strong>NTUC:</strong> 全国职工总会 (旗下有 FairPrice 超市)</li>
+    <li><strong>SIA:</strong> Singapore Airlines (新加坡航空)</li>
+    <li><strong>UNH:</strong> UnitedHealth Group Inc. (美国联合健康集团)</li>
+    <li><strong>GPT:</strong> Generative Pre-trained Transformer (在此指代 AI 聊天机器人服务)</li>
+    <li><strong>T&amp;C:</strong> Terms and Conditions (条款与条件)</li>
+    <li><strong>Net Rent:</strong> 净租金收入</li>
+    <li><strong>Allowance:</strong> (在此语境下) 工资/津贴，用于银行转账分类</li>
+    <li><strong>SALA:</strong> Salary (工资)，银行转账代码</li>
+    <li><strong>CRS:</strong> Common Reporting Standard (共同申报准则，提及背景为税务信息交换)</li>
+    <li><strong>羊毛:</strong> (网络用语) 指银行或商家的促销优惠、小额福利。</li>
+    <li><strong>老头乐:</strong> (网络用语, [推测]) 指美国的 Medicare/Medicaid 等老年人/低收入者医疗保障计划，与 UNH 业务相关。</li>
+    </ul>
+
+  </article>
+
+  <!-- 功能脚本 -->
+  <!-- Prism.js 核心库 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <!-- Prism.js 自动加载语言支持 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <!-- MathJax 配置与加载 (如果需要数学公式渲染) -->
+  <!--
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']], // 行内公式标识符
+        displayMath: [['$$', '$$'], ['\\[', '\\]']] // 行间公式标识符
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+  -->
+  <!-- 黑暗模式切换脚本 -->
+  <script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    const htmlElement = document.documentElement; // 使用 html 元素以便 :root 变量也能被切换
+
+    // 检查本地存储中是否有用户的偏好设置
+    if (localStorage.getItem('theme') === 'dark') {
+      htmlElement.classList.add('dark-mode');
+      toggleButton.textContent = '切换亮色';
+    } else {
+       toggleButton.textContent = '切换暗色'; // 默认是亮色
+    }
+
+    toggleButton.addEventListener('click', () => {
+      if (htmlElement.classList.contains('dark-mode')) {
+        htmlElement.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+        toggleButton.textContent = '切换暗色';
+      } else {
+        htmlElement.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+        toggleButton.textContent = '切换亮色';
+      }
+    });
+
+    // TOC 锚点 ID 生成 (确保 URL 编码安全)
+    // 注意：此脚本假定页面加载时目录已生成。更健壮的方案是在JS中动态生成目录。
+    // 这里仅处理现有链接的潜在编码问题（如果手动生成目录时没处理好）
+    // 但在此例中，我已在 HTML 中使用了 URL 编码的 ID，所以此JS部分是可选的
+    document.querySelectorAll('#toc a').forEach(link => {
+       try {
+         // 尝试解码，如果已经是合法的编码则保持，否则重新编码
+         const decodedHref = decodeURIComponent(link.getAttribute('href'));
+         // 重新编码以确保万无一失，特别是对于非ASCII字符
+         link.href = '#' + encodeURIComponent(decodedHref.substring(1));
+       } catch (e) {
+         console.warn("Could not process TOC link href:", link.getAttribute('href'), e);
+         // 如果解码失败（可能已经是奇怪的格式），尝试直接编码原始href的#之后的部分
+         const originalHref = link.getAttribute('href');
+         if (originalHref && originalHref.startsWith('#')) {
+             link.href = '#' + encodeURIComponent(originalHref.substring(1));
+         }
+       }
+    });
+
+    // Prism 高亮触发 (如果页面内容是动态加载的，需要在此处或之后调用)
+    // Prism.highlightAll(); // Autoloader 会自动处理，通常不需要手动调用
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聊天分析报告 2025-04-16 - 卡片样式</title>
+  <!-- 核心样式 (来自 样式.html) -->
+  <style>
+    /* --- Start of CSS from 样式.html --- */
+    ol,
+    ul,
+    menu {
+      list-style: none;
+    }
+    .card {
+      position: relative;
+      /* 基础样式 */
+      font-family: BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      color: #24292e;
+      background-color: #fff;
+      font-size: 16px;
+      word-wrap: break-word;
+      position: relative;
+    }
+    /* 标题样式 */
+    .card h1,
+    .card h2,
+    .card h3,
+    .card h4,
+    .card h5,
+    .card h6 {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .card h1 {
+      font-size: 2em;
+    }
+
+    .card h2 {
+      font-size: 1.5em;
+    }
+
+    .card h3 {
+      font-size: 1.25em;
+    }
+
+    .card h4 {
+      font-size: 1em;
+    }
+
+    .card h5 {
+      font-size: 0.875em;
+    }
+
+    .card h6 {
+      font-size: 0.85em;
+      color: #6a737d;
+    }
+
+    /* 段落和文本样式 */
+    .card p {
+      margin-top: 0;
+    }
+
+    .card a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .card strong {
+      font-weight: 600;
+    }
+
+    .card em {
+      font-style: italic;
+    }
+
+    .card del {
+      text-decoration: line-through;
+    }
+    /* 表格样式 - 通用 */
+    .card-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+      overflow-x: auto; /* Ensure table scrolls on small screens */
+      display: block; /* Needed for overflow-x */
+    }
+
+    .card-content th {
+      font-weight: 600;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .card-content td {
+      padding: 10px;
+      line-height: 1.5;
+    }
+
+    .card-content tr {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: #eaecef; /* Added default border color */
+    }
+
+    /* Code Block Styling - General */
+    .card-content pre {
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      background-color: #f6f8fa; /* Default background */
+      color: #24292e; /* Default text color */
+    }
+
+    .card-content code:not(pre code) {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.9em;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background-color: #eaecef;
+    }
+
+    /* 引用块样式 - 通用 */
+    .card-content blockquote {
+      border-left: 3px solid #8e8e93;
+      margin: 20px 0;
+      padding: 10px 20px;
+      position: relative;
+      font-style: italic;
+      color: #586069; /* Slightly muted color */
+    }
+    .card-content blockquote p { /* Ensure paragraphs inside blockquote have correct margin */
+        margin-bottom: 0;
+    }
+
+
+    /* 有列表样式 - 通用 */
+    .card-content ol {
+      counter-reset: item;
+      padding-left: 2.5em; /* Adjust padding for number */
+      margin: 20px 0;
+      list-style: none; /* Remove default */
+    }
+    .card-content ol li {
+        position: relative;
+        margin: 8px 0; /* Adjust spacing */
+        line-height: 1.7;
+        counter-increment: item;
+    }
+    .card-content ol li::before { /* Default numbering */
+        content: counter(item) ".";
+        position: absolute;
+        left: -2.5em; /* Position number */
+        width: 2em; /* Width for number */
+        text-align: right;
+        font-weight: bold;
+        color: #586069;
+    }
+
+
+    /* 无序列表样式 - 通用 */
+    .card-content ul {
+      padding-left: 2em; /* Adjust padding for bullet */
+      margin: 20px 0;
+      list-style: none; /* Remove default */
+    }
+
+    .card-content ul li {
+      position: relative;
+      list-style: none;
+      margin: 8px 0; /* Adjust spacing */
+      line-height: 1.7;
+    }
+     .card-content ul li::before { /* Default bullet */
+        content: "•";
+        position: absolute;
+        left: -1.5em; /* Position bullet */
+        font-size: 1.2em; /* Bullet size */
+        color: #586069;
+        top: -0.1em; /* Adjust vertical alignment */
+    }
+
+
+    /* Nested lists */
+    .card-content ul ul, .card-content ul ol,
+    .card-content ol ul, .card-content ol ol {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      padding-left: 2em; /* Indent nested lists */
+    }
+    .card-content ul ul li::before { content: "◦"; font-size: 1em; } /* Nested bullet */
+    .card-content ul ul ul li::before { content: "▪"; font-size: 0.9em; } /* Deeper nested bullet */
+
+
+    /* 图片样式 - 通用 */
+    .card-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    /* 水平线样式 - 通用 */
+    .card-content hr {
+      margin: 24px 0;
+      border: 0;
+      height: 1px;
+      background-color: #eaecef;
+    }
+    /* 段落样式 - 通用 */
+    .card-content {
+      font-size: 16px;
+    }
+    .card-content p {
+      line-height: 1.8;
+      font-size: 16px;
+      margin: 16px 0; /* Consistent paragraph margin */
+    }
+    /*段落样式 - 通用 */
+    .card-content .card-content-inner > p:first-child {
+        margin-top: 0; /* Remove top margin for first paragraph */
+    }
+     .card-content .card-content-inner > h1:first-child,
+     .card-content .card-content-inner > h2:first-child,
+     .card-content .card-content-inner > h3:first-child,
+     .card-content .card-content-inner > h4:first-child,
+     .card-content .card-content-inner > h5:first-child,
+     .card-content .card-content-inner > h6:first-child {
+        margin-top: 0; /* Remove top margin for first heading */
+    }
+
+
+    .card mark {
+      background-color: rgba(248, 206, 64, 0.3);
+      color: inherit;
+      padding: 2px 4px;
+      border-radius: 3px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .card mark::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: rgba(248, 206, 64, 0.7);
+      border-radius: 1px;
+    }
+
+    mjx-container svg {
+      display: inline !important;
+    }
+
+    .markdown-body ul.contains-task-list,
+    .markdown-body ol.contains-task-list {
+        padding-left: 1em; /* Less padding for task lists */
+    }
+
+    .markdown-body .task-list-item::before {
+      display: none !important; /* Hide default list bullets */
+    }
+    .markdown-body .task-list-item {
+      list-style-type: none !important; /* Ensure bullets/numbers are hidden */
+      padding-left: 24px !important; /* Indent to make space for checkbox, override general list padding */
+      position: relative; /* For positioning the checkbox */
+      margin-left: -18px; /* Adjust to align checkbox better with text flow */
+    }
+    .markdown-body input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 2px solid #888;
+      border-radius: 2px;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 5px; /* Adjust vertical position */
+      left: 0;
+      background-color: #fff;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .markdown-body input[type="checkbox"]:checked {
+      background-color: #1677ff;
+      border-color: #1677ff;
+      background-position: 1px 2px;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMy43OCA0LjIyYS43NS43NSAwIDAgMSAwIDEuMDZsLTcuNSA3LjVhLjc1Ljc1IDAgMCAxLTEuMDYgMGwtMy41LTMuNWEuNzUuNzUgMCAxIDEgMS4wNi0xLjA2TDYgMTEuMTlsNy4yMi03LjIyYS43NS43NSAwIDAgMSAxLjA2IDB6Ii8+PC9zdmc+);
+    }
+
+    /* Add this for proper task list item structure */
+    .markdown-body ul li.task-list-item,
+    .markdown-body ol li.task-list-item {
+        list-style-type: none !important; /* Force override */
+    }
+
+
+    .code-block-container { /* Wrapper for header + pre */
+        margin: 20px 0;
+        position: relative;
+    }
+    .code__header {
+      display: grid;
+      height: 34px;
+      align-items: center;
+      grid-gap: 12px;
+      grid-template-columns: 48px 1fr auto; /* Adjusted last column */
+      background-color: #e1e4e8; /* Header background */
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      padding: 0 12px;
+      border: 1px solid #d1d5da; /* Header border */
+      border-bottom: none; /* No bottom border for header */
+    }
+    .code-title {
+      text-align: center;
+      font-size: 12px;
+      color: #586069;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-weight: 600;
+    }
+    .code__tools {
+      display: flex;
+      gap: 6px;
+      align-items: center; /* Vertically center circles */
+    }
+    .code__circle {
+      display: block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+    .red {
+      background-color: #ff605c;
+    }
+
+    .yellow {
+      background-color: #ffbd44;
+    }
+
+    .green {
+      background-color: #00ca4e;
+    }
+
+    .code-block-container pre { /* Style pre within the container */
+        margin: 0; /* Remove default pre margin */
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border: 1px solid #d1d5da; /* Pre border */
+        border-top: none; /* Connect with header */
+        padding-top: 10px; /* Adjust padding if header exists */
+    }
+    .code-block-container pre code { /* Ensure code tag fills pre */
+        display: block;
+    }
+
+
+    .markdown-body pre .line {
+      display: block;
+      min-height: 1.6em; /* Ensure line height consistency */
+    }
+
+    .markdown-body pre.showLineNumbers code {
+        position: relative;
+        padding-left: 3.5em; /* Make space for line numbers */
+    }
+
+    .markdown-body pre.showLineNumbers .line::before {
+      content: attr(data-line-number); /* Use data attribute */
+      position: absolute;
+      left: 0;
+      width: 2.5em; /* Width of number area */
+      margin-right: 1em;
+      padding-right: 0.5em; /* Spacing between number and code */
+      display: inline-block;
+      text-align: right;
+      color: rgba(115, 138, 148, 0.6); /* Dimmer numbers */
+      user-select: none; /* Prevent selecting line numbers */
+      border-right: 1px solid rgba(115, 138, 148, 0.2); /* Separator line */
+    }
+
+    .code-line.inserted {
+      background-color: rgba(16, 185, 129, 0.15); /* Subtle insert */
+    }
+
+    .code-line.deleted {
+      background-color: rgba(239, 68, 68, 0.15); /* Subtle delete */
+    }
+
+    .highlighted {
+      background-color: rgba(255, 229, 100, 0.4); /* Yellowish highlight */
+      display: block; /* Ensure highlight covers full line */
+      margin: 0 -16px; /* Extend highlight to pre padding edges */
+      padding: 0 16px;
+      box-shadow: 0 0 0 2px rgba(255, 229, 100, 0.4); /* Add subtle border */
+    }
+
+    .wavy-underline {
+      position: relative;
+      text-decoration: none; /* Remove default underline */
+      display: inline; /* Make it work within text flow */
+    }
+    .wavy-underline > .wavy-text {
+      position: relative; /* 确保文本有相对定位 */
+      z-index: 1; /* 确保文本在下划线上方 */
+    }
+    .wavy-underline > .wavy-line {
+      width: 100%;
+      height: 5px; /* Slightly thicker */
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><path d="M0 2.5 C 2.5 0, 7.5 5, 10 2.5" stroke="rgb(248, 206, 64)" fill="none" stroke-width="1.5"/></svg>');
+      background-repeat: repeat-x;
+      background-position: 0 90%; /* Position the wave */
+      background-size: 10px 5px; /* Control wave size */
+      display: block;
+      position: absolute;
+      bottom: -2px; /* Adjust vertical position */
+      left: 0;
+      z-index: 0; /* 确保在文本下方 */
+      pointer-events: none; /* Prevent line from blocking text interaction */
+    }
+
+    /* 小红书封面样式 - 通用 */
+    .card-cover {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      font-family: "PingFang SC", sans-serif;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px; /* Space between cover and content */
+      border-radius: 12px; /* Rounded corners for cover */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .cover-image-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .cover-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .card-cover:hover .cover-image {
+        transform: scale(1.03); /* Slight zoom on hover */
+    }
+
+    .cover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.6)
+      );
+      pointer-events: none;
+    }
+
+    .cover-content {
+      position: relative;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .cover-title {
+      margin: 0 0 16px 0;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: 700;
+      color: #1f2329; /* Darker title color */
+    }
+
+    .cover-description {
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #586069; /* Description color */
+      opacity: 0.9;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Allow wrapping on small screens */
+      gap: 10px; /* Space between elements */
+    }
+
+    .cover-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cover-tag {
+      padding: 4px 12px; /* More padding */
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      background-color: #f1f1f1; /* Light grey tag background */
+      color: #586069;
+    }
+
+    .cover-date {
+      font-size: 14px;
+      color: #6a737d; /* Date color */
+      opacity: 0.8;
+    }
+
+    /* 覆盖式封面样式 - 内容覆盖在图片上 */
+    .card-cover-overlay .cover-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: white;
+      padding: 30px;
+      border-radius: 0 0 12px 12px; /* Match container */
+    }
+     .card-cover-overlay .cover-title,
+     .card-cover-overlay .cover-description,
+     .card-cover-overlay .cover-tag,
+     .card-cover-overlay .cover-date {
+        color: white; /* Ensure text is white */
+     }
+      .card-cover-overlay .cover-tag {
+         background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent tags */
+      }
+
+
+    /* 分离式封面样式 - 内容在图片下方 */
+    .card-cover-separate {
+      display: flex;
+      flex-direction: column;
+      box-shadow: none; /* Remove outer shadow if needed */
+    }
+
+    .card-cover-separate .cover-image-container {
+      border-radius: 12px 12px 0 0;
+    }
+
+    .card-cover-separate .cover-content {
+      border-radius: 0 0 12px 12px;
+      background-color: #ffffff; /* White background for content */
+      border: 1px solid #eaecef; /* Subtle border */
+      border-top: none;
+    }
+
+    /* 无图片模式 - 通用样式 */
+    .card-cover-no-image {
+      min-height: 250px; /* Reduced height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px dashed #d1d5da; /* Dashed border */
+      background-color: #f6f8fa; /* Light background */
+    }
+
+    .card-cover-no-image .cover-content {
+      background: none;
+      position: static;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card-cover-no-image .cover-title {
+      margin-bottom: 20px;
+      font-size: 26px; /* Slightly smaller */
+    }
+
+    .card-cover-no-image .cover-footer {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card-cover-no-image .cover-tags {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .card-cover-no-image .cover-date {
+      margin-top: 5px;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .cover-title {
+        font-size: 24px;
+      }
+
+      .cover-description {
+        font-size: 14px;
+      }
+      .cover-footer {
+        flex-direction: column;
+        align-items: flex-start; /* Align items left */
+      }
+       .card-cover-no-image .cover-footer {
+          align-items: center; /* Center align for no-image */
+       }
+       .cover-date {
+         margin-top: 10px; /* Add space above date */
+       }
+    }
+
+    /* 颜色变量定义 */
+    :root {
+      /* 基础颜色 */
+      --pop-primary: #ff2e63; /* Bright Pink */
+      --pop-secondary: #51bafa; /* Bright Blue */
+      --pop-bg: #fde041; /* Bright Yellow */
+      --pop-text: #252a34; /* Dark Grey/Black */
+      --pop-dots-color: #d3b000; /* Darker Yellow for dots */
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='${encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue('--pop-dots-color'))}'/%3E%3C/svg%3E");
+      --pop-white: #ffffff;
+      --pop-code-bg: #2d2d2d; /* Darker code background */
+
+      /* 装饰元素颜色 */
+      --pop-accent1: var(--pop-primary);
+      --pop-accent2: var(--pop-secondary);
+      --pop-accent3: #ff625a; /* Bright Red/Orange */
+      --pop-border: var(--pop-text);
+      --pop-shadow-color: rgba(37, 42, 52, 0.8);
+
+      /* RGB versions for rgba() */
+      --pop-primary-rgb: 255, 46, 99;
+      --pop-secondary-rgb: 81, 186, 250;
+      --pop-accent2-rgb: 81, 186, 250;
+      --pop-accent3-rgb: 255, 98, 90;
+
+      /* Dynamic SVG URLs need JS or manual update */
+      --pop-decor-before: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='${encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue('--pop-secondary'))}' stroke='${encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue('--pop-border'))}' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='${encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue('--pop-border'))}'%3EPOP!%3C/text%3E%3C/svg%3E");
+      --pop-decor-after: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='${encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue('--pop-primary'))}' stroke='${encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue('--pop-border'))}' stroke-width='3'/%3E%3C/svg%3E");
+    }
+
+    /* 小红书粉蓝主题 */
+    .card-pop-art.pink-blue-mode {
+      --pop-primary: #ff4e79; /* Pink */
+      --pop-secondary: #7fd1ae; /* Mint Green */
+      --pop-bg: #a6dcef; /* Light Blue */
+      --pop-dots-color: #8ac6d0; /* Darker Blue for dots */
+      --pop-text: #2a3f54; /* Darker Blue/Grey Text */
+
+      --pop-accent1: #ff4e79;
+      --pop-accent2: #7fd1ae;
+      --pop-accent3: #ffd666; /* Yellow */
+      --pop-border: #2a3f54;
+      --pop-shadow-color: rgba(42, 63, 84, 0.7); /* Darker shadow */
+
+      /* Update RGB */
+       --pop-primary-rgb: 255, 78, 121;
+       --pop-secondary-rgb: 127, 209, 174;
+       --pop-accent2-rgb: 127, 209, 174;
+       --pop-accent3-rgb: 255, 214, 102;
+       /* Update SVGs if needed */
+    }
+
+    /* 小红书薄荷糖主题 */
+    .card-pop-art.mint-mode {
+      --pop-primary: #7fd1ae; /* Mint Green */
+      --pop-secondary: #ff4e79; /* Pink */
+      --pop-bg: #e0f7fa; /* Very Light Mint Blue */
+      --pop-dots-color: #b2ebf2; /* Light Blue dots */
+      --pop-text: #004d40; /* Dark Teal Text */
+
+      --pop-accent1: #7fd1ae;
+      --pop-accent2: #ff4e79;
+      --pop-accent3: #51bafa; /* Blue */
+      --pop-border: #00796b; /* Darker Mint/Teal Border */
+      --pop-shadow-color: rgba(0, 121, 107, 0.5); /* Teal shadow */
+
+       /* Update RGB */
+       --pop-primary-rgb: 127, 209, 174;
+       --pop-secondary-rgb: 255, 78, 121;
+       --pop-accent2-rgb: 255, 78, 121;
+       --pop-accent3-rgb: 81, 186, 250;
+       /* Update SVGs if needed */
+    }
+
+    /* 紫色星空主题 */
+    .card-pop-art.purple-mode {
+      --pop-primary: #e040fb; /* Bright Purple */
+      --pop-secondary: #ffab40; /* Orange */
+      --pop-bg: #4a148c; /* Deep Purple Background */
+      --pop-dots-color: #ab47bc; /* Lighter Purple dots */
+      --pop-text: #f3e5f5; /* Light Lavender Text */
+      --pop-white: #f3e5f5;
+      --pop-code-bg: #311b92; /* Dark Indigo Code Background */
+
+      --pop-accent1: var(--pop-primary);
+      --pop-accent2: var(--pop-secondary);
+      --pop-accent3: #64b5f6; /* Light Blue */
+      --pop-border: #ce93d8; /* Lighter Purple Border */
+      --pop-shadow-color: rgba(171, 71, 188, 0.6); /* Purple shadow */
+
+      /* Update RGB */
+      --pop-primary-rgb: 224, 64, 251;
+      --pop-secondary-rgb: 255, 171, 64;
+      --pop-accent2-rgb: 255, 171, 64;
+      --pop-accent3-rgb: 100, 181, 246;
+       /* Update SVGs if needed */
+    }
+
+    /* Helper function to update SVG URLs - run this once after defining themes */
+    /* Ideally done via JS, but for static CSS, manual update or build step needed */
+    /* Example for default theme (manual for now): */
+     :root {
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23d3b000'/%3E%3C/svg%3E");
+      --pop-decor-before: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='%2351bafa' stroke='%23252a34' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23252a34'%3EPOP!%3C/text%3E%3C/svg%3E");
+      --pop-decor-after: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='%23ff2e63' stroke='%23252a34' stroke-width='3'/%3E%3C/svg%3E");
+     }
+     /* Example for pink-blue theme (manual): */
+     .card-pop-art.pink-blue-mode {
+        --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%238ac6d0'/%3E%3C/svg%3E");
+        --pop-decor-before: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='%237fd1ae' stroke='%232a3f54' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%232a3f54'%3EPOP!%3C/text%3E%3C/svg%3E");
+        --pop-decor-after: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='%23ff4e79' stroke='%232a3f54' stroke-width='3'/%3E%3C/svg%3E");
+     }
+    /* (Repeat manually for other themes) */
+
+
+    /* 波普艺术风格 */
+    /* 卡片内容样式 */
+    .card-pop-art .wavy-underline > .wavy-line {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5"><path d="M0 2.5 C 2.5 0, 7.5 5, 10 2.5" stroke="var(--pop-primary)" fill="none" stroke-width="1.5"/></svg>');
+      height: 5px;
+      bottom: -2px;
+    }
+
+    .card-pop-art {
+      background-color: var(--pop-bg);
+      background-image: var(--pop-dots);
+      background-size: 24px 24px;
+      background-position: 12px 12px;
+      color: var(--pop-text);
+      font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
+      padding: 30px;
+      position: relative;
+      font-size: 16px;
+      border: none; /* Override basic card border if any */
+      box-shadow: none; /* Override basic card shadow if any */
+      overflow: visible; /* Allow decorations to overflow */
+    }
+
+    /* 添加波普艺术装饰元素 */
+    .card-pop-art::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 80px;
+      height: 80px;
+      background-image: var(--pop-decor-before); /* Use variable */
+      background-repeat: no-repeat;
+      background-size: 60px 60px;
+      background-position: top right;
+      transform: translate(20px, -20px) rotate(15deg);
+      z-index: 3; /* Above content background, below card interaction maybe */
+      pointer-events: none;
+    }
+
+    .card-pop-art::after {
+       content: "";
+       position: absolute;
+       bottom: -15px;
+       left: -15px;
+       width: 100px;
+       height: 100px;
+       background-image: var(--pop-decor-after); /* Use variable */
+       background-repeat: no-repeat;
+       background-size: 70px 70px;
+       background-position: bottom left;
+       transform: rotate(-10deg);
+       z-index: 3;
+       pointer-events: none;
+    }
+
+
+    .card-pop-art .card-content {
+      position: relative;
+      z-index: 2; /* Ensure content is above main background but below decorations */
+      padding: 20px; /* Adjust padding */
+      border: 3px solid var(--pop-border);
+      height: 100%;
+      background: var(--pop-white);
+      box-shadow: 8px 8px 0 var(--pop-shadow-color); /* Adjusted shadow */
+      border-radius: 4px; /* Optional: slight rounding */
+      overflow: hidden; /* Clip inner content */
+    }
+
+    /* Make sure inner content doesn't overflow weirdly */
+    .card-pop-art .card-content-inner {
+        /* No overflow hidden needed here if card-content handles it */
+    }
+
+
+    /* 标题样式 */
+    .card-pop-art h1 strong {
+      color: var(--pop-primary);
+      background-color: var(--pop-white);
+      padding: 2px 6px; /* Adjust padding */
+      border: 3px solid var(--pop-border);
+      display: inline-block;
+      transform: rotate(-2deg);
+      box-shadow: 2px 2px 0px var(--pop-shadow-color);
+    }
+
+    .card-pop-art h1 {
+      font-size: 2.2em; /* Larger */
+      font-weight: 800;
+      color: var(--pop-text);
+      margin-top: 10px; /* Less margin top inside card */
+      margin-bottom: 25px; /* More margin bottom */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 3px 3px 0 var(--pop-primary);
+      position: relative;
+      padding-bottom: 15px; /* Space for the line */
+      line-height: 1.2;
+    }
+
+    .card-pop-art h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--pop-primary),
+        var(--pop-primary) 8px,
+        var(--pop-accent2) 8px,
+        var(--pop-accent2) 16px
+      );
+       border-radius: 3px;
+    }
+
+    .card-pop-art h2 {
+      font-size: 1.8em; /* Adjusted size */
+      font-weight: 700;
+      color: var(--pop-text);
+      margin-top: 24px;
+      margin-bottom: 16px;
+      background-color: var(--pop-accent2);
+      padding: 5px 12px; /* Adjust padding */
+      display: inline-block; /* To contain background */
+      transform: rotate(-2deg);
+      box-shadow: 3px 3px 0px var(--pop-shadow-color);
+       border: 2px solid var(--pop-border);
+       border-radius: 3px; /* Slight rounding */
+    }
+
+    .card-pop-art h3 {
+      font-size: 1.5em; /* Adjusted size */
+      font-weight: 700;
+      color: var(--pop-white); /* White text */
+      margin-top: 20px;
+      margin-bottom: 12px;
+      background-color: var(--pop-accent3); /* Use accent color */
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      border: 2px solid var(--pop-border);
+       transform: skew(-5deg); /* Add skew */
+       box-shadow: 2px 2px 0px var(--pop-shadow-color);
+    }
+
+    /* 段落样式 */
+    .card-pop-art p {
+      line-height: 1.7;
+      margin: 16px 0;
+      color: var(--pop-text);
+       font-size: 1.05em; /* Slightly larger paragraph text */
+    }
+
+
+    /* 列表样式 */
+    .card-pop-art ul {
+      background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque */
+      padding: 15px 15px 15px 30px; /* Adjust padding */
+      border: 2px dashed var(--pop-border); /* Dashed border */
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 4px 4px 0px var(--pop-accent2);
+      list-style: none;
+    }
+
+    .card-pop-art ul li {
+      position: relative;
+      padding-left: 28px; /* More space for marker */
+      margin: 12px 0; /* Adjust spacing */
+      line-height: 1.6;
+    }
+
+    .card-pop-art ul li::before {
+      content: "💥"; /* Pop/Explosion emoji */
+      position: absolute;
+      top: -2px;
+      left: 0px;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .card-pop-art ol {
+      counter-reset: item;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px 15px 15px 40px; /* More left padding */
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      margin: 20px 0;
+      list-style-type: none; /* Ensure default numbers are off */
+      box-shadow: 4px 4px 0px var(--pop-accent3);
+    }
+
+    .card-pop-art ol li {
+      position: relative;
+      padding-left: 35px; /* Space for custom counter */
+      margin: 12px 0;
+      counter-increment: item;
+      line-height: 1.6;
+    }
+
+    .card-pop-art ol li::before {
+      content: counter(item); /* Use the counter */
+      position: absolute;
+      left: 0;
+      top: 0px; /* Align better */
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      font-weight: 700;
+      width: 28px; /* Slightly larger */
+      height: 28px; /* Slightly larger */
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px; /* Match height */
+      border: 2px solid var(--pop-border);
+      font-size: 14px; /* Adjust font size */
+       transform: rotate(-5deg); /* Tilt */
+       box-shadow: 1px 1px 0px var(--pop-shadow-color);
+    }
+
+    /* Nested lists pop art */
+    .card-pop-art ul ul, .card-pop-art ul ol,
+    .card-pop-art ol ul, .card-pop-art ol ol {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 30px; /* Indent nested lists */
+        background: rgba(255, 255, 255, 0.6); /* Lighter background */
+        border-style: dotted;
+        box-shadow: 2px 2px 0px var(--pop-accent1);
+    }
+    .card-pop-art ul ul li::before { content: "✨"; font-size: 18px; } /* Nested bullet: sparkle */
+    .card-pop-art ol ol li::before { /* Custom nested counter */
+        background-color: var(--pop-accent2);
+        transform: rotate(5deg);
+        content: counter(item, lower-alpha); /* Use letters */
+        font-size: 13px;
+        line-height: 26px; /* Adjust line height */
+    }
+
+
+    /* Task list specific style within pop-art */
+     .card-pop-art ul.contains-task-list,
+     .card-pop-art ol.contains-task-list {
+        padding-left: 20px; /* Adjust padding for task lists */
+        border-style: solid;
+        box-shadow: 4px 4px 0px var(--pop-secondary);
+     }
+
+    .card-pop-art .task-list-item {
+        padding-left: 30px !important; /* Ensure space for checkbox */
+        margin-left: 0 !important; /* Override default list indent if necessary */
+    }
+    .card-pop-art .task-list-item::before {
+        display: none !important; /* Hide default or emoji bullet */
+    }
+    .card-pop-art .task-list-item input[type="checkbox"] {
+        top: 6px; /* Adjust checkbox position */
+        left: 0; /* Position checkbox */
+        border-width: 3px; /* Thicker border */
+        border-color: var(--pop-border);
+        border-radius: 0; /* Square checkboxes */
+        transform: rotate(3deg); /* Slight tilt */
+        cursor: pointer;
+        width: 18px; /* Slightly larger */
+        height: 18px;
+    }
+    .card-pop-art .task-list-item input[type="checkbox"]:checked {
+        background-color: var(--pop-primary);
+        border-color: var(--pop-border);
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white"%3E%3Cpath fill-rule="evenodd" d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06L6 11.19l7.22-7.22a.75.75 0 0 1 1.06 0z"/%3E%3C/svg%3E'); /* White checkmark */
+        background-size: 70%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    /* 引用样式 */
+    .card-pop-art blockquote {
+      padding: 20px 20px 20px 30px; /* More padding, more left padding */
+      border-left: none; /* Remove side border */
+      margin: 25px 0;
+      color: var(--pop-text);
+      font-style: italic;
+      font-weight: 600;
+      background-color: rgba(var(--pop-secondary-rgb), 0.2); /* Use accent color */
+      border-radius: 8px;
+      position: relative;
+      border: 3px solid var(--pop-border);
+      box-shadow: 5px 5px 0 var(--pop-primary);
+      transform: rotate(1deg); /* Slight rotation */
+    }
+    .card-pop-art blockquote p:first-child { margin-top: 0; }
+    .card-pop-art blockquote p:last-child { margin-bottom: 0; }
+
+
+    .card-pop-art blockquote::before {
+      content: "❝"; /* Open quote */
+      position: absolute;
+      top: -10px; /* Position above */
+      left: 5px;
+      font-size: 50px; /* Adjust size */
+      color: var(--pop-primary);
+      font-family: Georgia, serif;
+      line-height: 1;
+      opacity: 0.8;
+      z-index: 1; /* Ensure it's above background */
+    }
+     .card-pop-art blockquote::after {
+      content: "❞"; /* Close quote */
+      position: absolute;
+      bottom: -15px; /* Position below */
+      right: 10px;
+      font-size: 50px; /* Adjust size */
+      color: var(--pop-primary);
+      font-family: Georgia, serif;
+      line-height: 1;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    /* 代码块样式 */
+     .card-pop-art .code-block-container { /* Wrapper styling */
+         margin: 25px 0;
+         border: 3px solid var(--pop-border);
+         box-shadow: 6px 6px 0 var(--pop-accent2);
+         border-radius: 0;
+         overflow: hidden; /* Clip children */
+     }
+     .card-pop-art .code__header {
+         background-color: var(--pop-accent2);
+         border: none;
+         border-bottom: 3px solid var(--pop-border);
+         border-radius: 0;
+         height: 30px; /* Smaller header */
+     }
+     .card-pop-art .code-title {
+         color: var(--pop-text);
+         font-weight: bold;
+         font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
+         text-transform: uppercase;
+         font-size: 13px;
+     }
+      .card-pop-art .code__circle {
+          border: 1px solid var(--pop-border);
+          width: 10px;
+          height: 10px;
+      }
+      .card-pop-art .red { background-color: #ff605c; }
+      .card-pop-art .yellow { background-color: #ffbd44; }
+      .card-pop-art .green { background-color: #00ca4e; }
+
+
+    .card-pop-art pre {
+      background-color: var(--pop-code-bg);
+      border-radius: 0; /* Sharp corners */
+      padding: 15px; /* Adjust padding */
+      font-family: "Courier New", Courier, monospace; /* Monospace font */
+      font-size: 14px;
+      overflow-x: auto;
+      color: #f0f0f0; /* Lighter text */
+      border: none; /* Border handled by container */
+      box-shadow: none; /* Shadow handled by container */
+      margin: 0; /* Margin handled by container */
+      position: relative;
+    }
+     /* Optional: Add scanlines effect */
+     .card-pop-art pre::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+        background-size: 100% 4px;
+        pointer-events: none;
+        opacity: 0.6;
+        z-index: 1; /* Above code, below selection */
+     }
+     .card-pop-art pre code {
+         position: relative;
+         z-index: 2; /* Ensure code is above scanlines */
+     }
+
+
+    .card-pop-art code:not(pre code) {
+      background-color: rgba(var(--pop-primary-rgb), 0.15); /* Light primary bg */
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      color: var(--pop-primary); /* Primary color text */
+      border: 1px solid rgba(var(--pop-primary-rgb), 0.5);
+      font-weight: bold;
+    }
+
+    /* 表格样式 */
+    .card-pop-art table {
+      border-collapse: separate; /* Needed for border-spacing and shadows */
+      border-spacing: 0;
+      width: 100%;
+      margin: 25px 0;
+      background-color: var(--pop-white);
+      border: 4px solid var(--pop-border); /* Thicker border */
+      border-radius: 0px; /* Sharp corners */
+      overflow: hidden; /* Needed for border radius on table */
+      box-shadow: 6px 6px 0 var(--pop-primary);
+      transform: rotate(-1deg); /* Slight tilt */
+      display: block; /* For overflow-x */
+      overflow-x: auto; /* Enable horizontal scroll */
+    }
+
+    .card-pop-art thead { /* Ensure thead background covers */
+       display: table-header-group;
+       width: 100%;
+    }
+    .card-pop-art tbody {
+       display: table-row-group;
+       width: 100%;
+    }
+
+
+    .card-pop-art th {
+      background-color: var(--pop-border); /* Use border color for header */
+      color: var(--pop-white);
+      padding: 12px 15px;
+      text-align: center; /* Center align header */
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+       border-bottom: 4px solid var(--pop-border); /* Match table border */
+       border-left: 1px dashed rgba(var(--pop-primary-rgb), 0.3); /* Separator */
+    }
+     .card-pop-art th:first-child {
+        border-left: none;
+     }
+
+    .card-pop-art td {
+      border-bottom: 2px dashed var(--pop-border); /* Dashed row separator */
+      padding: 12px 15px; /* Adjust padding */
+      position: relative;
+      text-align: center; /* Center align cells */
+      border-left: 1px dashed rgba(var(--pop-primary-rgb), 0.3); /* Separator */
+    }
+     .card-pop-art td:first-child {
+        border-left: none;
+     }
+
+
+    .card-pop-art tr:last-child td {
+        border-bottom: none; /* Remove border from last row */
+    }
+
+    .card-pop-art tr:nth-child(odd) td {
+      background-color: rgba(var(--pop-secondary-rgb), 0.1); /* Lighter accent bg for odd rows */
+    }
+     .card-pop-art tr:nth-child(even) td {
+      background-color: rgba(var(--pop-accent3-rgb), 0.08); /* Lighter accent bg for even rows */
+    }
+
+
+    /* 水平线样式 */
+    .card-pop-art hr {
+      border: 0;
+      height: 8px; /* Thicker */
+      background: repeating-linear-gradient(
+        45deg,
+        var(--pop-primary),
+        var(--pop-primary) 12px,
+        var(--pop-accent2) 12px,
+        var(--pop-accent2) 24px
+      );
+      margin: 30px 0;
+      border-radius: 4px;
+      border-top: 2px solid var(--pop-border);
+      border-bottom: 2px solid var(--pop-border);
+       box-shadow: 0px 2px 0px var(--pop-shadow-color);
+    }
+
+    /* 图片样式 */
+    .card-pop-art img {
+      max-width: 100%;
+      border: 5px solid var(--pop-border);
+      border-radius: 0; /* Sharp corners */
+      box-shadow: 8px 8px 0 var(--pop-primary);
+      transform: rotate(-2deg); /* Slightly more rotation */
+      margin: 25px auto; /* Adjust margin */
+      display: block;
+       filter: sepia(0.1) contrast(1.05) brightness(1.02); /* Adjusted filter */
+    }
+
+    /* 高亮标记 */
+    .card-pop-art mark {
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      padding: 3px 6px;
+      border-radius: 0px; /* Sharp corners */
+      font-weight: 700;
+      box-shadow: 2px 2px 0 var(--pop-text);
+      text-decoration: none; /* Remove default mark underline */
+       /* Add zigzag bottom border effect using background */
+       background-image: linear-gradient(45deg, var(--pop-text) 25%, transparent 25%), linear-gradient(-45deg, var(--pop-text) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--pop-text) 75%), linear-gradient(-45deg, transparent 75%, var(--pop-text) 75%);
+       background-position: 0 100%;
+       background-repeat: repeat-x;
+       background-size: 8px 4px; /* Adjust size of zigzag */
+       border-bottom: 4px solid transparent; /* Make space for background */
+       display: inline; /* Ensure it works inline */
+       box-decoration-break: clone; /* Make it work across lines */
+       -webkit-box-decoration-break: clone;
+    }
+
+
+    .card-pop-art mark::after {
+      display: none;
+    }
+
+    /* 链接样式 */
+    .card-pop-art a {
+      color: var(--pop-primary);
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 3px dashed var(--pop-border); /* Dashed underline */
+      padding: 0 3px 2px 3px; /* Adjust padding */
+      transition: all 0.2s ease;
+      position: relative;
+      background: none; /* Ensure no background interference */
+    }
+
+    .card-pop-art a:hover {
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      border-bottom-color: transparent; /* Hide border on hover */
+      border-radius: 4px;
+      padding: 2px 5px; /* Adjust padding on hover */
+      box-shadow: 2px 2px 0px var(--pop-shadow-color);
+      transform: rotate(-1deg) scale(1.05); /* Add subtle hover effect */
+    }
+
+
+    /* 添加波普艺术特有的语音气泡效果 */
+    .card-pop-art .speech-bubble {
+      position: relative;
+      background: var(--pop-white);
+      border-radius: 15px; /* More rounded */
+      padding: 20px;
+      margin: 25px 0 35px 0; /* More margin bottom for tail */
+      border: 3px solid var(--pop-border);
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 6px 6px 0 var(--pop-primary);
+       transform: rotate(1deg); /* Slight tilt */
+    }
+
+    .card-pop-art .speech-bubble::before { /* Outer border tail */
+      content: "";
+      position: absolute;
+      bottom: -23px; /* Adjust position based on border (border-width*2 + triangle height) */
+      left: 30px; /* Position tail */
+      transform: translateX(0) rotate(15deg); /* Rotate tail */
+      width: 0;
+      height: 0;
+      border-width: 15px; /* Size of the tail */
+      border-style: solid;
+      border-color: var(--pop-border) transparent transparent var(--pop-border); /* Border color for outer tail */
+       /* This creates a triangle pointing down-leftish with border */
+       /* Simpler triangle: */
+       /* border-top: 15px solid var(--pop-border); */
+       /* border-left: 10px solid transparent; */
+       /* border-right: 10px solid transparent; */
+       /* bottom: -18px; */ /* Position below */
+
+    }
+     /* Simplified single triangle tail */
+     .card-pop-art .speech-bubble::after {
+        content: "";
+        position: absolute;
+        bottom: -15px; /* Position below the bubble */
+        left: 35px; /* Adjust horizontal position */
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid var(--pop-white); /* Matches bubble background */
+        filter: drop-shadow(2px 2px 0px var(--pop-shadow-color)); /* Add shadow to tail */
+        z-index: 0; /* Below the border */
+     }
+     .card-pop-art .speech-bubble::before { /* Border for the tail */
+        content: "";
+        position: absolute;
+        bottom: -19px; /* Position slightly below the bubble */
+        left: 31px; /* Adjust horizontal position */
+        width: 0;
+        height: 0;
+        border-left: 19px solid transparent; /* Slightly larger */
+        border-right: 19px solid transparent;
+        border-top: 19px solid var(--pop-border); /* Border color */
+        z-index: -1; /* Below the white tail */
+     }
+
+
+    /* --- End of CSS from 样式.html --- */
+  </style>
+  <!-- Add JS here if needed for dynamic features like syntax highlighting (Prism.js) or MathJax -->
+</head>
+<body>
+  <!--
+    Expected Output Structure:
+    The Markdown content will be placed inside the 'card-content-inner' div.
+    The outer divs provide the necessary classes for the styles.
+    A theme class (e.g., pink-blue-mode) might be added to the 'card' div based on input hints.
+  -->
+  <div class="card markdown-body card-pop-art">
+    <!-- Optional: Add theme class here e.g., <div class="card markdown-body card-pop-art pink-blue-mode"> -->
+    <!-- Optional: Card Header Section (if needed, based on Markdown structure or hints) -->
+    <!-- <section class="card-header">...</section> -->
+
+    <section class="card-content">
+      <section class="card-content-inner">
+        <h1>聊天分析报告 2025-04-16</h1>
+        <h2>基础统计</h2>
+        <ul>
+          <li>时间范围：2025-04-16 08:54:10 至 2025-04-16 23:17:28 (SG时区)</li>
+          <li>消息总量：约 250+ 条（含 6 张有效图片、多个分享链接及视频号引用）</li>
+          <li>参与人数：约 38 人 (部分昵称含优惠码信息已被识别并部分屏蔽)</li>
+        </ul>
+        <h2>核心洞察</h2>
+        <h3>今日TOP5话题</h3>
+        <p><strong>1. 金融 | IRAS税务处理与UOB One 6%返现攻略</strong> (优先级：高)</p>
+        <ul>
+          <li><strong>关键策略 (SOP):</strong>
+            <ul>
+              <li><strong>触发条件:</strong> 需要缴纳个人所得税，且希望最大化返现。</li>
+              <li><strong>执行路径:</strong>
+                <ol>
+                  <li><strong>UOB One账户准备:</strong>
+                    <ul>
+                      <li>将个人NRIC绑定到 UOB (大华银行) PayNow。 (若此前绑定DBS等其他银行，需先解绑)</li>
+                      <li>激活 UOB One 账户的 Money Lock 功能，锁入至少 S$1。</li>
+                    </ul>
+                  </li>
+                  <li><strong>IRAS (新加坡国内税务局) 设置:</strong>
+                    <ul>
+                      <li>登录 IRAS myTax Portal。</li>
+                      <li>设置 GIRO (General Interbank Recurring Order) 自动扣款，选择 UOB One 账户。</li>
+                    </ul>
+                  </li>
+                  <li><strong>[优化] 组合支付 (适用于月税额较高或希望结合信用卡返现者):</strong>
+                    <ul>
+                      <li><strong>计算节点:</strong> UOB One 的 6% 返现可能有上限 (讨论中提及 S$833 相关，具体上限需查阅银行条款)。</li>
+                      <li><strong>操作:</strong> 在 GIRO 扣款日期 (通常为每月5-7日，建议在4月25日前完成) 之前，通过 AXS (安盛) 等平台，使用其他信用卡 (如 <strong>薅资本主义毛</strong> 提及的 HSBC 信用卡获取 1% 返现) 手动支付超出 UOB One 优化返现上限的部分税款。</li>
+                      <li><strong>结果:</strong> 剩余税款由 UOB One GIRO 扣除，享受 6% 返现 (在符合条件和上限内)。</li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+              <li><strong>预期效果:</strong> 符合条件的用户可通过 UOB One GIRO 缴税获得最高 6% 返现。</li>
+            </ul>
+          </li>
+          <li><strong>风险提示:</strong>
+            <ul>
+              <li>报税截止日期为 <strong>2025年4月18日</strong>，逾期可能面临最高 S$5,000 罚款。</li>
+              <li>GIRO 扣款有固定日期，手动缴付部分税款需在此日期前完成，否则可能导致全额 GIRO 扣款或缴付失败。</li>
+              <li>无法同时设立两个 GIRO 账户缴付同一笔税款。</li>
+              <li>首次 GIRO 扣款是否会影响账户平均余额 (ADB) 计算尚不明确 (<strong>薅资本主义毛</strong> 提及)，可能影响 UOB One 利息 [推测]。</li>
+              <li>UOB One 6% 返现活动有特定时间范围 (提及至2026年3月31日) 和具体条款，用户需自行查阅确认。</li>
+              <li>Money Lock 功能本身不产生利息 (<strong>四个煎蛋</strong> 提及)。</li>
+            </ul>
+          </li>
+          <li><strong>AI优化建议:</strong>
+            <ol>
+              <li><strong>精确计算:</strong> 建议用户根据个人年度税款总额 / 12，精确计算每月 GIRO 扣款额。对比 UOB One 6% 返现条款中的合格消费/金额上限，判断是否需要采用组合支付策略。</li>
+              <li><strong>日历提醒:</strong> 设置个人日历提醒，在 GIRO 扣款日前至少 3-5 个工作日完成必要的手动缴款操作，避免遗忘。</li>
+              <li><strong>条款核实:</strong> 在执行任何操作前，务必查阅 UOB One 账户、6% 返现活动以及 HSBC 等信用卡返现的最新官方条款与细则。</li>
+            </ol>
+          </li>
+          <li><strong>讨论氛围:</strong> 积极热烈，信息共享密集，围绕具体操作步骤、截止日期、不同银行策略比较展开。<strong>四个煎蛋</strong>、<strong>宝宝</strong>、<strong>Nora 漫天羊毛</strong>、<strong>薅资本主义毛</strong>、<strong>团团</strong> 等用户贡献了关键信息和操作步骤。</li>
+        </ul>
+        <p><strong>ASCII 流程图 (UOB One 税务返现策略):</strong></p>
+        <div class="code-block-container">
+            <div class="code__header">
+                <div class="code__tools">
+                    <span class="code__circle red"></span>
+                    <span class="code__circle yellow"></span>
+                    <span class="code__circle green"></span>
+                </div>
+                <div class="code-title">ascii</div>
+                <div></div>
+            </div>
+            <pre><code class="language-ascii">+-------------------------+      +-----------------------+      +---------------------+
+|  准备 UOB One 账户       | ---&gt; |  设置 IRAS GIRO       | ---&gt; |  [可选] 组合支付     |
+| (PayNow绑定, MoneyLock) |      | (选择 UOB One 账户)  |      | (手动缴付部分税款) |
++-------------------------+      +----------+------------+      +---------+-----------+
+                                           |                           |
+                                           |                           | (若执行)
+                                           v                           v
+                               +-----------------------+      +---------------------+
+                               | GIRO 自动扣款         | &lt;--- | (建议4月25日前完成)  |
+                               | (享受 6% 返现 - 合规)|      +---------------------+
+                               +-----------------------+
+</code></pre>
+        </div>
+        <p><strong>2. 社会 | 对杨莉明部长相关言论的讨论</strong> (优先级：中)</p>
+        <ul>
+          <li><strong>关键讨论点:</strong>
+            <ul>
+              <li>围绕某政治人物 (杨莉明) 关于飞机噪音、组屋大小等贴近民生问题的言论展开。</li>
+              <li>讨论者 (<strong>四个煎蛋</strong>, <strong>林大(薅羊毛初级选手)</strong>, <strong>别割我了我疼</strong>, <strong>集毛成球</strong>, <strong>紫忤</strong> 等) 认为其言论可能脱离民众实际感受。</li>
+              <li>提及 Sengkang (盛港) 居民对飞机噪音的常态化感受。</li>
+              <li>关联讨论了 Straits Times (海峡时报) 是否为亲 PAP (人民行动党) 媒体。</li>
+              <li>涉及对 NRIC (国民登记身份证) 相关政策的既往评论。</li>
+            </ul>
+          </li>
+          <li><strong>风险提示:</strong> 讨论内容涉及政治人物评论，观点主观性强。</li>
+          <li><strong>优化建议:</strong> 无 (社会观察类话题)。</li>
+          <li><strong>讨论氛围:</strong> 带有调侃和无奈情绪 ([破涕为笑] 表情多次出现)，反映了部分民众对政策制定者与民生疾苦关联度的关切。</li>
+        </ul>
+        <p><strong>3. 金融 | DBS 及 NVDA 股票讨论</strong> (优先级：中)</p>
+        <ul>
+          <li><strong>关键讨论点:</strong>
+            <ul>
+              <li>DBS (星展银行) 股价波动，<strong>赚点钱不易</strong> 提及冲高至 40+，<strong>Shepherd</strong> 表示近期有买入。</li>
+              <li>NVDA (英伟达) 股价下跌，<strong>升级捡羊毛</strong> 询问原因，<strong>剪羊毛</strong>、<strong>yuqian</strong>、<strong>盛夏零度</strong> 等讨论可能与美国禁止向中国出售 H20 芯片及潜在的特朗普因素有关。<strong>洪老师-MEMO_脑力学院</strong> 分享了相关新闻截图 (The Kobeissi Letter)。</li>
+            </ul>
+          </li>
+          <li><strong>风险提示:</strong> 股票市场波动受多重因素影响，讨论内容不构成投资建议。</li>
+          <li><strong>优化建议:</strong> 建议关注者结合宏观经济、行业政策、公司基本面等多维度信息进行独立判断。</li>
+          <li><strong>讨论氛围:</strong> 信息分享与观点交流，对市场波动原因进行探讨。</li>
+        </ul>
+        <p><strong>4. 金融 | 银行账户月末资金调度与利息优化</strong> (优先级：中)</p>
+        <ul>
+          <li><strong>关键策略:</strong>
+            <ul>
+              <li><strong>触发条件:</strong> 月末 (4月30日) 临近，需要规划资金存放以最大化银行账户 (如高息储蓄户口) 的利息收益。</li>
+              <li><strong>执行路径:</strong> <strong>Nora 漫天羊毛</strong>、<strong>薅羊绒</strong>、<strong>赚点钱不易</strong> 等讨论在 4 月 29/30 日将资金转入目标账户 (提及 EGA Account B [推测为某特定高息账户]、MariBank、SCB eSaver [渣打银行 Bonus$aver 账户])，或从 UOB One/OCBC 360 (华侨银行 365 信用卡关联账户) 转出以满足其他账户要求或避免影响利息计算。讨论了转账时间点对 ADB (日均余额) 的影响。</li>
+              <li><strong>预期效果:</strong> 通过在计息周期结束前将资金集中到利息更高的账户，提升当月利息收入。</li>
+            </ul>
+          </li>
+          <li><strong>风险提示:</strong> 不同银行账户的利息计算规则 (基于 ADB 或月末余额) 不同，操作前需了解清楚。频繁大额转账可能触发银行风控。</li>
+          <li><strong>优化建议:</strong> 建立个人银行账户信息表，清晰记录各账户利息计算方式、最低结余要求、主要收益条件，便于月末规划。</li>
+          <li><strong>讨论氛围:</strong> 策略探讨，精打细算，关注时间节点和账户细节。</li>
+        </ul>
+        <p><strong>5. 生活 | 餐饮及出行优惠信息</strong> (优先级：低)</p>
+        <ul>
+          <li><strong>关键信息:</strong>
+            <ul>
+              <li><strong>Krispy Kreme:</strong> <strong>trust 申请码 QQD</strong>*CH** 分享 4 月 16 日当天买 6 送 6 甜甜圈活动 (大部分分店参与，机场店可能除外)。</li>
+              <li><strong>JUMBO Seafood (珍宝海鲜):</strong> <strong>Shania 骆骆</strong> 分享生日电子优惠券 (E-Voucher) 图片，并确认使用方式 (直接告知店员使用生日券)。<strong>薅资本主义毛</strong> 补充珍宝服务好，提供免费温水湿纸巾，并会赠送代金券。</li>
+              <li><strong>Singapore Airlines (新加坡航空):</strong> <strong>四个煎蛋</strong> 分享 5 月 Spontaneous Escapes 活动信息，提供 30% miles (里程) 兑换优惠。</li>
+              <li><strong>Tsui Wah (翠华餐厅):</strong> 优惠券列表中提及翠华的 1 送 1 瓶装港式奶茶券。</li>
+            </ul>
+          </li>
+          <li><strong>风险提示:</strong> 优惠活动均具有时效性 (如 Krispy Kreme 仅当天)，且可能有具体条款限制 (如最低消费、指定分店)。</li>
+          <li><strong>优化建议:</strong> 对有时效性的优惠信息，建议用户标记日历提醒，避免错过。</li>
+          <li><strong>讨论氛围:</strong> 信息分享型，氛围轻松。</li>
+        </ul>
+        <h3>多媒体解析</h3>
+        <ul>
+          <li><strong>Shania 骆骆</strong> 分享图片 (Page 5): 内容为 JUMBO Seafood、Tsui Wah 等餐厅的电子优惠券列表，关联<strong>餐饮优惠</strong>话题，引发关于如何使用珍宝生日券的讨论。</li>
+          <li><strong>四个煎蛋</strong> 分享图片 (Page 10): 内容为新闻截图，显示最新一批一年期 T-bills (Treasury Bills / 国库券) 截止收益率为 2.29%，关联<strong>理财投资</strong>话题。</li>
+          <li><strong>四个煎蛋</strong> 分享图片 (Page 49): 内容为新加坡住家用水价格分阶段上涨信息图表，关联<strong>社会民生/生活成本</strong>话题。</li>
+          <li><strong>团团</strong> 分享图片 (Page 40): 图示化展示了 UOB One 配合 IRAS GIRO 返现策略的三个关键步骤 (绑定 PayNow, Money Lock, 设置 Giro)，关联<strong>税务处理与银行攻略</strong>话题。</li>
+          <li><strong>洪老师-MEMO_脑力学院</strong> 分享图片 (Page 47): 内容为 The Kobeissi Letter 关于 Nvidia 股票异常看跌期权交易与美国芯片禁令时间关联的推文截图，关联<strong>股票投资</strong>话题。</li>
+          <li><strong>洪老师-MEMO_脑力学院</strong> 引用图片 (Page 17): 在讨论杨莉明飞机噪音言论时引用 <strong>四个煎蛋</strong> 的图片，具体内容未知，但用于支持其观点。</li>
+          <li><strong>Shepherd</strong> 引用图片 (Page 2): 在讨论 DBS 股票时引用 <strong>我就是</strong> 的图片，内容未知，可能与股价或交易记录相关。</li>
+        </ul>
+        <h2>附录</h2>
+        <ul>
+          <li><strong>术语词典 (部分):</strong>
+            <ul>
+              <li><strong>IRAS:</strong> Inland Revenue Authority of Singapore (新加坡国内税务局)</li>
+              <li><strong>GIRO:</strong> General Interbank Recurring Order (银行间转账付款指令)</li>
+              <li><strong>UOB:</strong> United Overseas Bank (大华银行)</li>
+              <li><strong>UOB One:</strong> UOB One Account (大华银行 One 账户)</li>
+              <li><strong>Stash:</strong> UOB Stash Account (大华银行 Stash 账户)</li>
+              <li><strong>HSBC:</strong> Hongkong and Shanghai Banking Corporation (汇丰银行)</li>
+              <li><strong>OCBC:</strong> Oversea-Chinese Banking Corporation (华侨银行)</li>
+              <li><strong>OCBC 360:</strong> OCBC 360 Account (华侨银行 360 账户) (备注：聊天中提及360，推测为此账户)</li>
+              <li><strong>DBS:</strong> Development Bank of Singapore (星展银行)</li>
+              <li><strong>AXS:</strong> AXS Pte Ltd (新加坡在线支付平台)</li>
+              <li><strong>PayNow:</strong> 新加坡快速安全转账服务</li>
+              <li><strong>T-bills:</strong> Treasury Bills (短期国库券)</li>
+              <li><strong>NOA:</strong> Notice of Assessment (税务评估通知)</li>
+              <li><strong>ADB:</strong> Average Daily Balance (日均余额)</li>
+              <li><strong>miles:</strong> (航空) 里程</li>
+              <li><strong>Spontaneous Escape:</strong> 新加坡航空里程促销活动</li>
+              <li><strong>PAP:</strong> People's Action Party (人民行动党)</li>
+              <li><strong>NRIC:</strong> National Registration Identity Card (国民登记身份证)</li>
+              <li><strong>Mindef:</strong> Ministry of Defence (国防部)</li>
+              <li><strong>CDC:</strong> Community Development Council (社区发展理事会, 关联其 Vouchers)</li>
+              <li><strong>MariBank:</strong> 马来亚银行旗下数字银行</li>
+              <li><strong>SCB eSaver:</strong> Standard Chartered Bonus$aver Account (渣打银行 Bonus$aver 账户) [推测]</li>
+              <li><strong>EGA Account B:</strong> [推测] 某特定银行账户名称，具体指代需更多上下文</li>
+              <li><strong>羊毛:</strong> 指小额优惠、福利或返现</li>
+              <li><strong>上车:</strong> 指加入某项投资或购买某产品</li>
+              <li><strong>还钱:</strong> 在新马语境下有时指“付款”</li>
+            </ul>
+          </li>
+        </ul>
+        <hr>
+        <p><strong>免责声明:</strong> 本报告基于提供的聊天记录分析生成，内容仅供参考。涉及税务、法律、投资等专业领域信息时，请务必咨询合格专业人士获取建议。银行产品、优惠活动等具体条款可能随时变更，请以官方最新信息为准。</p>
+      </section>
+    </section>
+
+    <!-- Optional: Card Footer Section (if needed) -->
+    <!-- <section class="card-footer">...</section> -->
+  </div>
+
+  <!-- Functional scripts (example, if syntax highlighting is desired) -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script> -->
+  <!-- Link Prism CSS theme if needed -->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" /> -->
+
+</body>
+</html>

@@ -140,7 +140,7 @@
       font-style: italic;
     }
 
-    /* 有序列表样式 - 通用 */
+    /* 有列表样式 - 通用 */
     .card-content ol {
       counter-reset: item;
       padding-left: 20px;
@@ -215,13 +215,12 @@
     }
 
     .markdown-body .contains-task-list .task-list-item::before {
-      display: none; /* Hide original list marker */
+      display: none;
     }
     .markdown-body .contains-task-list .task-list-item {
-      list-style-type: none !important; /* Ensure bullets/numbers are hidden */
+      list-style-type: none; /* Ensure bullets/numbers are hidden */
       padding-left: 24px; /* Indent to make space for checkbox */
       position: relative; /* For positioning the checkbox */
-      margin-left: 0 !important; /* Override potential indentation */
     }
     .markdown-body input[type="checkbox"] {
       appearance: none;
@@ -248,17 +247,8 @@
     }
 
     /* Add this for proper task list item structure */
-    .markdown-body ul li.task-list-item,
-    .markdown-body ol li.task-list-item {
+    .markdown-body ul li.task-list-item {
         list-style-type: none !important; /* Force override */
-        margin-left: 0 !important;
-    }
-    /* Ensure nested standard lists inside task lists aren't affected negatively */
-    .markdown-body .contains-task-list ul li:not(.task-list-item),
-    .markdown-body .contains-task-list ol li:not(.task-list-item) {
-        list-style-type: initial; /* Or 'disc', 'decimal' etc. as appropriate */
-        padding-left: initial;
-        position: static;
     }
 
 
@@ -493,29 +483,6 @@
       .cover-description {
         font-size: 14px;
       }
-       .card {
-          min-width: 90%; /* Allow smaller width on mobile */
-       }
-       .card-pop-art {
-          padding: 15px; /* Reduce padding */
-       }
-       .card-pop-art .card-content {
-           padding: 15px;
-           box-shadow: 5px 5px 0 var(--pop-shadow); /* Reduce shadow */
-       }
-       .card-pop-art::before, .card-pop-art::after {
-           /* Optionally hide or shrink decorative elements on small screens */
-           display: none;
-       }
-       .card-pop-art h1 { font-size: 1.8em; text-shadow: 2px 2px 0 var(--pop-primary); }
-       .card-pop-art h2 { font-size: 1.5em; }
-       .card-pop-art h3 { font-size: 1.3em; }
-       .card-pop-art p { font-size: 1em; }
-       .card-pop-art ul, .card-pop-art ol { padding: 10px 10px 10px 25px; }
-       .card-pop-art pre { padding: 10px; font-size: 12px; }
-       .card-pop-art table { font-size: 12px; box-shadow: 4px 4px 0 var(--pop-primary); }
-       .card-pop-art th, .card-pop-art td { padding: 8px 10px; }
-       .card-pop-art img { box-shadow: 5px 5px 0 var(--pop-primary); }
     }
 
     /* 颜色变量定义 */
@@ -557,9 +524,8 @@
 
       /* Update RGB if needed */
        --pop-primary-rgb: 255, 78, 121;
-       --pop-secondary-rgb: 127, 209, 174;
        --pop-accent2-rgb: 127, 209, 174;
-       --pop-accent3-rgb: 255, 214, 102;
+       --pop-accent3-rgb: 255, 214, 102; /* Added for consistency */
     }
 
     /* 小红书薄荷糖主题 */
@@ -576,33 +542,29 @@
 
        /* Update RGB if needed */
        --pop-primary-rgb: 127, 209, 174;
-       --pop-secondary-rgb: 255, 78, 121;
        --pop-accent2-rgb: 255, 78, 121;
-       --pop-accent3-rgb: 81, 186, 250;
+       --pop-accent3-rgb: 81, 186, 250; /* Added for consistency */
     }
 
     /* 紫色星空主题 */
     .card-pop-art.purple-mode {
-      --pop-primary: #9c27b0; /* Use purple as primary */
+      --pop-primary: #ff4e79; /* Keeping primary for consistency or adjust as needed, e.g., #9c27b0 */
       --pop-secondary: #ffab40;
-      --pop-bg: #3a1f75; /* Deep purple background */
-      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23a87fff'/%3E%3C/svg%3E"); /* Lighter purple dots */
-      --pop-text: #f3e5f5; /* Light lavender text */
-      --pop-white: #f3e5f5;
-      --pop-code-bg: #311b92; /* Darker purple code bg */
-
-      --pop-accent1: #9c27b0; /* Purple */
-      --pop-accent2: #ffab40; /* Orange */
-      --pop-accent3: #64b5f6; /* Light blue */
-      --pop-border: #7e57c2; /* Lighter purple border */
-      --pop-shadow: rgba(126, 87, 194, 0.5); /* Purple shadow */
-
+      --pop-bg: #3a1f75; /* 调整为较亮的紫色背景 */
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23a87fff'/%3E%3C/svg%3E"); /* 更亮的点 */
+      --pop-accent1: #9c27b0;
+      --pop-accent2: #ffab40;
+      --pop-accent3: #64b5f6;
+      --pop-border: #673ab7; /* 紫色边框 */
+      --pop-shadow: rgba(156, 39, 176, 0.4); /* 紫色阴影 */
+      --pop-text: #f8f9fa; /* Light text for dark background */
+      --pop-white: #f8f9fa; /* 调整白色 */
+      --pop-code-bg: #311b92; /* 深紫色代码背景 */
 
       /* Update RGB if needed */
-      --pop-primary-rgb: 156, 39, 176;
-      --pop-secondary-rgb: 255, 171, 64;
+      --pop-primary-rgb: 156, 39, 176; /* Using accent1 as primary visually */
       --pop-accent2-rgb: 255, 171, 64;
-      --pop-accent3-rgb: 100, 181, 246;
+       --pop-accent3-rgb: 100, 181, 246; /* Added for consistency */
     }
 
     /* 波普艺术风格 */
@@ -635,8 +597,8 @@
       right: 0px; /* Adjusted from -10px */
       width: 80px;
       height: 80px;
-      /* Simplified SVG example for pop effect - using theme colors */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='rgb(var(--pop-secondary-rgb))' stroke='rgb(var(--pop-border-rgb))' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='rgb(var(--pop-text-rgb))'%3EPOP!%3C/text%3E%3C/svg%3E");
+      /* Simplified SVG example for pop effect */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='%2351bafa' stroke='%23252a34' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23252a34'%3EPOP!%3C/text%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-size: 60px 60px; /* Slightly smaller */
       background-position: top right;
@@ -651,8 +613,8 @@
        left: -15px; /* Position slightly outside */
        width: 100px; /* Example size */
        height: 100px; /* Example size */
-       /* Simplified star SVG - using theme colors */
-       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='rgb(var(--pop-primary-rgb))' stroke='rgb(var(--pop-border-rgb))' stroke-width='3'/%3E%3C/svg%3E");
+       /* Simplified star SVG */
+       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='%23ff2e63' stroke='%23252a34' stroke-width='3'/%3E%3C/svg%3E");
        background-repeat: no-repeat;
        background-size: 70px 70px; /* Control size */
        background-position: bottom left;
@@ -747,18 +709,6 @@
       border: 2px solid var(--pop-border);
        transform: skew(-5deg); /* Add skew */
     }
-    .card-pop-art h4 { /* Add some basic pop styling for H4 */
-        font-size: 1.2em;
-        font-weight: 700;
-        color: var(--pop-text);
-        margin-top: 18px;
-        margin-bottom: 10px;
-        border-bottom: 3px dotted var(--pop-primary);
-        display: inline-block; /* Apply border only to text width */
-        padding-bottom: 3px;
-    }
-    .card-pop-art h5 { font-size: 1.1em; font-weight: 700; color: var(--pop-accent1); margin-top: 16px; margin-bottom: 8px;}
-    .card-pop-art h6 { font-size: 1em; font-weight: 700; color: var(--pop-accent2); margin-top: 14px; margin-bottom: 6px; }
 
     /* 段落样式 */
     .card-pop-art p {
@@ -773,23 +723,13 @@
 
     /* 列表样式 */
     .card-pop-art ul {
-      background-color: rgba(var(--pop-white-rgb, 255, 255, 255), 0.8); /* Slightly more opaque, use RGB var if defined */
+      background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque */
       padding: 15px 15px 15px 30px; /* Adjust padding */
       border: 2px dashed var(--pop-border); /* Dashed border */
       border-radius: 8px;
       margin: 20px 0;
       box-shadow: 4px 4px 0px var(--pop-accent2);
-      list-style: none; /* Ensure default markers are off */
     }
-    /* Handle nested UL */
-    .card-pop-art ul ul {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 15px; /* Indent nested list */
-        border-style: dotted; /* Dotted border for nested */
-        box-shadow: 2px 2px 0px var(--pop-accent3); /* Different shadow */
-    }
-
 
     .card-pop-art ul li {
       position: relative;
@@ -797,8 +737,8 @@
       margin: 12px 0; /* Adjust spacing */
       line-height: 1.6;
     }
-    /* Don't apply icon to task list items if they exist */
-    .card-pop-art ul li:not(.task-list-item)::before {
+
+    .card-pop-art ul li::before {
       content: "💥"; /* Pop/Explosion emoji */
       position: absolute;
       top: -2px;
@@ -807,30 +747,16 @@
       font-size: 20px;
       line-height: 1;
     }
-     /* Style for nested UL items */
-    .card-pop-art ul ul li::before {
-        content: "🌟"; /* Different marker for nested items */
-        font-size: 18px;
-    }
-
 
     .card-pop-art ol {
       counter-reset: item;
-      background-color: rgba(var(--pop-white-rgb, 255, 255, 255), 0.8);
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 15px 15px 15px 40px; /* More left padding */
       border: 2px solid var(--pop-border);
       border-radius: 8px;
       margin: 20px 0;
       list-style-type: none; /* Ensure default numbers are off */
       box-shadow: 4px 4px 0px var(--pop-accent3);
-    }
-     /* Handle nested OL */
-    .card-pop-art ol ol {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 15px;
-        border-style: solid;
-        box-shadow: 2px 2px 0px var(--pop-accent1);
     }
 
     .card-pop-art ol li {
@@ -840,8 +766,8 @@
       counter-increment: item;
       line-height: 1.6;
     }
-    /* Don't apply counter style to task list items if they exist */
-    .card-pop-art ol li:not(.task-list-item)::before {
+
+    .card-pop-art ol li::before {
       content: counter(item); /* Use the counter */
       position: absolute;
       left: 0;
@@ -858,24 +784,14 @@
       font-size: 14px; /* Adjust font size */
        transform: rotate(-5deg); /* Tilt */
     }
-     /* Style for nested OL items */
-    .card-pop-art ol ol li::before {
-        background-color: var(--pop-secondary); /* Different color for nested */
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        font-size: 12px;
-    }
-
 
     /* Task list specific style within pop-art */
     .card-pop-art .task-list-item {
-        padding-left: 30px !important; /* Ensure space for checkbox, override general li padding */
-        margin-left: 0 !important; /* Override default list indent if necessary */
+        padding-left: 30px; /* Ensure space for checkbox */
+        margin-left: 0; /* Override default list indent if necessary */
     }
     .card-pop-art .task-list-item input[type="checkbox"] {
         top: 6px; /* Adjust checkbox position */
-        left: 0; /* Position checkbox at the start */
         border-width: 3px; /* Thicker border */
         border-color: var(--pop-border);
         border-radius: 0; /* Square checkboxes */
@@ -905,12 +821,6 @@
       box-shadow: 5px 5px 0 var(--pop-primary);
       transform: rotate(1deg); /* Slight rotation */
     }
-     .card-pop-art blockquote p { /* Style paragraphs inside blockquote */
-         margin-bottom: 10px;
-     }
-     .card-pop-art blockquote p:last-child {
-         margin-bottom: 0;
-     }
 
     .card-pop-art blockquote::before {
       content: "❝"; /* Open quote */
@@ -984,7 +894,7 @@
       background-color: var(--pop-white);
       border: 4px solid var(--pop-border); /* Thicker border */
       border-radius: 0px; /* Sharp corners */
-      overflow: hidden; /* Helps contain background colors */
+      overflow: hidden;
       box-shadow: 6px 6px 0 var(--pop-primary);
       transform: rotate(-1deg); /* Slight tilt */
     }
@@ -1005,25 +915,10 @@
       padding: 12px 15px; /* Adjust padding */
       position: relative;
       text-align: center; /* Center align cells */
-      color: var(--pop-text); /* Ensure text color contrasts with row bg */
     }
 
     .card-pop-art tr:last-child td {
         border-bottom: none; /* Remove border from last row */
-    }
-
-    /* Define accent3 RGB variable if not already present */
-    :root {
-        --pop-accent3-rgb: 255, 98, 90; /* Default */
-    }
-    .card-pop-art.pink-blue-mode {
-        --pop-accent3-rgb: 255, 214, 102;
-    }
-     .card-pop-art.mint-mode {
-        --pop-accent3-rgb: 81, 186, 250;
-    }
-     .card-pop-art.purple-mode {
-        --pop-accent3-rgb: 100, 181, 246;
     }
 
     .card-pop-art tr:nth-child(odd) td {
@@ -1149,193 +1044,170 @@
   <!-- Add JS here if needed for dynamic features like syntax highlighting (Prism.js) or MathJax -->
 </head>
 <body>
-  <!--
-    Expected Output Structure:
-    The Markdown content will be placed inside the 'card-content-inner' div.
+  <!-- 
+    Expected Output Structure: 
+    The Markdown content will be placed inside the 'card-content-inner' div. 
     The outer divs provide the necessary classes for the styles.
     A theme class (e.g., pink-blue-mode) might be added to the 'card' div based on input hints.
   -->
-  <div class="card markdown-body card-pop-art">
+  <div class="card markdown-body card-pop-art"> 
     <!-- Optional: Add theme class here e.g., <div class="card markdown-body card-pop-art pink-blue-mode"> -->
     <!-- Optional: Card Header Section (if needed, based on Markdown structure or hints) -->
     <!-- <section class="card-header">...</section> -->
-
+    
     <section class="card-content">
       <section class="card-content-inner">
         <h1>聊天分析报告 2025-04-20</h1>
         <h2>基础统计</h2>
         <ul>
-          <li>时间范围：2025-04-20 00:31:27 至 2025-04-20 23:06:50 (SG时区)</li>
-          <li>消息总量：约 90+ 条有效消息（含 4 张有效图片，1 封邮件截图）</li>
-          <li>参与人数：24 人 ( <strong>爱羊毛</strong>, <strong>春天来了</strong>, <strong>倾青恋叶</strong>, <strong>洪老师-MEMO_脑力学院</strong>, <strong>一碗咖喱</strong>, <strong>Shepherd</strong>, <strong>宝宝</strong>, <strong>yuqian</strong>, <strong>接 bug 或超级 promotion 商务舱机票</strong>, <strong>升级捡羊毛</strong>, <strong>Observer</strong>, <strong>薅不到的羊毛</strong>, <strong>四个煎蛋Q</strong>, <strong>大熊猫</strong>, <strong>鄂尔多多 moo: PVEXE***JM</strong>, <strong>trust 申请码 QQDDE***CH</strong>, <strong>Nora 漫天羊毛</strong>, <strong>范星星</strong>, <strong>别让跑了</strong>, <strong>42号</strong>, <strong>leongfei</strong>, <strong>专业寻找羊毛</strong>, <strong>赚点钱不易</strong>, <strong>:heart:</strong>, <strong>团团</strong>, <strong>YY</strong>, <strong>羊毛衫</strong>, <strong>小羔羊</strong> ) <em>注：部分昵称含促销代码或未完全显示，已尽力识别</em></li>
+        <li>时间范围：2025-04-20 00:31:27 至 2025-04-20 23:06:50 (SG时区)</li>
+        <li>消息总量：约90条（含4张有效图片）</li>
+        <li>参与人数：24人</li>
         </ul>
-        <h2>核心洞察</h2>
-        <h3>今日TOP话题</h3>
-        <h4>1. 生活 | 新加坡与新山(JB)鸡蛋价格及“缩水”现象讨论 (优先级：高)</h4>
+        <h2>焦点议题</h2>
+        <h3>本日热点话题 ★★★★★</h3>
+        <p><strong>生活 | 新加坡与马来西亚<code>(JB)</code>鸡蛋价格及规格讨论</strong></p>
         <ul>
-          <li>
-            <strong>核心讨论</strong>：
-            <ul>
-              <li><strong>价格对比</strong>：普遍认为马来西亚新山(Johor Bahru, JB)的鸡蛋价格远低于新加坡（<strong>宝宝</strong>, <strong>Observer</strong>, <strong>羊毛衫</strong>提及JB Kampong鸡蛋30个约13.9 RM）。新加坡本地鸡蛋价格较高，如<strong>洪老师-MEMO_脑力学院</strong>分享的图片显示价格达 S$14.99 及 S$20.99，<strong>Shepherd</strong> 提及坡县起码S$3，30个约S$7。<strong>42号</strong>分享的图片显示昇菘超市(Sheng Siong, ss)售卖的马来西亚农场鸡蛋30个 S$6.65 (1650g)。</li>
-              <li><strong>“缩水”现象 (Shrinkflation)</strong>：多位参与者 (<strong>Nora 漫天羊毛</strong>, <strong>范星星</strong>, <strong>别让跑了</strong>, <strong>四个煎蛋Q</strong>) 观察到鸡蛋尺寸/重量变小，认为这是通胀下商家维持价格的策略。<strong>范星星</strong> 发现有44g/45g的鸡蛋，<strong>别让跑了</strong> 指出 NTUC FairPrice 超市 30个装鸡蛋从550g降至500g。<strong>四个煎蛋Q</strong> 指出商家可能将原来标准尺寸(Normal Size)的鸡蛋作为“优质”(Premium)售卖，而将更小的鸡蛋作为“标准”售卖。<strong>范星星</strong> 分享了Chew's牌450g/10个装(45g/个)的“迷你蛋”图片。</li>
-              <li><strong>消费习惯</strong>：部分成员鸡蛋消耗量大（如<strong>四个煎蛋Q</strong>家一天5-10个），会一次性购买较多（如60个）。而<strong>薅不到的羊毛</strong>因消耗少，即使去JB也不特意购买。</li>
-              <li><strong>鸡蛋等级</strong>：<strong>大熊猫</strong>建议在JB购买AA或AAA级鸡蛋，避免购买低于10马币的C级鸡蛋，并指出鸡蛋大小通常与等级有关。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>关键策略</strong>：
-            <ul>
-              <li><em>触发条件</em>：日常需要购买鸡蛋。</li>
-              <li>
-                <em>执行路径</em>：
-                <ol>
-                  <li>若方便前往JB且消耗量大，可考虑在JB购买，性价比高。注意选择信誉好的商家和较高等级(AA/AAA)的鸡蛋。</li>
-                  <li>在新加坡本地购买时，注意对比不同品牌和包装的单价及单个鸡蛋克重，警惕“缩水”现象。昇菘超市 (<strong>42号</strong>提及的) 和NTUC FairPrice (<strong>别让跑了</strong>提及的) 是常见购买点。</li>
-                </ol>
-              </li>
-              <li><em>预期效果</em>：优化家庭鸡蛋采购成本，了解市场变化。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>风险提示</strong>：
-            <ul>
-              <li>从JB携带鸡蛋回新加坡可能存在数量限制或检疫要求（未在本次讨论中明确提及，但属常规风险）。</li>
-              <li>低价鸡蛋可能对应较低等级或较小尺寸。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>优化建议</strong>：
-            <p>[AI生成] 建立常购鸡蛋品牌/规格的价格和重量追踪记录，以便及时发现“缩水”或判断促销真实惠利。考虑家庭鸡蛋消耗量和保质期，平衡单次购买量与新鲜度。</p>
-          </li>
-          <li>
-            <strong>讨论氛围</strong>：
-            <p>务实，略带对物价上涨和“缩水”现象的无奈([破涕为笑]表情多次出现)。</p>
-          </li>
-        </ul>
-        <h4>2. 金融 | UOB ONE账户返现及Earmark活动讨论 (优先级：中)</h4>
+        <li>
+        <p><strong>核心讨论</strong>：围绕新加坡本地鸡蛋价格高昂、尺寸缩水（Shrinkflation）以及与柔佛新山<code>(Johor Bahru, JB)</code>鸡蛋的性价比对比展开。多位参与者分享了本地超市（如<strong>昇菘超市<code>(ss)</code></strong>, <strong>NTUC FairPrice<code>(ntuc)</code></strong>）和<code>JB</code>购买鸡蛋的经验。</p>
         <ul>
-          <li>
-            <strong>核心讨论</strong>：
-            <ul>
-              <li><strong>UOB ONE返现</strong>：<strong>Nora 漫天羊毛</strong> 询问使用 UOB ONE Account 关联的信用卡通过 Grab Dinee-in 付款是否享有10%返现，得到 <strong>倾青恋叶</strong> 的确认。后续讨论了不同消费档位（S$500 vs S$2000）的返现率，<strong>Nora 漫天羊毛</strong> 确认 S$500 档位 (Credit Card) 可获得 5% extra cashback。<strong>别让跑了</strong> 提及了 8.3% 的返现率（可能指特定条件下或计算有误，UOB ONE返现层级复杂，需查证官网条款）。</li>
-              <li><strong>UOB Earmark活动</strong>：<strong>升级捡羊毛</strong> 和 <strong>倾青恋叶</strong> 提及 Earmark 活动（可能指 UOB Cash is King Savings Bonanza）。<strong>接 bug 或超级 promotion 商务舱机票</strong> 分享了该活动的邮件截图，明确了活动时间 (2025.04.01-2025.06.30)，要求存入S$100,000新资金，并根据存款时间确定不同的资金冻结结束日期（Earmark End Date）。讨论涉及了新资金的计算基准月（March 2025 MAB），以及从 UOB Stash Account 转账是否影响资格和4月平均每日余额(ADB)计算。<strong>升级捡羊毛</strong> 指出四月存入的资金对应五月的Earmark，并提及某项返利活动的参考月份(reference month)是3月。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>关键策略</strong>：
-            <ul>
-              <li><em>触发条件</em>：持有 UOB ONE Account 或 计划参与 UOB Earmark 活动。</li>
-              <li>
-                <em>执行路径</em>：
-                <ol>
-                  <li><strong>UOB ONE返现</strong>：确认自己符合的消费档位 (S$500/S$1000/S$2000) 和最低交易次数要求，使用 UOB ONE 信用卡进行符合条件的消费（如GrabPay充值、指定商户消费）。</li>
-                  <li><strong>UOB Earmark</strong>：仔细阅读活动条款，确保存入的是符合要求的新资金（对比基准月MAB），在规定时间内完成存款，并维持资金至指定的 Earmark End Date。通过 UOB TMRW app 关注账户冻结情况和利息。</li>
-                </ol>
-              </li>
-              <li><em>预期效果</em>：最大化 UOB ONE 账户的返现收益；通过 Earmark 活动赚取额外现金奖励和利息。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>风险提示</strong>：
-            <ul>
-              <li>UOB ONE 返现规则复杂，需满足最低消费额、交易次数、GIRO付款等多项条件，易出错。</li>
-              <li>Earmark 活动要求资金冻结一段时间，期间无法动用，需注意资金流动性安排。新资金认定规则需仔细理解。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>优化建议</strong>：
-            <p>[AI生成] 定期检查 UOB ONE 账户的返现进度和达标情况。参与 Earmark 前务必通过官方渠道确认活动细则，特别是新资金定义和时间节点。若资金来源复杂（如从 Stash 转账），建议咨询银行确认资格。</p>
-          </li>
-          <li>
-            <strong>讨论氛围</strong>：
-            <p>信息分享，细节确认，对规则理解的探讨。</p>
-          </li>
+        <li><strong>洪老师-MEMO_脑力学院</strong>分享的图片显示本地高端鸡蛋价格昂贵（$14.99/$20.99）。</li>
+        <li><strong>42号</strong>分享的图片显示马来西亚农场鸡蛋（30个, 1650g）价格为$6.65 (约55g/个)。</li>
+        <li><strong>范星星</strong>分享的图片显示Chew's品牌迷你蛋（10个, 450g）价格为$3.05 (45g/个)。</li>
+        <li>普遍观察到鸡蛋尺寸变小（如44g/45g），<strong>别让🐱跑了</strong>提到<code>NTUC</code> 30个装从550g降至500g。</li>
+        <li>讨论了不同鸡蛋等级（C, AA, AAA），<strong>大熊猫</strong>建议在<code>JB</code>购买AA/AAA级，避免低于10<strong>马币<code>(RM)</code></strong>的C级蛋。</li>
+        <li><strong>羊毛衫</strong>分享<code>JB</code> Kampong鸡蛋价格为30个/13.9RM。</li>
         </ul>
-        <h4>3. 金融 | 其他金融产品与服务 (优先级：低)</h4>
+        </li>
+        <li>
+        <p><strong>关键策略（<code>JB</code>购蛋）</strong>：</p>
         <ul>
-          <li><strong>花呗还款</strong>：<strong>春天来了</strong> 提到境外卡似乎不能直接用于还花呗/借呗，需要先充值支付宝余额再还款，并分享了官方说明（要求中国大陆银行卡）。</li>
-          <li><strong>Citi PayAll</strong>：<strong>鄂尔多多 moo: PVEXE***JM</strong> 询问是否有人用 Citi PayAll 支付所得税 (income tax)。<em>（注：利用信用卡支付税款通常是为了赚取积分/里程，但需注意手续费成本）。</em></li>
-          <li><strong>Amaze + Citi Rewards</strong>：<strong>:heart:</strong> 提出 Amaze 绑定 Citi Rewards 卡似乎不再划算，可能指返现/积分规则调整。</li>
-          <li><strong>税务与法律免责声明</strong>：[推测] 涉及使用信用卡支付税款等操作可能涉及税务合规性，建议用户咨询专业人士，本分析不构成财务或法律建议。</li>
+        <li><strong>触发条件</strong>：追求更高性价比或特定品质（如Kampong蛋）的鸡蛋。</li>
+        <li><strong>执行路径</strong>：前往<code>JB</code>，在当地超市或市场购买鸡蛋，留意品牌和等级（推荐AA/AAA），如Kampong蛋约30个/14RM。</li>
+        <li><strong>预期效果</strong>：通常比新加坡购买同等级或更多数量的鸡蛋更便宜。</li>
+        <li><strong>风险提示</strong>：需考虑过境时间与交通成本；鸡蛋易碎，携带需小心；不同等级/品牌口感、品质可能有差异。</li>
         </ul>
-        <h4>4. 生活 | 淘宝购物与集运 (优先级：低)</h4>
+        </li>
+        <li>
+        <p><strong>优化建议</strong>：[推测] 可在<code>JB</code>大型超市比较不同品牌和等级的价格与新鲜度，如Aeon、Tesco等。关注促销活动。</p>
+        </li>
+        <li>
+        <p><strong>讨论氛围</strong>：普遍认同本地鸡蛋贵且有缩水现象，对<code>JB</code>鸡蛋性价比表示肯定。情绪包含感叹（贵）、无奈（缩水）、分享经验。</p>
+        </li>
+        <li>
+        <p><strong>议题演进</strong>：美国蛋价 → 新加坡蛋价 → <code>JB</code>蛋价对比 → 鸡蛋尺寸缩水讨论 → 蛋重规格细节 → 鸡蛋等级讨论 → 具体品牌价格分享 (Chew's, Malaysia Farm)。</p>
+        </li>
+        </ul>
+        <h3>本日热点话题 ★★★★☆</h3>
+        <p><strong>金融 | UOB银行相关活动与卡片福利讨论</strong></p>
         <ul>
-          <li><strong>别割我了我疼</strong> 询问淘宝99元包邮商品是选择直接包邮还是菜鸟集运更划算。</li>
-          <li><strong>老虎申请码 8YQ***QP</strong> 认为直接包邮价格更低，因菜鸟集运会额外收取运费。</li>
-          <li><strong>倾青恋叶</strong> 和 <strong>团团</strong> 确认淘宝（直接）包邮到新加坡需要支付消费税(GST)。</li>
+        <li>
+        <p><strong>核心讨论</strong>：集中在UOB ONE账户/信用卡的返现机制、Grab交易返现，以及UOB Stash账户参与"Cash is King" Earmark活动规则。</p>
+        <ul>
+        <li><strong>UOB ONE + Grab Food</strong>: <strong>Nora 漫天羊毛</strong> 询问使用<strong>UOB ONE账户<code>(UOB ONE)</code></strong> 支付Grab晚餐(Grab dinner in)是否有10%返现，得到<strong>倾青恋叶</strong>肯定的答复。后续讨论明确需满足消费层级（如月消费S$2000），若仅消费S$500，则为较低返现率（<strong>别让🐱跑了</strong>提及8.3%，后<strong>Nora 漫天羊毛</strong>确认用Credit Card为5% extra）。</li>
+        <li>
+        <p><strong>UOB Earmark 活动</strong>: 围绕"Cash is King Savings Bonanza" (1 Apr - 30 Jun 2025)展开。</p>
+        <ul>
+        <li><strong>接 bug 或超级 promotion 商务舱机票</strong>分享了活动邮件截图，显示需存入S$100,000新资金（对比2025年3月<code>MAB</code>），根据存款时间确定Earmark周期（如4月存入，Earmark至9月17日）。</li>
+        <li>讨论了Earmark开始时间（预计5月中旬），以及资金从<strong>UOB Stash Account<code>(Stash)</code></strong>转出再转入是否影响资格（关键看3月<code>MAB</code>和新资金认定）。</li>
         </ul>
-        <h3>多媒体解析</h3>
-        <ol>
-          <li>
-            <strong>洪老师-MEMO_脑力学院</strong> 分享图片 (Page 2):
-            <ul>
-              <li>内容：超市货架上的鸡蛋，价格标签显示 $14.99 (12个 JUMBO) 和 $20.99 (18个 LARGE AA)。</li>
-              <li>关联话题：引发了关于新加坡鸡蛋价格高昂的讨论。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>42号</strong> 分享图片 (Page 12):
-            <ul>
-              <li>内容：昇菘超市 (标识推测) 的 "FRESH EGGS MALAYSIA FARM'S EGG" 促销牌，显示 "Egg For You" 品牌 30个 1650g 售价 $6.65/Tray。</li>
-              <li>关联话题：提供了新加坡本地超市鸡蛋的具体价格和规格实例，用于对比和讨论鸡蛋大小 (55g/个)。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>42号</strong> 分享图片 (Page 13 引用, 实际图片在 Page 14):
-            <ul>
-              <li>内容：Chew's 品牌的 "RISE & SHINE F.FRSH10S" 鸡蛋，价格标签显示 10个 450g 售价 $3.05。</li>
-              <li>关联话题：提供了另一款鸡蛋的规格和价格，<strong>范星星</strong> 称之为“迷你蛋”，进一步佐证了鸡蛋变小的讨论。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>接 bug 或超级 promotion 商务舱机票</strong> 分享截图 (Page 17):
-            <ul>
-              <li>内容：UOB 银行关于 "Cash is King Savings Bonanza" 活动的邮件截图。详细说明了活动时间、参与条件（S$100k新资金）、资金冻结规则和对应日期。</li>
-              <li>关联话题：为 UOB Earmark 活动的讨论提供了确切的官方信息和细节。</li>
-            </ul>
-          </li>
-        </ol>
+        </li>
+        </ul>
+        </li>
+        <li>
+        <p><strong>关键策略（<code>UOB ONE</code> Grab返现）</strong>：</p>
+        <ul>
+        <li><strong>触发条件</strong>：使用Grab服务（特别是餐饮）。</li>
+        <li><strong>执行路径</strong>：使用<strong>UOB ONE</strong>信用卡支付Grab账单；确保当月总消费额达到指定层级（S$500/S$1,000/S$2,000）以获得对应返现率（基础+额外）。</li>
+        <li><strong>预期效果</strong>：根据消费层级获得额外返现（如5%或更高）。</li>
+        <li><strong>风险提示</strong>：必须使用信用卡（Debit卡可能不适用）；需满足最低消费额和交易笔数要求才能触发返现；活动规则可能变更。</li>
+        </ul>
+        </li>
+        <li>
+        <p><strong>优化建议</strong>：[推测] 结合UOB ONE卡的其他高返现类别（如<strong>昇菘超市<code>(ss)</code></strong>、Grab线上线下等）规划消费，最大化返现收益。</p>
+        </li>
+        <li>
+        <p><strong>讨论氛围</strong>：积极探讨优惠获取方式和规则细节，有疑问和确认环节。</p>
+        </li>
+        <li>
+        <p><strong>议题演进</strong>：Grab返现疑问 → 返现率与条件确认 → Earmark活动状态 → Earmark活动规则细节讨论 (基于邮件/截图)。</p>
+        </li>
+        </ul>
+        <h3>本日热点话题 ★★★☆☆</h3>
+        <p><strong>生活 | 淘宝购物与跨境物流讨论</strong></p>
+        <ul>
+        <li>
+        <p><strong>核心讨论</strong>：关于淘宝99包邮商品直邮新加坡与通过菜鸟集运的成本效益比较，以及是否需要支付<strong>消费税<code>(GST)</code></strong>。</p>
+        <ul>
+        <li><strong>别割我了我疼</strong> 提问99包邮是直接发划算还是走菜鸟集运划算。</li>
+        <li><strong>老虎申请码8YQ***P</strong> 指出包邮价格通常更低（已含部分运费），菜鸟还需额外付运费。</li>
+        <li><strong>倾青恋叶</strong> 和 <strong>团团</strong> 确认淘宝直邮包邮商品到新加坡仍需依法支付<code>GST</code>。</li>
+        </ul>
+        </li>
+        <li>
+        <p><strong>关键策略（淘宝购物）</strong>：</p>
+        <ul>
+        <li><strong>触发条件</strong>：在淘宝购买支持直邮新加坡的99包邮商品。</li>
+        <li><strong>执行路径</strong>：直接选择官方直邮（99包邮选项）。</li>
+        <li><strong>预期效果</strong>：通常比先寄到菜鸟集运仓再合并转运的总成本更低。</li>
+        <li><strong>风险提示</strong>：商品总价值（含运费）超过规定免税额（目前为S$400）需缴纳<code>GST</code>；直邮时效和稳定性可能不如特定集运线路。</li>
+        </ul>
+        </li>
+        <li>
+        <p><strong>优化建议</strong>：[推测] 对于多件非包邮小商品，集运可能更划算；对于单件高价值或大件包邮商品，直邮优势明显。下单前预估<code>GST</code>。</p>
+        </li>
+        <li>
+        <p><strong>讨论氛围</strong>：疑问与解答，信息分享。</p>
+        </li>
+        <li>
+        <p><strong>议题演进</strong>：99包邮选择疑问 → 成本比较 → <code>GST</code>确认。</p>
+        </li>
+        </ul>
+        <h3>本日热点话题 ★★☆☆☆</h3>
+        <p><strong>金融 | Citibank PayAll 付款方式咨询</strong></p>
+        <ul>
+        <li><strong>核心讨论</strong>：<strong>鄂尔多多 moo: PV***6JM</strong> 询问是否有用户使用<strong>Citibank PayAll<code>(Citi payall)</code></strong> 支付<strong>所得税<code>(income tax)</code></strong>。</li>
+        <li><strong>关键策略</strong>：[未展开深入讨论，仅为信息咨询]</li>
+        <li><strong>风险提示</strong>：[推测] 使用<strong>Citi PayAll</strong>支付税款通常会产生手续费（除非有免手续费促销），需要计算手续费成本与获得积分/里程的价值是否匹配。<strong>税务相关操作请务必遵循官方规定并咨询专业人士，此处讨论不构成税务建议。</strong>【免责声明】</li>
+        <li><strong>讨论氛围</strong>：信息征询。</li>
+        <li><strong>议题演进</strong>：提出问题，暂无明确回复或经验分享。</li>
+        </ul>
+        <h2>多媒体解析</h2>
+        <ul>
+        <li><strong>洪老师-MEMO_脑力学院</strong> (2025-04-20 12:43:26 附近) 分享图片：展示超市冷柜中的多款鸡蛋，价格标签显示$14.99和$20.99，引发对鸡蛋价格的讨论。（关联话题：鸡蛋价格）</li>
+        <li><strong>42号</strong> (2025-04-20 18:25:29 附近) 分享图片：显示“Fresh Eggs MALAYSIA FARM'S EGG”，30个装，1650g，售价$6.65/Tray。（关联话题：鸡蛋价格、规格）</li>
+        <li><strong>范星星</strong> (2025-04-20 19:58:45 附近) 分享图片：显示Chew's Rise & Shine F.FRSH10S鸡蛋，10个装，450g，售价$3.05。（关联话题：鸡蛋价格、规格）</li>
+        <li><strong>接 bug 或超级 promotion 商务舱机票</strong> (2025-04-20 22:23:25 附近) 分享图片/截图：展示UOB Cash is King Savings Bonanza活动详情邮件，包含活动时间、新资金要求、Earmark规则等。（关联话题：UOB活动）</li>
+        </ul>
         <h2>附录</h2>
         <ul>
-          <li>
-            <strong>术语词典</strong>：
-            <ul>
-              <li><strong>ss</strong>: 昇菘超市 (Sheng Siong Supermarket)</li>
-              <li><strong>JB</strong>: 新山 (Johor Bahru, Malaysia)，常指去马来西亚购物。</li>
-              <li><strong>坡县</strong>: [推测] 指新加坡。</li>
-              <li><strong>花呗/借呗</strong>: 支付宝提供的消费信贷服务。</li>
-              <li><strong>境外卡</strong>: 指非中国大陆发行的银行卡/信用卡。</li>
-              <li><strong>UOB ONE / UOB ONE Account</strong>: UOB (大华银行) 的一种高返利储蓄账户，通常需配合信用卡消费、支付账单等满足条件。</li>
-              <li><strong>Earmark</strong>: 指银行活动中，为获得奖励而需要冻结一段时间的存款。</li>
-              <li><strong>Stash / UOB Stash Account</strong>: UOB 的另一种储蓄账户，可能有利率递增机制。</li>
-              <li><strong>ADB</strong>: 平均每日余额 (Average Daily Balance)。</li>
-              <li><strong>MAB</strong>: 月平均余额 (Monthly Average Balance)。</li>
-              <li><strong>Citi PayAll</strong>: Citibank 提供的一项服务，允许用信用卡支付租金、税款、教育费等大额账单以赚取积分/里程（通常有手续费）。</li>
-              <li><strong>Amaze</strong>: Instarem 公司发行的卡，可关联其他信用卡消费，提供特定汇率或返现优惠。</li>
-              <li><strong>Citi Rewards</strong>: Citibank 的一种信用卡，侧重积分奖励。</li>
-              <li><strong>菜鸟集运</strong>: 阿里巴巴旗下的物流服务，用于合并多个淘宝订单后一次性运送至海外。</li>
-              <li><strong>GST</strong>: 消费税 (Goods and Services Tax)，新加坡为9%。</li>
-              <li><strong>RM</strong>: 马来西亚林吉特 (Ringgit Malaysia)。</li>
-              <li><strong>SQ</strong>: 新加坡航空 (Singapore Airlines)。</li>
-              <li><strong>Kampong 鸡蛋</strong>: 甘榜鸡蛋，通常指散养或传统方式饲养的鸡产下的蛋。</li>
-              <li><strong>AA / AAA / C 级鸡蛋</strong>: 鸡蛋的等级划分，通常与新鲜度、蛋壳质量、内部品质和大小有关。</li>
-              <li><strong>[破涕为笑] / [捂脸] / [吃瓜] / [旺柴] / [强]</strong>: 表情符号，反映了参与者的情绪和态度（无奈、尴尬、旁观、兴奋、赞同等）。</li>
-            </ul>
-          </li>
-          <li>
-            <strong>敏感信息</strong>：
-            <ul>
-              <li>优惠码/邀请码已部分打码处理: PVEXE***JM, QQDDE***CH, 8YQ***QP。</li>
-            </ul>
-          </li>
+        <li>
+        <p><strong>术语词典</strong>：</p>
+        <ul>
+        <li><strong><code>JB</code></strong>: Johor Bahru (柔佛新山)</li>
+        <li><strong><code>ss</code></strong>: Sheng Siong Supermarket (昇菘超市)</li>
+        <li><strong><code>ntuc</code></strong>: NTUC FairPrice (职总平价超市)</li>
+        <li><strong><code>UOB ONE</code></strong>: UOB ONE Account / Credit Card (大华银行ONE账户/信用卡)</li>
+        <li><strong><code>Stash</code></strong>: UOB Stash Account (大华银行Stash账户)</li>
+        <li><strong><code>MAB</code></strong>: Monthly Average Balance (月平均余额)</li>
+        <li><strong><code>RM</code></strong>: Malaysian Ringgit (马来西亚林吉特)</li>
+        <li><strong><code>GST</code></strong>: Goods and Services Tax (消费税)</li>
+        <li><strong><code>Citi payall</code></strong>: Citibank PayAll (花旗银行PayAll服务)</li>
+        <li><strong>花呗</strong>: Alipay Huabei (支付宝花呗，一种消费信贷服务)</li>
+        <li><strong>羊毛</strong>: 指小额优惠、福利或薅羊毛行为</li>
+        <li><strong>坡县</strong>: 指新加坡</li>
+        </ul>
+        </li>
+        <li><strong>参与者昵称高亮说明</strong>：报告中已对所有出现的参与者昵称进行<strong>加粗</strong>高亮。</li>
+        <li><strong>敏感信息处理</strong>：已将识别到的含"code"或"优惠码"特征的昵称中的代码部分进行脱敏处理（如 <strong>PV***6JM</strong>, <strong>QQD***BCH</strong>, <strong>8YQ***P</strong>）。</li>
         </ul>
       </section>
     </section>
-
+    
     <!-- Optional: Card Footer Section (if needed) -->
     <!-- <section class="card-footer">...</section> -->
   </div>
-
+  
   <!-- Functional scripts (example, if syntax highlighting is desired) -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script> -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script> -->

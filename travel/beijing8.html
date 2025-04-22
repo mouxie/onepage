@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京东城西城7日游 | BEIJING 7-DAY TOUR</title>
+    <!-- CSS Reset/Normalize (Optional CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10/dist/framer-motion.umd.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <h1 class="huge-title highlight">京 <span class="small-accent">BEIJING</span></h1>
+        <p class="subtitle">东城西城七日 <span class="small-accent">DONGCHENG & XICHENG 7 DAYS</span></p>
+        <!-- Navigation to switch plans if needed -->
+    </header>
+
+    <main>
+        <!-- Itinerary Plan 1 Section -->
+        <section id="plan1" class="itinerary-plan">
+            <h2 class="plan-title">行程方案一: <span class="highlight">经典文化</span> <span class="small-accent">CLASSIC CULTURE</span></h2>
+
+            <!-- Day 1 -->
+            <article class="day-schedule" data-day="1">
+                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+                    <h3 class="day-title">DAY 1 <span class="highlight huge-number">①</span> <span class="small-accent">ARRIVAL & EXPLORE</span></h3>
+                    <div class="content-block">
+                        <p><i class="fas fa-plane-arrival highlight"></i> 07:15 抵达 PEK | <span class="small-accent">Arrive PEK</span></p>
+                        <p><i class="fas fa-car highlight"></i> 07:15-09:00 接送机 & 前往酒店 | <span class="small-accent">Transfer & To Hotel</span></p>
+                        <p><i class="fas fa-suitcase highlight"></i> 09:00-09:30 寄存行李 | <span class="small-accent">Store Luggage</span></p>
+                        <p><i class="fas fa-mug-saucer highlight"></i> 09:30-10:10 (40m) 早餐 | <span class="small-accent">Breakfast</span></p>
+                        <div class="activity">
+                            <h4><span class="highlight">王府井大街</span> <span class="small-accent">Wangfujing St.</span> (2h)</h4>
+                            <p><i class="fas fa-walking highlight"></i> 交通: 步行 | <span class="small-accent">Walk</span></p>
+                        </div>
+                        <p><i class="fas fa-utensils highlight"></i> 12:10-13:40 (90m) 午餐 | <span class="small-accent">Lunch</span></p>
+                        <p><i class="fas fa-key highlight"></i> 13:40-14:00 办理入住 | <span class="small-accent">Check-in</span></p>
+                         <div class="activity">
+                            <h4><span class="highlight">中国国家博物馆</span> <span class="small-accent">National Museum</span> (3h)</h4>
+                            <p><i class="fas fa-subway highlight"></i> 交通: `5号线` 灯市口 → **东单** → `1号线` 天安门东 (约30m, 3km) | <span class="small-accent">Metro: L5->Dongdan->L1 Tian'anmen East (~30m, 3km)</span></p>
+                        </div>
+                        <p><i class="fas fa-concierge-bell highlight"></i> 17:30-19:20 (110m) 晚餐 | <span class="small-accent">Dinner</span></p>
+                    </div>
+                </motion.div>
+            </article>
+
+            <!-- Day 2 -->
+            <article class="day-schedule" data-day="2">
+                 <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+                    <h3 class="day-title">DAY 2 <span class="highlight huge-number">②</span> <span class="small-accent">SQUARE & PALACE AREA</span></h3>
+                    <div class="content-block">
+                        <!-- ... Day 2 Details ... -->
+                    </div>
+                 </motion.div>
+            </article>
+
+            <!-- ... More Days (3-7) ... -->
+
+        </section>
+
+        <!-- Itinerary Plan 2 Section (Optional) -->
+        <!-- <section id="plan2" class="itinerary-plan"> ... </section> -->
+
+        <!-- Chart Section (Optional) -->
+        <section class="visualization">
+             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }}>
+                <h3 class="section-title highlight">行程概览 <span class="small-accent">OVERVIEW</span></h3>
+                <div class="chart-container">
+                    <!-- Canvas for Chart.js or div for ApexCharts -->
+                    <canvas id="timeAllocationChart"></canvas>
+                    <p class="small-accent chart-caption">每日游玩 vs 交通 vs 用餐时间比例 (示例) | <span class="small-accent">Daily Time Allocation (Sample)</span></p>
+                </div>
+             </motion.div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p class="small-accent">行程规划基于估算，请以实际情况为准 | <span class="small-accent">Itinerary based on estimates.</span></p>
+    </footer>
+
+    <!-- Include JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

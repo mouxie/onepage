@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京 7 日文化探索之旅 | Beijing 7-Day Cultural Exploration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #000000;
+            --text-color: #FFFFFF;
+            --highlight-color: #FFA500;
+            --secondary-text-color: #AAAAAA;
+            --border-color: #333333;
+            --box-bg-color: #111111;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 4rem; /* 超大字体 */
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        .header .highlight {
+            font-size: 5rem; /* 更大数字 */
+            color: var(--highlight-color);
+            display: block; /* 让数字单独一行 */
+            margin-bottom: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header .subtitle-en {
+            font-size: 1.2rem;
+            color: var(--secondary-text-color);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 1rem;
+        }
+
+        .bento-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            margin-bottom: 3rem;
+        }
+
+        .bento-box {
+            background-color: var(--box-bg-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensure content fits */
+        }
+
+        .bento-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.1);
+        }
+
+        .bento-box.span-2 {
+            grid-column: span 2;
+        }
+         @media (max-width: 768px) {
+            .bento-box.span-2 {
+                 grid-column: span 1; /* Stack on smaller screens */
+             }
+         }
+
+
+        .bento-box h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--highlight-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        .bento-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+         .bento-box h4 {
+             font-size: 1.1rem;
+             font-weight: 700;
+             color: var(--highlight-color);
+             margin-top: 1rem;
+             margin-bottom: 0.5rem;
+             display: flex;
+             align-items: center;
+             gap: 0.5rem;
+         }
+
+        .bento-box p, .bento-box li {
+            color: var(--secondary-text-color);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+        .bento-box strong {
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        .bento-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .bento-box li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start; /* Align icon with first line of text */
+            gap: 0.8rem;
+        }
+
+        .bento-box li i {
+            color: var(--highlight-color);
+            margin-top: 0.2em; /* Adjust icon vertical alignment */
+            font-size: 1.1em;
+            width: 20px; /* Fixed width for alignment */
+            text-align: center;
+        }
+
+        .highlight-text {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+
+        .small-en {
+            font-size: 0.8rem;
+            color: var(--secondary-text-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        /* Gradient effect */
+        .gradient-highlight-bg {
+            position: relative;
+        }
+        .gradient-highlight-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 165, 0, 0.15) 0%, rgba(255, 165, 0, 0) 70%);
+            border-radius: 1rem;
+            z-index: 0;
+            pointer-events: none;
+        }
+         .bento-box > * {
+             position: relative; /* Ensure content is above gradient */
+             z-index: 1;
+         }
+
+        /* Simple Line Icon/Visual - Placeholder */
+        .line-visual {
+            height: 50px;
+            width: 100%;
+            border-top: 2px solid var(--highlight-color);
+            opacity: 0.5;
+            margin-top: 1.5rem;
+            position: relative;
+        }
+         .line-visual::after {
+            content: '';
+            position: absolute;
+            bottom: -10px; /* Adjust position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid var(--highlight-color);
+         }
+
+         /* Button for Itinerary Options (if implementing multiple) */
+         .option-buttons {
+             text-align: center;
+             margin-bottom: 2rem;
+         }
+         .option-button {
+             background-color: var(--box-bg-color);
+             color: var(--highlight-color);
+             border: 1px solid var(--highlight-color);
+             padding: 0.8rem 1.5rem;
+             border-radius: 2rem;
+             cursor: pointer;
+             font-size: 1rem;
+             font-weight: 700;
+             margin: 0 0.5rem;
+             transition: background-color 0.3s, color 0.3s;
+         }
+         .option-button.active, .option-button:hover {
+             background-color: var(--highlight-color);
+             color: var(--bg-color);
+         }
+
+         .itinerary-content {
+             /* display: none; /* Hide initially if multiple options */
+         }
+         .itinerary-content.active {
+             display: block;
+         }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header" data-aos="fade-up">
+            <h1>北京 <span class="highlight">7</span> 日游</h1>
+            <span class="subtitle-en">Beijing 7-Day Cultural Exploration</span>
+            <p style="color: var(--secondary-text-color); margin-top: 1rem;">2025年6月6日 (周五) - 2025年6月12日 (周四)</p>
+            <p style="color: var(--secondary-text-color);">酒店区域: 东城区 - 灯市口地铁站 (5号线) 附近</p>
+        </div>
+
+        <!-- Add buttons here if implementing multiple itinerary options -->
+        <!-- <div class="option-buttons" data-aos="fade-up">
+            <button class="option-button active" onclick="showItinerary('option1')">经典文化</button>
+            <button class="option-button" onclick="showItinerary('option2')">Option 2</button>
+        </div> -->
+
+        <div id="option1" class="itinerary-content active">
+
+            <!-- Day 1 -->
+            <div class="bento-grid">
+                <div class="bento-box span-2 gradient-highlight-bg" data-aos="fade-up">
+                    <h2><span class="highlight-text">DAY 1</span> | 抵达 & 王府井</h2>
+                    <span class="small-en">Arrival & Wangfujing Exploration | Friday, June 6</span>
+                    <p>早班机抵达，先前往酒店寄存行李，随后在著名的王府井商业区轻松逛逛，适应北京的节奏。</p>
+
+                    <ul>
+                        <li><i class="fas fa-plane-arrival"></i><strong>07:15</strong> 抵达北京首都国际机场 (PEK)。</li>
+                        <li><i class="fas fa-car"></i><strong>07:45 - 08:45 (约1小时)</strong> 乘坐预订的接送机服务前往东城区灯市口酒店。<strong>交通方式:</strong> <span class="highlight-text">商务专车</span>。</li>
+                        <li><i class="fas fa-luggage-cart"></i><strong>08:45 - 09:15</strong> 抵达酒店，办理行李寄存手续（下午14:00后入住）。</li>
+                         <li><i class="fas fa-coffee"></i><strong>09:15 - 09:55 (40分钟)</strong> <strong class="highlight-text">早餐</strong>: 酒店附近寻找当地早餐店 (如庆丰包子铺、护国寺小吃等) 或便捷连锁。</li>
+                        <li><i class="fas fa-walking"></i><strong>10:00 - 11:30 (1.5小时)</strong> <strong>活动:</strong> 步行或地铁1站至<strong class="highlight-text">王府井步行街</strong> 游览。看看老字号、新商场、王府井天主堂外观。
+                            <span class="small-en">Travel: Walk (~15min, 1km) or Metro Line 5 (Dengshikou -> Dongdan) transfer Line 1 (Dongdan -> Wangfujing) ~20min.</span></li>
+                        <li><i class="fas fa-utensils"></i><strong>11:30 - 13:00 (1.5小时)</strong> <strong class="highlight-text">午餐</strong>: 王府井区域。
+                            <span class="small-en">Options: Quanjude (烤鸭老字号体验), Donglaishun (涮肉), 或 APM/东方新天地内多样选择 (如外婆家-排队久, 南京大牌档等)。</span></li>
+                         <li><i class="fas fa-key"></i><strong>13:00 - 14:30</strong> 步行回酒店附近稍作等待，<strong class="highlight-text">14:00</strong> 办理入住手续，稍事休息。</li>
+                        <li><i class="fas fa-landmark"></i><strong>15:00 - 16:30 (1.5小时)</strong> <strong>活动:</strong> 步行或地铁前往<strong class="highlight-text">天安门广场</strong>区域。感受广场氛围，外观人民大会堂、国家博物馆、毛主席纪念堂、天安门城楼。
+                            <span class="small-en">Travel: Metro Line 5 (Dengshikou -> Dongdan) transfer Line 1 (Dongdan -> Tiananmen East/West) ~25min. Or Walk ~30-40min, 2.5km.</span></li>
+                         <li><i class="fas fa-utensils"></i><strong>17:30 - 19:20 (1小时50分钟)</strong> <strong class="highlight-text">晚餐</strong>: 前门/大栅栏区域或返回酒店附近。
+                            <span class="small-en">Options: 前门大街 (便宜坊烤鸭, 都一处烧麦等老字号), 或返回灯市口附近餐厅。</span></li>
+                         <li><i class="fas fa-moon"></i><strong>19:20 之后</strong> 自由活动或返回酒店休息。</li>
+                    </ul>
+                    <div class="line-visual"></div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+             <div class="bento-grid">
+                 <div class="bento-box span-2 gradient-highlight-bg" data-aos="fade-up" data-aos-delay="100">
+                     <h2><span class="highlight-text">DAY 2</span> | 紫禁城 & 皇家视角</h2>
+                     <span class="small-en">Forbidden City & Imperial View | Saturday, June 7</span>
+                     <p>全天沉浸在明清两代的皇权中心，登高俯瞰紫禁城的壮丽全景。</p>
+
+                     <ul>
+                         <li><i class="fas fa-coffee"></i><strong>08:00 - 08:40 (40分钟)</strong> <strong class="highlight-text">早餐</strong>: 酒店附近。</li>
+                         <li><i class="fas fa-subway"></i><strong>08:40 - 09:10 (约30分钟)</strong> <strong>交通:</strong> 地铁5号线 (灯市口 -> 东单) 换乘1号线 (东单 -> 天安门东)。步行至故宫午门入口。<strong>距离:</strong> 约3km。</li>
+                         <li><i class="fas fa-chess-rook"></i><strong>09:10 - 13:10 (4小时)</strong> <strong>活动:</strong> 参观<strong class="highlight-text">故宫博物院</strong> (提前预订门票！)。建议沿中轴线参观，可按需选择东西六宫及珍宝馆/钟表馆（另收费）。
+                            <span class="small-en">Highlight: Hall of Supreme Harmony, Palace of Heavenly Purity, Imperial Garden. Booking essential!</span></li>
+                         <li><i class="fas fa-utensils"></i><strong>13:10 - 14:40 (1.5小时)</strong> <strong class="highlight-text">午餐</strong>: 故宫神武门（北门）外区域选择。
+                            <span class="small-en">Options: 故宫角楼咖啡/餐厅 (价格偏高), 或附近胡同简餐/自带干粮。</span></li>
+                         <li><i class="fas fa-mountain"></i><strong>14:40 - 16:10 (1.5小时)</strong> <strong>活动:</strong> 步行至马路对面的<strong class="highlight-text">景山公园</strong>。登山至万春亭，<strong class="highlight-text">俯瞰故宫全景</strong>。
+                             <span class="small-en">Travel: Walk across the street (~5min).</span></li>
+                         <li><i class="fas fa-subway"></i><strong>16:10 - 17:00</strong> <strong>交通:</strong> 步行至附近公交站或地铁站 (如8号线什刹海站需步行稍远) 返回酒店。</li>
+                         <li><i class="fas fa-utensils"></i><strong>18:00 - 19:50 (1小时50分钟)</strong> <strong class="highlight-text">晚餐</strong>: 可选东四区域或返回灯市口附近。
+                            <span class="small-en">Options: 东四附近胡同菜 (如Crescent Moon新疆菜), 或酒店附近餐厅。</span></li>
+                         <li><i class="fas fa-moon"></i><strong>19:50 之后</strong> 自由活动或休息。</li>
+                     </ul>
+                     <div class="line-visual"></div>
+                 </div>
+             </div>
+
+             <!-- Day 3 -->
+            <div class="bento-grid">
+                <div class="bento-box span-2 gradient-highlight-bg" data-aos="fade-up" data-aos-delay="100">
+                    <h2><span class="highlight-text">DAY 3</span> | 天坛祭祀 & 胡同漫步</h2>
+                    <span class="small-en">Temple of Heaven & Hutong Stroll | Sunday, June 8</span>
+                    <p>感受皇家祭天的神圣，午后穿梭于什刹海的胡同，体验老北京的市井生活。</p>
+
+                    <ul>
+                        <li><i class="fas fa-coffee"></i><strong>08:00 - 08:40 (40分钟)</strong> <strong class="highlight-text">早餐</strong>: 酒店附近。</li>
+                        <li><i class="fas fa-subway"></i><strong>08:40 - 09:10 (约30分钟)</strong> <strong>交通:</strong> 地铁5号线 (灯市口 -> 天坛东门)。<strong>距离:</strong> 约5km。</li>
+                        <li><i class="fas fa-place-of-worship"></i><strong>09:10 - 11:40 (2.5小时)</strong> <strong>活动:</strong> 参观<strong class="highlight-text">天坛公园</strong> (提前预订门票！)。核心区域包括祈年殿、回音壁、圜丘坛。
+                            <span class="small-en">Highlight: Hall of Prayer for Good Harvests, Echo Wall, Circular Mound Altar. Booking needed.</span></li>
+                        <li><i class="fas fa-utensils"></i><strong>12:00 - 13:30 (1.5小时)</strong> <strong class="highlight-text">午餐</strong>: 天坛北门或西门附近，或返回前门区域。
+                            <span class="small-en">Options: 老磁器口豆汁店 (体验), 或前门大栅栏小吃 (如门框胡同卤煮)。</span></li>
+                         <li><i class="fas fa-subway"></i><strong>13:30 - 14:10 (约40分钟)</strong> <strong>交通:</strong> 地铁5号线 (天坛东门 -> 雍和宫) 换乘8号线 (雍和宫 -> 什刹海)。<strong>距离:</strong> 约10km。</li>
+                        <li><i class="fas fa-bicycle"></i><strong>14:10 - 17:10 (3小时)</strong> <strong>活动:</strong> 游览<strong class="highlight-text">什刹海</strong>区域。漫步后海、烟袋斜街，感受胡同文化。可外观鼓楼、钟楼。可选乘摇橹船（自费）。
+                            <span class="small-en">Explore Houhai Lake, Yandai Xie Street (Skew Street), Drum & Bell Towers (exterior). Optional boat ride.</span></li>
+                        <li><i class="fas fa-utensils"></i><strong>17:30 - 19:20 (1小时50分钟)</strong> <strong class="highlight-text">晚餐</strong>: 什刹海/后海区域。
+                            <span class="small-en">Options: 烤肉季 (清真烤肉), 南门涮肉, 或烟袋斜街/周边胡同特色小馆 (如铃木食堂-日式简餐, Dali Courtyard-云南菜需预订)。</span></li>
+                        <li><i class="fas fa-glass-cheers"></i><strong>19:20 之后</strong> 可体验后海酒吧街氛围，或地铁返回酒店。</li>
+                    </ul>
+                    <div class="line-visual"></div>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+             <div class="bento-grid">
+                 <div class="bento-box span-2 gradient-highlight-bg" data-aos="fade-up" data-aos-delay="100">
+                     <h2><span class="highlight-text">DAY 4</span> | 慕田峪长城一日</h2>
+                     <span class="small-en">Mutianyu Great Wall Day Trip | Monday, June 9</span>
+                     <p>前往风景秀丽、相对人少的慕田峪长城，感受中华民族的伟大奇迹。</p>
+
+                     <ul>
+                         <li><i class="fas fa-coffee"></i><strong>07:00 - 07:40 (40分钟)</strong> <strong class="highlight-text">早餐</strong>: 酒店附近或打包。</li>
+                         <li><i class="fas fa-bus-alt"></i><strong>07:40 - 10:10 (约2.5小时)</strong> <strong>交通 (公共交通方案):</strong>
+                             1. 地铁5号线 (灯市口 -> 雍和宫) 换乘2号线 (雍和宫 -> 东直门)。
+                             2. 在<strong class="highlight-text">东直门</strong>公交枢纽站乘坐<strong class="highlight-text">慕田峪长城旅游专线</strong> (优点: 直达，缺点: 车次时间固定，需查询) 或 乘坐<strong class="highlight-text">916快</strong>公交车到怀柔城区（怀柔北大街站），然后换乘 H23/H24/H35/H36路 或 打车 前往慕田峪环岛。
+                             <span class="small-en">Public Transport Option: Subway to Dongzhimen, then Tourist Bus (check schedule) or Bus 916 Express + Local Transfer/Taxi. Approx. 2.5-3h total. Alternative: Pre-booked car (~1.5-2h).</span></li>
+                         <li><i class="fas fa-gopuram"></i><strong>10:10 - 14:10 (4小时)</strong> <strong>活动:</strong> 游览<strong class="highlight-text">慕田峪长城</strong> (提前预订门票！)。建议乘坐缆车或索道上山，选择一段精华路线徒步，可选择滑道下山（刺激有趣）。
+                             <span class="small-en">Visit Mutianyu Great Wall. Cable car up, hike, optional toboggan down. Booking essential.</span></li>
+                         <li><i class="fas fa-utensils"></i><strong>14:10 - 15:40 (1.5小时)</strong> <strong class="highlight-text">午餐</strong>: 慕田峪长城脚下餐厅区。
+                             <span class="small-en">Options: Subway (赛百味), 馅老满 (饺子), 或其他中式快餐/农家菜。</span></li>
+                         <li><i class="fas fa-bus-alt"></i><strong>15:40 - 18:10 (约2.5小时)</strong> <strong>交通:</strong> 按原路返回市区酒店。</li>
+                         <li><i class="fas fa-utensils"></i><strong>19:00 - 20:50 (1小时50分钟)</strong> <strong class="highlight-text">晚餐</strong>: 酒店附近放松用餐。
+                             <span class="small-en">Relaxed dinner near the hotel after the long day trip.</span></li>
+                         <li><i class="fas fa-moon"></i><strong>20:50 之后</strong> 休息。</li>
+                     </ul>
+                     <div class="line-visual"></div>
+                 </div>
+             </div>
+
+            <!-- Day 5 -->
+             <div class="bento-grid">
+                 <div class="bento-box span-2 gradient-highlight-bg" data-aos="fade-up" data-aos-delay="100">
+                     <h2><span class="highlight-text">DAY 5</span> | 颐和园皇家园林</h2>
+                     <span class="small-en">Summer Palace Retreat | Tuesday, June 10</span>
+                     <p>漫步于清代皇家园林颐和园，欣赏湖光山色与精致建筑。</p>
+
+                     <ul>
+                         <li><i class="fas fa-coffee"></i><strong>08:00 - 08:40 (40分钟)</strong> <strong class="highlight-text">早餐</strong>: 酒店附近。</li>
+                         <li><i class="fas fa-subway"></i><strong>08:40 - 09:30 (约50分钟)</strong> <strong>交通:</strong> 地铁5号线 (灯市口 -> 磁器口) 换乘7号线 (磁器口 -> 菜市口) 换乘4号线 (菜市口 -> 北宫门)。<strong>距离:</strong> 约20km。</li>
+                         <li><i class="fas fa-vihara"></i><strong>09:30 - 13:00 (3.5小时)</strong> <strong>活动:</strong> 游览<strong class="highlight-text">颐和园</strong> (提前预订门票！)。主要景点：长廊、佛香阁、石舫、昆明湖、苏州街（另收费）。
+                            <span class="small-en">Visit the Summer Palace. Highlights: Long Corridor, Tower of Buddhist Incense, Marble Boat, Kunming Lake. Booking needed.</span></li>
+                         <li><i class="fas fa-utensils"></i><strong>13:00 - 14:30 (1.5小时)</strong> <strong class="highlight-text">午餐</strong>: 颐和园北宫门或东宫门外。
+                             <span class="small-en">Options: Restaurants outside the North or East Gate.</span></li>
+                         <li><i class="fas fa-history"></i><strong>14:30 - 17:00 (2.5小时)</strong> <strong>活动 (可选):</strong>
+                             选项A: 乘坐公交或打车前往附近的<strong class="highlight-text">圆明园遗址公园</strong> (门票另购)，感受历史的沧桑。 (约2小时游览)
+                             选项B: 返回市区，参观<strong class="highlight-text">首都博物馆</strong> (需预约) 或其他感兴趣的博物馆。
+                            <span class="small-en">Option A: Old Summer Palace (Yuanmingyuan). Option B: Return to city for Capital Museum (booking needed).</span></li>
+                         <li><i class="fas fa-subway"></i><strong>17:00 - 18:00</strong> <strong>交通:</strong> 地铁返回酒店区域。</li>
+                         <li><i class="fas fa-utensils"></i><strong>18:30 - 20:20 (1小时50分钟)</strong> <strong class="highlight-text">晚餐</strong>: 酒店附近或尝试不同区域。
+                            <span class="small-en">Explore restaurants in areas like Xidan (accessible via Line 1/4) or stick near Dengshikou.</span></li>
+                         <li><i class="fas fa-moon"></i><strong>20:20 之后</strong> 自由活动。</li>
+                     </ul>
+                     <div class="line-visual"></div>
+                 </div>
+             </div>
+
+            <!-- Day 6 -->
+             <div class="bento-grid">
+                 <div class="bento-box span-2 gradient-highlight-bg" data-aos="fade-up" data-aos-delay="100">
+                     <h2><span class="highlight-text">DAY 6</span> | 宗教文化 & 博物探索</h2>
+                     <span class="small-en">Culture & Museum Discovery | Wednesday, June 11</span>
+                     <p>探访京城最大的藏传佛教寺院和古代最高学府，下午深入了解中华历史或感受现代艺术。</p>
+
+                     <ul>
+                         <li><i class="fas fa-coffee"></i><strong>08:30 - 09:10 (40分钟)</strong> <strong class="highlight-text">早餐</strong>: 酒店附近。</li>
+                         <li><i class="fas fa-subway"></i><strong>09:10 - 09:30 (约20分钟)</strong> <strong>交通:</strong> 地铁5号线 (灯市口 -> 雍和宫)。<strong>距离:</strong> 约4km。</li>
+                         <li><i class="fas fa-synagogue"></i><strong>09:30 - 11:00 (1.5小时)</strong> <strong>活动:</strong> 参观<strong class="highlight-text">雍和宫</strong> (提前预订门票！)。北京最大的藏传佛教寺院。
+                             <span class="small-en">Visit Lama Temple (Yonghegong). Booking needed.</span></li>
+                         <li><i class="fas fa-landmark-flag"></i><strong>11:00 - 12:30 (1.5小时)</strong> <strong>活动:</strong> 步行至隔壁的<strong class="highlight-text">孔庙和国子监博物馆</strong> (门票另购)。元明清三代最高学府和祭孔之地。
+                             <span class="small-en">Walk to Confucius Temple and Imperial College Museum.</span></li>
+                         <li><i class="fas fa-utensils"></i><strong>12:30 - 14:00 (1.5小时)</strong> <strong class="highlight-text">午餐</strong>: 雍和宫或五道营胡同区域。
+                             <span class="small-en">Options: Wudaoying Hutong (Vineyard Cafe, Susu Vietnamese - booking recommended), or nearby eateries like Xian Lao Man (饺子). High-end: Jing Zhao Yin (素食, booking essential).</span></li>
+                         <li><i class="fas fa-archway"></i><strong>14:00 - 14:30</strong> 简单逛逛<strong class="highlight-text">五道营胡同</strong>。</li>
+                         <li><i class="fas fa-subway"></i><strong>14:30 - 15:30 (约1小时)</strong> <strong>交通 (方案一: 国博):</strong> 地铁5号线 (雍和宫 -> 东单) 换乘1号线 (东单 -> 天安门东)。<strong>距离:</strong> 约8km。
+                             <span class="small-en">Travel Option 1 (National Museum): Subway to Tiananmen East.</span>
+                             <strong>交通 (方案二: 798):</strong> 地铁2号线 (雍和宫 -> 东直门) 换乘14号线 (东直门 -> 望京南)。步行或公交短驳至798艺术区。<strong>距离:</strong> 约15km, 耗时较长。
+                             <span class="small-en">Travel Option 2 (798): Subway to Wangjing Nan + Walk/Bus. Takes longer.</span></li>
+                         <li><i class="fas fa-university"></i><strong>15:30 - 17:30 (2小时)</strong> <strong>活动 (方案一):</strong> 参观<strong class="highlight-text">中国国家博物馆</strong> (提前预订门票！免费，特展收费)。根据兴趣选择展厅。
+                             <span class="small-en">Activity Option 1: National Museum of China (Free, booking essential).</span>
+                             <strong>活动 (方案二):</strong> 探索<strong class="highlight-text">798艺术区</strong>。逛画廊、看展览、感受艺术氛围。
+                             <span class="small-en">Activity Option 2: Explore 798 Art Zone.</span></li>
+                         <li><i class="fas fa-utensils"></i><strong>18:30 - 20:20 (1小时50分钟)</strong> <strong class="highlight-text">晚餐</strong>:
+                             方案一 (国博后): 前门/王府井/灯市口区域。
+                             方案二 (798后): 可选择三里屯区域 (需地铁返回)。
+                             <span class="small-en">Dinner near activity area or back near hotel/Sanlitun. Options: Transit (川菜), Bottega (意餐), Middle 8 (云南菜) in Sanlitun.</span></li>
+                         <li><i class="fas fa-moon"></i><strong>20:20 之后</strong> 自由活动或休息。</li>
+                     </ul>
+                     <div class="line-visual"></div>
+                 </div>
+             </div>
+
+            <!-- Day 7 -->
+             <div class="bento-grid">
+                 <div class="bento-box span-2 gradient-highlight-bg" data-aos="fade-up" data-aos-delay="100">
+                     <h2><span class="highlight-text">DAY 7</span> | 自由时光 & 告别京城</h2>
+                     <span class="small-en">Leisure Time & Departure | Thursday, June 12</span>
+                     <p>根据航班时间安排上午的活动，购买纪念品或重游喜欢的地方，下午前往机场。</p>
+
+                     <ul>
+                         <li><i class="fas fa-coffee"></i><strong>08:00 - 08:40 (40分钟)</strong> <strong class="highlight-text">早餐</strong>: 酒店附近。</li>
+                         <li><i class="fas fa-shopping-bag"></i><strong>09:00 - 11:30 (2.5小时)</strong> <strong>活动 (根据航班时间调整):</strong>
+                             办理酒店退房手续，寄存行李。
+                             选项A: 前往<strong class="highlight-text">前门大栅栏/北京坊</strong> 区域，购买特色纪念品（老字号点心、茶叶等）。
+                             选项B: 参观<strong class="highlight-text">北海公园</strong>，体验皇家园林与白塔。 (地铁5号线灯市口->东四 换乘6号线->北海北)
+                             选项C: 参观<strong class="highlight-text">首都博物馆</strong>（如果前一天未去且预约到）。(地铁5号线->换乘1号线木樨地)
+                            <span class="small-en">Check out, store luggage. Option A: Qianmen/Dashilan for souvenirs. Option B: Beihai Park. Option C: Capital Museum (if not visited).</span></li>
+                         <li><i class="fas fa-utensils"></i><strong>11:30 - 13:00 (1.5小时)</strong> <strong class="highlight-text">午餐</strong>: 根据上午活动地点就近选择，或返回酒店附近。</li>
+                         <li><i class="fas fa-briefcase"></i><strong>13:00 - 13:30</strong> 返回酒店取行李。</li>
+                         <li><i class="fas fa-plane-departure"></i><strong>13:30 - 15:00 (约1.5小时)</strong> <strong>交通:</strong> 前往北京首都国际机场 (PEK)。
+                             <strong class="highlight-text">公共交通方案:</strong>
+                             1. 步行至灯市口地铁站。
+                             2. 乘坐地铁5号线 (灯市口 -> 东直门)。
+                             3. 在<strong class="highlight-text">东直门</strong>站换乘<strong class="highlight-text">首都机场快线</strong>，直达T2/T3航站楼。
+                             <strong>总时长:</strong> 约 1小时15分钟 - 1小时30分钟 (含步行换乘)。
+                             <span class="small-en">Airport Transfer (Public Transport): Subway Line 5 (Dengshikou -> Dongzhimen) -> Airport Express Line. Allow ample time!</span></li>
+                         <li><i class="fas fa-user-clock"></i><strong>15:00 之后</strong> 到达机场，办理登机手续，结束愉快的北京之旅。 (请确保留出至少2-3小时的机场时间)</li>
+                     </ul>
+                     <div class="line-visual"></div>
+                 </div>
+             </div>
+
+        </div> <!-- End of Option 1 Content -->
+
+        <!-- Add other itinerary content divs here if implementing multiple options -->
+        <!-- <div id="option2" class="itinerary-content"> ... Option 2 Details ... </div> -->
+
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800, // Animation duration
+            easing: 'ease-in-out', // Animation easing
+            once: true // Only animate elements once
+        });
+
+        // Basic function to switch itineraries (if needed)
+        function showItinerary(optionId) {
+            // Hide all itinerary content
+            const allItineraries = document.querySelectorAll('.itinerary-content');
+            allItineraries.forEach(itinerary => {
+                itinerary.classList.remove('active');
+            });
+
+            // Deactivate all buttons
+            const allButtons = document.querySelectorAll('.option-button');
+            allButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show the selected itinerary
+            const selectedItinerary = document.getElementById(optionId);
+            if (selectedItinerary) {
+                selectedItinerary.classList.add('active');
+            }
+
+            // Activate the clicked button
+            const activeButton = document.querySelector(`.option-button[onclick="showItinerary('${optionId}')"]`);
+             if (activeButton) {
+                 activeButton.classList.add('active');
+             }
+         }
+
+         // Set the first itinerary as active by default (if using the button logic)
+         // document.addEventListener('DOMContentLoaded', () => {
+         //     showItinerary('option1');
+         // });
+
+    </script>
+
+</body>
+</html>

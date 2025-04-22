@@ -3,88 +3,1127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北京东城西城7日游 | BEIJING 7-DAY TOUR</title>
-    <!-- CSS Reset/Normalize (Optional CDN) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Framer Motion CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10/dist/framer-motion.umd.min.js"></script>
+    <title>北京 7 日 东城西城 探索之旅 | Beijing 7-Day Explorer</title>
+    <!-- CDN Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> <!-- Using Tailwind for utility classes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Font Awesome Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10/dist/framer-motion.umd.js"></script> <!-- Framer Motion -->
+
+    <style>
+        /* Neobrutalism & Custom Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700;900&family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: #f0f0f0; /* Light background */
+            color: #1a1a1a; /* Dark text */
+            overflow-x: hidden;
+        }
+
+        .neobrutalism-border {
+            border: 3px solid #1a1a1a;
+            box-shadow: 5px 5px 0px #1a1a1a;
+        }
+
+        .neobrutalism-card {
+            background-color: #ffffff;
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 2rem; /* mb-8 */
+        }
+
+        .highlight-yellow { color: #FFD700; }
+        .highlight-blue { color: #00A3FF; }
+        .highlight-pink { color: #FF69B4; }
+        .highlight-green { color: #39FF14; }
+
+        .gradient-highlight-blue {
+            background: linear-gradient(to bottom, rgba(0, 163, 255, 0.6), rgba(0, 163, 255, 0.1));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-highlight-pink {
+            background: linear-gradient(to bottom, rgba(255, 105, 180, 0.7), rgba(255, 105, 180, 0.1));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+         .gradient-highlight-green {
+            background: linear-gradient(to bottom, rgba(57, 255, 20, 0.7), rgba(57, 255, 20, 0.1));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .super-heading {
+            font-family: 'Noto Sans SC', sans-serif;
+            font-weight: 900;
+            font-size: clamp(3rem, 10vw, 8rem); /* Responsive large font */
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .sub-heading-en {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(0.8rem, 2vw, 1.2rem);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #555;
+        }
+
+        .day-number {
+            font-family: 'Noto Sans SC', sans-serif;
+            font-weight: 900;
+            font-size: clamp(4rem, 15vw, 12rem);
+             line-height: 0.8;
+            position: absolute;
+            left: -20px;
+            top: -20px;
+            opacity: 0.1;
+            z-index: 0;
+            pointer-events: none; /* Prevent interaction */
+             /* Example gradient highlight */
+        }
+        .day-number.blue { background: linear-gradient(to bottom, rgba(0, 163, 255, 0.3), rgba(0, 163, 255, 0.05)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .day-number.pink { background: linear-gradient(to bottom, rgba(255, 105, 180, 0.4), rgba(255, 105, 180, 0.05)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .day-number.green { background: linear-gradient(to bottom, rgba(57, 255, 20, 0.4), rgba(57, 255, 20, 0.05)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+
+        .content-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem; /* Space for icon */
+            position: relative;
+        }
+        .timeline-item::before { /* Simple line connector */
+            content: '';
+            position: absolute;
+            left: 12px; /* Aligns with icon center */
+            top: 25px;
+            bottom: -1.5rem; /* Extends to next item margin */
+            width: 2px;
+            background-color: #ccc;
+            z-index: -1;
+        }
+        .timeline-item:last-child::before {
+             display: none; /* No line after last item */
+        }
+
+        .timeline-icon {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 24px; /* Adjust size as needed */
+            height: 24px;
+            background-color: #f0f0f0; /* Match body background */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #1a1a1a;
+            z-index: 1;
+        }
+        .timeline-icon i { font-size: 14px; }
+
+        .timeline-content { flex: 1; }
+        .timeline-time { font-weight: bold; color: #444; font-size: 0.9em; }
+        .timeline-title { font-weight: bold; font-size: 1.1em; margin-bottom: 0.25rem; font-family: 'Noto Sans SC', sans-serif; }
+        .timeline-subtitle { font-size: 0.8em; color: #666; text-transform: uppercase; letter-spacing: 0.05em; }
+        .timeline-details { font-size: 0.9em; color: #333; margin-top: 0.5rem; }
+        .timeline-details code { background-color: #e0e0e0; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; border: 1px solid #ccc;}
+        .timeline-details strong { color: #0077cc; } /* Highlight transfer stations */
+
+
+        /* Simple Line Graphics Placeholder */
+        .line-graphic {
+            width: 100%;
+            height: 50px;
+            border-bottom: 3px solid #1a1a1a;
+            margin: 2rem 0;
+            position: relative;
+        }
+        .line-graphic::before, .line-graphic::after {
+            content: '';
+            position: absolute;
+            bottom: -8px; /* Adjust position */
+            width: 10px;
+            height: 10px;
+            background-color: #1a1a1a;
+            border-radius: 50%;
+        }
+        .line-graphic::before { left: 10%; }
+        .line-graphic::after { right: 10%; }
+
+        /* Framer Motion Initial State (Hidden) */
+        .motion-div {
+           opacity: 0;
+           y: 50; /* Start slightly lower */
+        }
+
+    </style>
 </head>
-<body>
-    <header class="main-header">
-        <h1 class="huge-title highlight">京 <span class="small-accent">BEIJING</span></h1>
-        <p class="subtitle">东城西城七日 <span class="small-accent">DONGCHENG & XICHENG 7 DAYS</span></p>
-        <!-- Navigation to switch plans if needed -->
-    </header>
+<body class="p-4 md:p-8">
 
-    <main>
-        <!-- Itinerary Plan 1 Section -->
-        <section id="plan1" class="itinerary-plan">
-            <h2 class="plan-title">行程方案一: <span class="highlight">经典文化</span> <span class="small-accent">CLASSIC CULTURE</span></h2>
+    <script>
+        const { motion, useScroll, useTransform } = FramerMotion;
 
-            <!-- Day 1 -->
-            <article class="day-schedule" data-day="1">
-                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <h3 class="day-title">DAY 1 <span class="highlight huge-number">①</span> <span class="small-accent">ARRIVAL & EXPLORE</span></h3>
-                    <div class="content-block">
-                        <p><i class="fas fa-plane-arrival highlight"></i> 07:15 抵达 PEK | <span class="small-accent">Arrive PEK</span></p>
-                        <p><i class="fas fa-car highlight"></i> 07:15-09:00 接送机 & 前往酒店 | <span class="small-accent">Transfer & To Hotel</span></p>
-                        <p><i class="fas fa-suitcase highlight"></i> 09:00-09:30 寄存行李 | <span class="small-accent">Store Luggage</span></p>
-                        <p><i class="fas fa-mug-saucer highlight"></i> 09:30-10:10 (40m) 早餐 | <span class="small-accent">Breakfast</span></p>
-                        <div class="activity">
-                            <h4><span class="highlight">王府井大街</span> <span class="small-accent">Wangfujing St.</span> (2h)</h4>
-                            <p><i class="fas fa-walking highlight"></i> 交通: 步行 | <span class="small-accent">Walk</span></p>
+        function AnimatedSection({ children }) {
+            // Simple fade-in animation when element scrolls into view
+            return React.createElement(
+                motion.div,
+                {
+                    initial: { opacity: 0, y: 50 },
+                    whileInView: { opacity: 1, y: 0 },
+                    viewport: { once: true, amount: 0.2 }, // Trigger animation when 20% is visible
+                    transition: { duration: 0.6, ease: "easeOut" }
+                },
+                children
+            );
+        }
+
+        // We will wrap sections with this component later via JS manipulation
+        // Or ideally, use React/Vue for proper component structure
+    </script>
+
+    <!-- Hero Section -->
+    <section class="text-center my-16 md:my-24">
+        <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }}>
+            <h1 class="super-heading">
+                北京 <span class="gradient-highlight-blue">7</span> 日游
+            </h1>
+            <p class="sub-heading-en">Beijing <span class="highlight-blue">7</span>-Day Dongcheng & Xicheng Explorer</p>
+            <p class="mt-4 text-lg font-semibold">2025.06.06 (周五) - 2025.06.12 (周四)</p>
+             <div class="line-graphic mt-8"></div>
+        </motion.div>
+    </section>
+
+     <!-- Overview Section -->
+    <section class="my-12 md:my-16 motion-div" id="overview-section">
+         <div class="neobrutalism-card neobrutalism-border">
+             <h2 class="text-2xl md:text-3xl font-bold mb-4 font-['Noto Sans SC']">核心信息 <span class="sub-heading-en text-xl"> / Core Info</span></h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 <div><i class="fas fa-map-marker-alt mr-2 highlight-pink"></i> <strong>区域 Focus:</strong> 东城区 Dongcheng & 西城区 Xicheng</div>
+                 <div><i class="fas fa-hotel mr-2 highlight-blue"></i> <strong>住宿 Hotel:</strong> 东城区 Dongcheng, 近 `地铁5号线` 灯市口 Dengshikou Station</div>
+                 <div><i class="fas fa-plane-arrival mr-2 highlight-green"></i> <strong>抵达 Arrival:</strong> 6月6日 07:15 @ PEK (私人接送 Private Transfer)</div>
+                 <div><i class="fas fa-plane-departure mr-2 highlight-yellow"></i> <strong>离开 Departure:</strong> 6月12日 (公共交通 Public Transport to PEK)</div>
+                 <div><i class="fas fa-utensils mr-2 highlight-pink"></i> <strong>用餐 Meals:</strong> 含早午晚餐推荐 Breakfast/Lunch/Dinner Recs Included</div>
+                 <div><i class="fas fa-ticket-alt mr-2 highlight-blue"></i> <strong>提示 Tip:</strong> 主要景点需提前预约! Book major sites in advance!</div>
+             </div>
+         </div>
+    </section>
+
+    <!-- Itinerary Options Toggle (Placeholder - requires JS for real toggle) -->
+    <div class="text-center my-8">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2 font-['Noto Sans SC']">行程选择</h2>
+        <p class="sub-heading-en">Itinerary Options</p>
+        <!-- Add buttons or tabs here later if implementing interactive toggle -->
+    </div>
+
+
+    <!-- === ITINERARY 1: CLASSIC LANDMARKS & CULTURE === -->
+    <section class="my-12 md:my-16 motion-div" id="itinerary-1">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 font-['Noto Sans SC']">行程一: 经典地标与文化 <span class="sub-heading-en text-2xl"> / Option 1: Classic & Culture</span></h2>
+
+        <!-- Day 1 -->
+        <div class="neobrutalism-card neobrutalism-border relative overflow-hidden">
+            <div class="day-number blue">1</div>
+            <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 1 / 周五 <span class="sub-heading-en text-lg"> - 抵达 & 初识京城 Arrival & First Look</span></h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-plane-arrival"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">07:15 - 09:25</div>
+                            <div class="timeline-title">抵达 PEK & 早餐</div>
+                            <div class="timeline-subtitle">Arrival & Airport Breakfast</div>
+                            <div class="timeline-details">入境取行李 (Immigration/Baggage ~1.5h), 机场早餐 (Breakfast ~40m).</div>
                         </div>
-                        <p><i class="fas fa-utensils highlight"></i> 12:10-13:40 (90m) 午餐 | <span class="small-accent">Lunch</span></p>
-                        <p><i class="fas fa-key highlight"></i> 13:40-14:00 办理入住 | <span class="small-accent">Check-in</span></p>
-                         <div class="activity">
-                            <h4><span class="highlight">中国国家博物馆</span> <span class="small-accent">National Museum</span> (3h)</h4>
-                            <p><i class="fas fa-subway highlight"></i> 交通: `5号线` 灯市口 → **东单** → `1号线` 天安门东 (约30m, 3km) | <span class="small-accent">Metro: L5->Dongdan->L1 Tian'anmen East (~30m, 3km)</span></p>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-car"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">09:25 - 11:30</div>
+                            <div class="timeline-title">私人接送 & 酒店寄存</div>
+                            <div class="timeline-subtitle">Private Transfer & Luggage Drop-off</div>
+                            <div class="timeline-details">商务车前往东城区灯市口酒店 (Transfer ~1h20m), 办理行李寄存 (Hotel Luggage Storage ~45m).</div>
                         </div>
-                        <p><i class="fas fa-concierge-bell highlight"></i> 17:30-19:20 (110m) 晚餐 | <span class="small-accent">Dinner</span></p>
                     </div>
-                </motion.div>
-            </article>
-
-            <!-- Day 2 -->
-            <article class="day-schedule" data-day="2">
-                 <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <h3 class="day-title">DAY 2 <span class="highlight huge-number">②</span> <span class="small-accent">SQUARE & PALACE AREA</span></h3>
-                    <div class="content-block">
-                        <!-- ... Day 2 Details ... -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">11:30 - 13:00 (1.5h)</div>
+                            <div class="timeline-title">午餐 @ 王府井</div>
+                            <div class="timeline-subtitle">Lunch near Wangfujing</div>
+                            <div class="timeline-details">推荐: 四季民福烤鸭, 局气, 或附近便餐.</div>
+                        </div>
                     </div>
-                 </motion.div>
-            </article>
-
-            <!-- ... More Days (3-7) ... -->
-
-        </section>
-
-        <!-- Itinerary Plan 2 Section (Optional) -->
-        <!-- <section id="plan2" class="itinerary-plan"> ... </section> -->
-
-        <!-- Chart Section (Optional) -->
-        <section class="visualization">
-             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }}>
-                <h3 class="section-title highlight">行程概览 <span class="small-accent">OVERVIEW</span></h3>
-                <div class="chart-container">
-                    <!-- Canvas for Chart.js or div for ApexCharts -->
-                    <canvas id="timeAllocationChart"></canvas>
-                    <p class="small-accent chart-caption">每日游玩 vs 交通 vs 用餐时间比例 (示例) | <span class="small-accent">Daily Time Allocation (Sample)</span></p>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-walking"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">13:00 - 14:00 (1h)</div>
+                            <div class="timeline-title">漫步王府井大街</div>
+                            <div class="timeline-subtitle">Stroll Wangfujing Street</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-key"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">14:00 - 15:00 (1h)</div>
+                            <div class="timeline-title">酒店 Check-in & 休整</div>
+                            <div class="timeline-subtitle">Hotel Check-in & Rest</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">15:00 - 17:30 (2.5h)</div>
+                            <div class="timeline-title">中国国家博物馆</div>
+                            <div class="timeline-subtitle">National Museum of China</div>
+                            <div class="timeline-details"><strong class="highlight-pink">需预约 Book Ahead!</strong> 交通: <code>地铁5号线</code> (灯市口→<strong>东单</strong>) → <code>1号线</code> (→天安门东站) | ~25 min | ~3 km. 游玩 ~2-2.5h.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">晚餐 @ 前门/大栅栏</div>
+                            <div class="timeline-subtitle">Dinner near Qianmen/Dashilan</div>
+                             <div class="timeline-details">推荐: 都一处烧麦, 便宜坊烤鸭, 老字号小吃.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">20:50 onwards</div>
+                            <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                            <div class="timeline-details">交通: <code>地铁2号线</code> (前门→<strong>崇文门</strong>) → <code>5号线</code> (→灯市口站) | ~25 min | ~4 km.</div>
+                        </div>
+                    </div>
                 </div>
-             </motion.div>
-        </section>
+            </div>
+        </div>
 
-    </main>
+        <!-- Day 2 -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number pink">2</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 2 / 周六 <span class="sub-heading-en text-lg"> - 皇家气派 & 城市中心 Imperial & Center</span></h3>
+                 <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">08:00 - 08:40 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">09:10 - 10:10 (1h)</div>
+                            <div class="timeline-title">天安门广场</div>
+                            <div class="timeline-subtitle">Tiananmen Square</div>
+                            <div class="timeline-details"><strong class="highlight-pink">需预约 Book Ahead!</strong> 交通: <code>地铁5号线</code> (灯市口→<strong>东单</strong>) → <code>1号线</code> (→天安门东/西站) | ~20 min | ~3 km.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-gopuram"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">10:10 - 14:10 (4h)</div>
+                            <div class="timeline-title">故宫博物院</div>
+                            <div class="timeline-subtitle">Forbidden City</div>
+                             <div class="timeline-details"><strong class="highlight-pink">需预约 Book Ahead!</strong> 游览中轴线及选定宫殿. 北门(神武门)出.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">14:10 - 15:40 (1.5h)</div>
+                             <div class="timeline-title">午餐 @ 故宫北门/景山附近</div>
+                             <div class="timeline-subtitle">Lunch near Forbidden City North Gate / Jingshan</div>
+                             <div class="timeline-details">推荐: 角楼餐厅, 附近小馆.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-mountain"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">15:40 - 17:10 (1.5h)</div>
+                            <div class="timeline-title">景山公园</div>
+                            <div class="timeline-subtitle">Jingshan Park</div>
+                            <div class="timeline-details">从故宫神武门步行即达. 登顶俯瞰故宫全景.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">晚餐 @ 后海/什刹海/鼓楼</div>
+                            <div class="timeline-subtitle">Dinner near Houhai/Shichahai/Drum Tower</div>
+                            <div class="timeline-details">推荐: 烤肉季, 鼓楼姚记炒肝, 南门涮肉.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">20:50 onwards</div>
+                             <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                            <div class="timeline-details">交通: <code>地铁8号线</code> (什刹海→<strong>南锣鼓巷</strong>) → <code>6号线</code> (→<strong>东四</strong>) → <code>5号线</code> (→灯市口站) | ~30 min | ~4 km.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <footer class="main-footer">
-        <p class="small-accent">行程规划基于估算，请以实际情况为准 | <span class="small-accent">Itinerary based on estimates.</span></p>
+        <!-- Day 3 -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number green">3</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 3 / 周日 <span class="sub-heading-en text-lg"> - 祭天祈福 & 藏传梵音 Heaven & Temple</span></h3>
+                 <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">08:30 - 09:10 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-place-of-worship"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">09:40 - 12:40 (3h)</div>
+                            <div class="timeline-title">天坛公园</div>
+                            <div class="timeline-subtitle">Temple of Heaven</div>
+                             <div class="timeline-details">交通: <code>地铁5号线</code> (灯市口→天坛东门站) | ~15 min | ~5 km. 建议买联票.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">12:40 - 14:10 (1.5h)</div>
+                            <div class="timeline-title">午餐 @ 天坛附近</div>
+                            <div class="timeline-subtitle">Lunch near Temple of Heaven</div>
+                            <div class="timeline-details">推荐: 老磁器口豆汁店, 家常菜馆.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-synagogue"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">14:40 - 16:10 (1.5h)</div>
+                            <div class="timeline-title">雍和宫</div>
+                            <div class="timeline-subtitle">Lama Temple</div>
+                             <div class="timeline-details">交通: <code>地铁5号线</code> (天坛东门→雍和宫站) | ~20 min | ~8 km.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">16:10 - 17:40 (1.5h)</div>
+                            <div class="timeline-title">孔庙和国子监博物馆</div>
+                            <div class="timeline-subtitle">Confucius Temple & Guozijian Museum</div>
+                            <div class="timeline-details">从雍和宫步行约 10-15 min.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-store"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">17:40 - 19:00 (1h 20m)</div>
+                            <div class="timeline-title">逛五道营胡同</div>
+                            <div class="timeline-subtitle">Explore Wudaoying Hutong</div>
+                             <div class="timeline-details">从国子监步行即达.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">晚餐 @ 雍和宫/五道营/簋街</div>
+                            <div class="timeline-subtitle">Dinner near Yonghe Temple/Wudaoying/Gui Jie</div>
+                            <div class="timeline-details">推荐: 素食, 云南菜, 或簋街麻小.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">20:50 onwards</div>
+                             <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                            <div class="timeline-details">交通: <code>地铁5号线</code> (雍和宫→灯市口站) | ~10 min | ~3 km.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 (Monday - Museum Closure Day) -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number blue">4</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 4 / 周一 <span class="sub-heading-en text-lg"> - 水畔漫步 & 王府探秘 Lake & Mansion (Museums Closed)</span></h3>
+                 <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">09:00 - 09:40 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-water"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">10:10 - 13:00 (2h 50m)</div>
+                            <div class="timeline-title">什刹海 & 后海 & 烟袋斜街</div>
+                            <div class="timeline-subtitle">Shichahai, Houhai & Yandai Xiejie</div>
+                            <div class="timeline-details">交通: <code>地铁5号线</code> (灯市口→<strong>东四</strong>) → <code>6号线</code> (→<strong>南锣鼓巷</strong>) → <code>8号线</code> (→什刹海站) | ~25 min | ~4 km. 可选乘摇橹船.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">13:00 - 14:30 (1.5h)</div>
+                            <div class="timeline-title">午餐 @ 什刹海/烟袋斜街附近</div>
+                            <div class="timeline-subtitle">Lunch near Shichahai/Yandai Xiejie</div>
+                            <div class="timeline-details">推荐: 九门小吃, 银锭桥畔餐馆.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-building-columns"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">14:30 - 17:00 (2.5h)</div>
+                             <div class="timeline-title">恭王府</div>
+                            <div class="timeline-subtitle">Prince Gong's Mansion</div>
+                            <div class="timeline-details">从什刹海步行约 15-20 min.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-road"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">17:00 - 19:00 (2h)</div>
+                             <div class="timeline-title">南锣鼓巷</div>
+                            <div class="timeline-subtitle">Nanluoguxiang</div>
+                             <div class="timeline-details">从恭王府步行约 20-30 min. 可逛周边胡同.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">晚餐 @ 南锣鼓巷/交道口</div>
+                            <div class="timeline-subtitle">Dinner near Nanluoguxiang/Jiaodaokou</div>
+                             <div class="timeline-details">推荐: 过客, 铃木食堂, 胡同创意菜.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">20:50 onwards</div>
+                            <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                            <div class="timeline-details">交通: <code>地铁6号线</code> (南锣鼓巷→<strong>东四</strong>) → <code>5号线</code> (→灯市口站) | ~20 min | ~3 km.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number pink">5</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 5 / 周二 <span class="sub-heading-en text-lg"> - 皇家园林 & 艺术熏陶 Garden & Art</span></h3>
+                 <div class="timeline">
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">08:30 - 09:10 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-tree"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">09:40 - 12:40 (3h)</div>
+                             <div class="timeline-title">北海公园</div>
+                            <div class="timeline-subtitle">Beihai Park</div>
+                            <div class="timeline-details">交通: <code>地铁5号线</code> (灯市口→<strong>东四</strong>) → <code>6号线</code> (→北海北站) | ~20 min | ~4 km. 建议买联票, 可泛舟.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">12:40 - 14:10 (1.5h)</div>
+                            <div class="timeline-title">午餐 @ 北海附近</div>
+                            <div class="timeline-subtitle">Lunch near Beihai Park</div>
+                             <div class="timeline-details">推荐: 仿膳饭庄, 老北京餐馆.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-landmark"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">14:40 - 17:10 (2.5h)</div>
+                            <div class="timeline-title">首都博物馆</div>
+                            <div class="timeline-subtitle">Capital Museum</div>
+                            <div class="timeline-details"><strong class="highlight-pink">需预约 Book Ahead!</strong> 交通: <code>地铁6号线</code> (北海北→<strong>白石桥南</strong>) → <code>9号线</code> (→<strong>军事博物馆</strong>) → <code>1号线</code> (→木樨地站) | ~50 min | ~8 km.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">晚餐 @ 西单/金融街</div>
+                            <div class="timeline-subtitle">Dinner near Xidan/Financial Street</div>
+                             <div class="timeline-details">推荐: 商场内餐厅或周边特色餐馆.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">20:50 onwards</div>
+                             <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                            <div class="timeline-details">交通: <code>地铁1号线</code> (西单/复兴门→<strong>东单</strong>) → <code>5号线</code> (→灯市口站) | ~25 min | ~6 km.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 6 -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number green">6</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 6 / 周三 <span class="sub-heading-en text-lg"> - 文化拾遗 & 休闲购物 Culture & Shopping</span></h3>
+                 <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">09:00 - 09:40 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-mug-hot"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">10:10 - 11:40 (1.5h)</div>
+                             <div class="timeline-title">老舍茶馆 或 前门大街/大栅栏</div>
+                            <div class="timeline-subtitle">Lao She Teahouse or Qianmen/Dashilan</div>
+                             <div class="timeline-details">交通: <code>地铁5号线</code> (灯市口→<strong>崇文门</strong>) → <code>2号线</code> (→前门站) | ~20 min | ~4 km. 品茶/看戏(需购票)或购物.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">11:40 - 13:10 (1.5h)</div>
+                             <div class="timeline-title">午餐 @ 前门/大栅栏</div>
+                            <div class="timeline-subtitle">Lunch near Qianmen/Dashilan</div>
+                             <div class="timeline-details">推荐: 门框胡同卤煮, 爆肚冯, 鲜鱼口小吃.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-shopping-bag"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">14:00 - 17:00 (3h)</div>
+                            <div class="timeline-title">西单商业街</div>
+                            <div class="timeline-subtitle">Xidan Commercial Street</div>
+                             <div class="timeline-details">交通: <code>地铁2号线</code> (前门→<strong>宣武门</strong>) → <code>4号线</code> (→西单站) | ~20 min | ~4 km. 自由购物.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">晚餐 (推荐北京烤鸭)</div>
+                            <div class="timeline-subtitle">Dinner (Peking Duck Recommended)</div>
+                             <div class="timeline-details">推荐: 大董, 全聚德, 或其他烤鸭店.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">20:50 onwards</div>
+                             <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                             <div class="timeline-details">根据晚餐地点就近乘地铁返回.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 7 -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number blue">7</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 7 / 周四 <span class="sub-heading-en text-lg"> - 告别京城 Departure</span></h3>
+                 <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">~08:30 - 09:10 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">~09:10 - 11:00 (1h 50m)</div>
+                             <div class="timeline-title">自由活动/整理行李</div>
+                            <div class="timeline-subtitle">Free Time / Packing</div>
+                             <div class="timeline-details">根据航班时间决定上午活动.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">~11:00 - 12:30 (1.5h)</div>
+                             <div class="timeline-title">午餐 @ 酒店附近</div>
+                            <div class="timeline-subtitle">Lunch near Hotel</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-sign-out-alt"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">~12:30</div>
+                             <div class="timeline-title">酒店 Check-out</div>
+                            <div class="timeline-subtitle">Hotel Check-out</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-plane-departure"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">~12:30 - 14:00 (1.5h)</div>
+                            <div class="timeline-title">前往首都国际机场 PEK</div>
+                            <div class="timeline-subtitle">Head to PEK Airport</div>
+                             <div class="timeline-details">公共交通: <code>地铁5号线</code> (灯市口→<strong>雍和宫</strong>) → <code>2号线</code> (→<strong>东直门</strong>) → <code>首都机场线</code> (→T3/T2) | ~1.5h | ~30 km.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">14:00 onwards</div>
+                             <div class="timeline-title">办理登机 & 安检</div>
+                            <div class="timeline-subtitle">Check-in & Security</div>
+                            <div class="timeline-details">建议至少提前 2-3 小时抵达机场.</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- === ITINERARY 2: HUTONG LIFE & ARTS EXPLORATION === -->
+    <section class="my-12 md:my-16 motion-div" id="itinerary-2">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 font-['Noto Sans SC']">行程二: 胡同生活与艺文 <span class="sub-heading-en text-2xl"> / Option 2: Hutong & Arts</span></h2>
+
+        <!-- Day 1 (Arts Focus) -->
+        <div class="neobrutalism-card neobrutalism-border relative overflow-hidden">
+            <div class="day-number pink">1</div>
+            <div class="content-container">
+                 <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 1 / 周五 <span class="sub-heading-en text-lg"> - 抵达 & 艺术初探 Arrival & Art Intro</span></h3>
+                 <div class="timeline">
+                    <!-- Arrival, Breakfast, Transfer, Check-in as in Itin 1 -->
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-palette"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">15:00 - 17:30 (2.5h)</div>
+                            <div class="timeline-title">中国美术馆</div>
+                            <div class="timeline-subtitle">National Art Museum of China</div>
+                            <div class="timeline-details"><strong class="highlight-pink">需预约 Book Ahead!</strong> 交通: <code>地铁5号线</code> (灯市口→<strong>东四</strong>) → <code>6号线</code> (→中国美术馆站) | ~15 min | ~2 km.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-archway"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">17:30 - 19:00 (1.5h)</div>
+                            <div class="timeline-title">漫步隆福寺街区</div>
+                            <div class="timeline-subtitle">Explore Longfu Temple Area</div>
+                            <div class="timeline-details">步行前往, 文创新街区.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">晚餐 @ 隆福寺/王府井</div>
+                            <div class="timeline-subtitle">Dinner near Longfu Temple/Wangfujing</div>
+                            <div class="timeline-details">推荐: 隆福寺内餐厅, 黑芝麻胡同私房菜.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">20:50 onwards</div>
+                            <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                            <div class="timeline-details">步行或 <code>地铁8号线</code> (中国美术馆→<strong>金鱼胡同</strong>) 换 <code>5号线</code>.</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Day 2 (Imperial Roots Focus) -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number green">2</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 2 / 周六 <span class="sub-heading-en text-lg"> - 紫禁城 & 皇城根下 Forbidden City & Roots</span></h3>
+                 <div class="timeline">
+                     <!-- Breakfast, Tiananmen, Forbidden City, Lunch as in Itin 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-leaf"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">15:40 - 18:00 (2h 20m)</div>
+                            <div class="timeline-title">皇城根遗址公园 & 菖蒲河公园</div>
+                            <div class="timeline-subtitle">Imperial City Wall Relics Park & Changpu River Park</div>
+                            <div class="timeline-details">从故宫东华门附近开始步行.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                             <div class="timeline-title">晚餐 @ 东华门/南池子</div>
+                            <div class="timeline-subtitle">Dinner near Donghuamen/Nanchizi</div>
+                             <div class="timeline-details">推荐: TRB Hutong (需预定), 附近有格调餐吧.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">20:50 onwards</div>
+                            <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                            <div class="timeline-details">步行至 `地铁1号线` 天安门东站或乘公交返回.</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Day 3 (Hutong Focus) -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number blue">3</div>
+             <div class="content-container">
+                 <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 3 / 周日 <span class="sub-heading-en text-lg"> - 钟鼓声声 & 胡同漫游 Bell Tower & Hutong Wandering</span></h3>
+                 <div class="timeline">
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">09:00 - 09:40 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-bell"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">10:10 - 11:40 (1.5h)</div>
+                             <div class="timeline-title">钟鼓楼</div>
+                            <div class="timeline-subtitle">Bell and Drum Towers</div>
+                             <div class="timeline-details">交通: <code>地铁5号线</code>→<code>6号线</code>→<code>8号线</code> (→什刹海站) 步行 | ~30 min. 可登楼.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">11:40 - 13:10 (1.5h)</div>
+                             <div class="timeline-title">午餐 @ 鼓楼附近</div>
+                            <div class="timeline-subtitle">Lunch near Drum Tower</div>
+                             <div class="timeline-details">推荐: 姚记炒肝, 赵府街副食店.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-bicycle"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">13:10 - 16:30 (3h 20m)</div>
+                             <div class="timeline-title">深度胡同游</div>
+                            <div class="timeline-subtitle">Deep Hutong Exploration</div>
+                            <div class="timeline-details">步行或骑行探索国子监街, 方家胡同, 北锣鼓巷等.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-synagogue"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">16:30 - 17:30 (1h)</div>
+                            <div class="timeline-title">雍和宫 (可选)</div>
+                            <div class="timeline-subtitle">Lama Temple (Optional)</div>
+                            <div class="timeline-details">从国子监街步行可达.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                             <div class="timeline-title">晚餐 @ 簋街</div>
+                            <div class="timeline-subtitle">Dinner at Gui Jie</div>
+                            <div class="timeline-details">推荐: 胡大饭馆, 花家怡园.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">20:50 onwards</div>
+                            <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                             <div class="timeline-details">交通: <code>地铁5号线</code> (北新桥/雍和宫→灯市口站) | ~15 min.</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+         <!-- Day 4 (Residences Focus - Monday) -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number pink">4</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 4 / 周一 <span class="sub-heading-en text-lg"> - 水畔园林 & 文人故居 Garden & Residences (Museums Closed)</span></h3>
+                 <div class="timeline">
+                     <!-- Breakfast, Beihai Park, Lunch as in Itin 1 -->
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-home"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">14:40 - 15:40 (1h)</div>
+                             <div class="timeline-title">宋庆龄故居</div>
+                            <div class="timeline-subtitle">Former Residence of Soong Ching Ling</div>
+                             <div class="timeline-details">从北海北门步行/骑行至后海北沿 ~20-30 min.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-pen-nib"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">15:40 - 17:00 (1h 20m)</div>
+                            <div class="timeline-title">郭沫若故居 (如开放)</div>
+                            <div class="timeline-subtitle">Former Residence of Guo Moruo (if open)</div>
+                            <div class="timeline-details">从宋庆龄故居步行至前海西街 ~15 min.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-glass-cheers"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">17:00 - 19:00 (2h)</div>
+                            <div class="timeline-title">什刹海周边小憩</div>
+                            <div class="timeline-subtitle">Relax near Shichahai</div>
+                             <div class="timeline-details">湖边漫步或找酒吧/茶馆休息.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                             <div class="timeline-title">晚餐 @ 什刹海/地安门</div>
+                            <div class="timeline-subtitle">Dinner near Shichahai/Di'anmen</div>
+                             <div class="timeline-details">推荐: 峨嵋酒家, 华天延吉餐厅.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">20:50 onwards</div>
+                            <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                            <div class="timeline-details">交通: <code>地铁8号线</code>→<code>6号线</code>→<code>5号线</code> | ~30 min.</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+         <!-- Day 5 (South City Focus) -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number green">5</div>
+             <div class="content-container">
+                 <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 5 / 周二 <span class="sub-heading-en text-lg"> - 天坛晨练 & 南城风情 Temple of Heaven & South City</span></h3>
+                 <div class="timeline">
+                    <!-- Breakfast, Temple of Heaven, Lunch as in Itin 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-archway"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">14:10 - 15:40 (1.5h)</div>
+                             <div class="timeline-title">北京古代建筑博物馆</div>
+                            <div class="timeline-subtitle">Beijing Ancient Architecture Museum</div>
+                             <div class="timeline-details">交通: <code>地铁5号线</code>→<code>7号线</code> (→<strong>虎坊桥</strong>) 步行 | ~35 min. 位于先农坛内.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-mosque"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">15:40 - 17:30 (1h 50m)</div>
+                            <div class="timeline-title">牛街区域 & 礼拜寺外观</div>
+                            <div class="timeline-subtitle">Niujie Area & Mosque Exterior</div>
+                            <div class="timeline-details">从虎坊桥乘公交或打车 ~15-20 min. 感受穆斯林社区.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-cookie-bite"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">17:30 - 19:00</div>
+                            <div class="timeline-title">品尝牛街小吃</div>
+                            <div class="timeline-subtitle">Taste Niujie Snacks</div>
+                            <div class="timeline-details">推荐: 洪记小吃, 聚宝源酱牛肉, 白记年糕等. (可作为晚餐)</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">晚餐 (如需)</div>
+                            <div class="timeline-subtitle">Dinner (if needed)</div>
+                             <div class="timeline-details">推荐: 聚宝源涮肉(需等位) 或返回他处用餐.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">20:50 onwards</div>
+                            <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                             <div class="timeline-details">从牛街乘公交至 <code>地铁7号线</code> 广安门内站换乘返回.</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+         <!-- Day 6 (Art/Architecture & Farewell) -->
+        <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+             <div class="day-number blue">6</div>
+             <div class="content-container">
+                <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 6 / 周三 <span class="sub-heading-en text-lg"> - 艺术设计 & 告别晚宴 Art/Arch & Farewell</span></h3>
+                 <div class="timeline">
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">09:00 - 09:40 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-theater-masks"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">10:10 - 11:40 (1.5h)</div>
+                             <div class="timeline-title">国家大剧院</div>
+                            <div class="timeline-subtitle">National Centre for the Performing Arts</div>
+                            <div class="timeline-details">交通: <code>地铁5号线</code>→<code>1号线</code> (→天安门西站) | ~20 min. 外观或购票参观.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">11:40 - 13:10 (1.5h)</div>
+                            <div class="timeline-title">午餐 @ 国家大剧院/西单附近</div>
+                            <div class="timeline-subtitle">Lunch near NCPA/Xidan</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-tree"></i></div> <!-- Icon for Park/Temple as alternative -->
+                        <div class="timeline-content">
+                            <div class="timeline-time">13:10 - 16:30 (3h 20m)</div>
+                             <div class="timeline-title">下午活动选择</div>
+                            <div class="timeline-subtitle">Afternoon Activity Choice</div>
+                            <div class="timeline-details">
+                                Option A (Art): **798艺术区** (较远, ~1-1.5h 单程交通). <br/>
+                                Option B (Park): **陶然亭公园** (`地铁4号线` 陶然亭站, ~35 min 交通). <br/>
+                                Option C (Temple): **白云观** (`地铁1号线` 木樨地站+步行/公交, ~30 min 交通).
+                            </div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">19:00 - 20:50 (1h 50m)</div>
+                            <div class="timeline-title">告别晚餐</div>
+                            <div class="timeline-subtitle">Farewell Dinner</div>
+                             <div class="timeline-details">推荐: 厲家菜, 花园餐厅, 或再吃一次烤鸭.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-subway"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">20:50 onwards</div>
+                            <div class="timeline-title">返回酒店</div>
+                            <div class="timeline-subtitle">Return to Hotel</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Day 7 (Departure) -->
+         <div class="neobrutalism-card neobrutalism-border relative overflow-hidden motion-div">
+            <div class="day-number pink">7</div>
+             <div class="content-container">
+                 <h3 class="text-2xl font-bold mb-6 font-['Noto Sans SC']">Day 7 / 周四 <span class="sub-heading-en text-lg"> - 轻松告别 Departure</span></h3>
+                 <!-- Departure details same as Itinerary 1 -->
+                 <div class="timeline">
+                      <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-coffee"></i></div>
+                        <div class="timeline-content"><div class="timeline-time">~08:30 - 09:10 (40m)</div><div class="timeline-title">早餐 Breakfast</div></div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">~09:10 - 11:00 (1h 50m)</div>
+                             <div class="timeline-title">自由活动/整理行李</div>
+                            <div class="timeline-subtitle">Free Time / Packing</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">~11:00 - 12:30 (1.5h)</div>
+                             <div class="timeline-title">午餐 @ 酒店附近</div>
+                            <div class="timeline-subtitle">Lunch near Hotel</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-sign-out-alt"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">~12:30</div>
+                             <div class="timeline-title">酒店 Check-out</div>
+                            <div class="timeline-subtitle">Hotel Check-out</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-plane-departure"></i></div>
+                        <div class="timeline-content">
+                             <div class="timeline-time">~12:30 - 14:00 (1.5h)</div>
+                            <div class="timeline-title">前往首都国际机场 PEK</div>
+                            <div class="timeline-subtitle">Head to PEK Airport</div>
+                             <div class="timeline-details">公共交通: <code>地铁5号线</code> (灯市口→<strong>雍和宫</strong>) → <code>2号线</code> (→<strong>东直门</strong>) → <code>首都机场线</code> (→T3/T2) | ~1.5h | ~30 km.</div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">14:00 onwards</div>
+                             <div class="timeline-title">办理登机 & 安检</div>
+                            <div class="timeline-subtitle">Check-in & Security</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Notes Section -->
+    <section class="my-12 md:my-16 motion-div" id="notes-section">
+         <div class="neobrutalism-card neobrutalism-border">
+             <h2 class="text-2xl md:text-3xl font-bold mb-4 font-['Noto Sans SC']">重要提示 <span class="sub-heading-en text-xl"> / Important Notes</span></h2>
+             <ul class="list-disc list-inside space-y-2">
+                 <li><i class="fas fa-calendar-check mr-2 highlight-pink"></i> **提前预约 Booking:** 故宫, 国博, 首博, 天安门广场等务必提前7天左右通过官方渠道实名预约.</li>
+                 <li><i class="fas fa-calendar-times mr-2 highlight-blue"></i> **周一闭馆 Monday Closures:** 主要博物馆通常周一闭馆 (June 9th). 请注意行程安排.</li>
+                 <li><i class="fas fa-shoe-prints mr-2 highlight-green"></i> **步行量 Walking:** 北京景点面积大, 步行多, 请穿舒适的鞋子.</li>
+                 <li><i class="fas fa-subway mr-2 highlight-yellow"></i> **交通 Metro:** 地铁是主要交通方式. 高峰期可能拥挤. 准备好交通卡或App.</li>
+                 <li><i class="fas fa-clock mr-2 highlight-pink"></i> **时间估算 Estimates:** 所有时间均为估算, 请根据实际情况灵活调整.</li>
+                 <li><i class="fas fa-map-signs mr-2 highlight-blue"></i> **灵活调整 Flexibility:** 行程可根据个人兴趣和体力进行调整.</li>
+             </ul>
+         </div>
+    </section>
+
+    <footer class="text-center text-gray-500 text-sm mt-16 mb-8">
+        行程规划 & 网页设计 by AI Assistant | Tour Plan & Web Design by AI Assistant
     </footer>
 
-    <!-- Include JavaScript file -->
-    <script src="script.js"></script>
+    <!-- Add JS to apply Framer Motion animations -->
+     <script>
+        // Basic script to wrap sections for animation
+        // For a real application, use a framework like React/Vue for cleaner component management
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.motion-div');
+            sections.forEach(section => {
+                // This is a simplified approach. Ideally, you'd use React/Vue components.
+                // Here, we just ensure the Framer Motion library is loaded and
+                // rely on its `whileInView` prop added directly in the HTML.
+                // If more complex scroll-linked animations (like Apple's site) are needed,
+                // you'd use `useScroll` and `useTransform` within a proper JS/React setup.
+            });
+        });
+    </script>
+
 </body>
 </html>

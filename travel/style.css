@@ -1,0 +1,142 @@
+/* Basic Setup */
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "PingFang SC", "Microsoft YaHei"; /* Sans-serif, prioritizing system fonts */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.highlight {
+    color: #FFA500; /* Bright Orange */
+}
+
+.small-accent {
+    font-size: 0.8em; /* Smaller English text */
+    color: #AAAAAA; /* Light gray for accents */
+    font-weight: normal;
+    display: inline-block; /* Ensure proper spacing */
+    margin-left: 5px;
+}
+
+/* Header Styling */
+.main-header {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.huge-title {
+    font-size: clamp(4rem, 15vw, 10rem); /* Responsive huge font */
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: -0.2em; /* Overlap for effect */
+    letter-spacing: -0.05em; /* Tighten spacing */
+}
+
+.subtitle {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/* Itinerary Section */
+.itinerary-plan {
+    padding: 2rem 1rem;
+}
+
+.plan-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.day-schedule {
+    margin-bottom: 4rem;
+}
+
+.day-title {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(255, 165, 0, 0.3); /* Orange gradient effect bottom border */
+    padding-bottom: 0.5rem;
+}
+
+.huge-number {
+     font-size: clamp(3rem, 10vw, 6rem); /* Very large number */
+     font-weight: 900;
+     line-height: 0.8;
+     display: inline-block;
+     vertical-align: middle; /* Align with text */
+     margin: 0 0.2em;
+}
+
+.content-block {
+    border: 2px solid #FFA500;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.5); /* Slight dark background */
+    box-shadow: 6px 6px 0px #FFA500; /* Neobrutalism shadow */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+}
+
+.content-block:hover {
+     box-shadow: 8px 8px 0px #FF8C00; /* Darker orange on hover */
+}
+
+.activity {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid rgba(255, 165, 0, 0.5); /* Orange gradient effect left border */
+}
+
+.activity h4 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+}
+
+.activity p {
+    margin: 0.2rem 0;
+    font-size: 0.9em;
+}
+
+/* Icons */
+.fas {
+    margin-right: 8px;
+    width: 1.2em; /* Consistent icon width */
+    text-align: center;
+}
+
+/* Chart Section */
+.visualization {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+.section-title {
+     font-size: clamp(2rem, 6vw, 3.5rem);
+     margin-bottom: 2rem;
+}
+.chart-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 2px dashed rgba(255, 165, 0, 0.4); /* Dashed orange border */
+}
+.chart-caption {
+    margin-top: 1rem;
+    font-size: 0.9em;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 165, 0, 0.2);
+}
+
+/* Add more styles for specific elements, typography, gradients, etc. */

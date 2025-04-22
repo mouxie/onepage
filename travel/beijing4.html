@@ -8,11 +8,10 @@
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Framer Motion CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/11.0.8/motion.umd.min.js" integrity="sha512-RdJ0Pwb6yVOXIeQDGjIN04LPOcU+Oh+9YHs26jXhmjEZj0ck/AWJvWWubrMPVUe9k9AJ3M7jA8FqWfB90T7rWg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- NOTE: Removed the problematic Framer Motion UMD script tag here -->
 
     <style>
-        /* Custom Styles */
+        /* Custom Styles (same as before) */
         body {
             background-color: #000000;
             color: #ffffff;
@@ -38,7 +37,7 @@
         .bar { background-color: #F97316; width: 15px; border-radius: 2px; opacity: 0.7; }
         .activity-item { margin-bottom: 0.75rem; padding-left: 0.5rem; border-left: 2px solid #374151; /* Subtle left border */}
         .activity-item p { margin-bottom: 0.25rem; }
-        .activity-icon { width: 1rem; /* w-4 */ margin-right: 0.5rem; /* mr-2 */ color: #F97316; text-align: center; }
+        .activity-icon { width: 1rem; /* w-4 */ margin-right: 0.5rem; /* mr-2 */ color: #F97316; text-align: center; display: inline-block; } /* Added display: inline-block */
         .duration-text { color: #9CA3AF; /* gray-400 */ font-size: 0.75rem; /* text-xs */ font-style: italic; margin-left: 0.5rem;}
         .travel-info { color: #6b7280; /* gray-500 */ font-size: 0.75rem; margin-top: 0.25rem; padding-left: 1.5rem; /* Indent travel info */}
         .meal-recommendation { color: #f59e0b; /* amber-500 */ font-size: 0.8rem; display: block; margin-top: 0.1rem; padding-left: 1.5rem; }
@@ -67,41 +66,11 @@
         <!-- Bento Grid Start -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
 
-             <!-- Itinerary Option 1: Classic -->
-            <motion.div class="bento-box lg:col-span-1 md:col-span-1"
-                data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.1, "ease": "easeInOut" }'>
-                 <div class="flex items-center mb-4"> <i class="fas fa-landmark text-2xl highlight-orange mr-3"></i> <div> <h2 class="chinese-subtitle">经典 全览</h2> <p class="english-annotation">Classic Highlights</p> </div> </div>
-                <p class="text-sm text-gray-300 mb-4">覆盖北京核心地标，适合首次到访，体验帝都的宏伟与历史底蕴。</p>
-                <div class="flex space-x-2 mb-4"> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">历史 HISTORY</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">文化 CULTURE</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">必去 MUST-SEE</span> </div>
-                <div class="line-graphic !border-orange-500"></div>
-                <p class="text-sm font-semibold text-gray-200">主要景点:</p>
-                <ul class="list-disc list-inside text-sm text-gray-400 space-y-1 mt-2"> <li>故宫 Forbidden City</li> <li>天坛 Temple of Heaven</li> <li>颐和园 Summer Palace</li> <li>八达岭长城 Badaling Great Wall</li> <li>天安门广场 Tian'anmen Square</li> <li>什刹海/胡同 Shichahai/Hutongs</li> </ul>
-                <div class="absolute bottom-0 left-0 right-0 h-24 gradient-orange-bottom pointer-events-none"></div>
-            </motion.div>
+            <!-- Itinerary Option Headers (same as before) -->
+             <motion.div class="bento-box lg:col-span-1 md:col-span-1" data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.1, "ease": "easeInOut" }'> <div class="flex items-center mb-4"> <i class="fas fa-landmark text-2xl highlight-orange mr-3"></i> <div> <h2 class="chinese-subtitle">经典 全览</h2> <p class="english-annotation">Classic Highlights</p> </div> </div> <p class="text-sm text-gray-300 mb-4">覆盖北京核心地标，适合首次到访，体验帝都的宏伟与历史底蕴。</p> <div class="flex space-x-2 mb-4"> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">历史 HISTORY</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">文化 CULTURE</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">必去 MUST-SEE</span> </div> <div class="line-graphic !border-orange-500"></div> <p class="text-sm font-semibold text-gray-200">主要景点:</p> <ul class="list-disc list-inside text-sm text-gray-400 space-y-1 mt-2"> <li>故宫 Forbidden City</li> <li>天坛 Temple of Heaven</li> <li>颐和园 Summer Palace</li> <li>八达岭长城 Badaling Great Wall</li> <li>天安门广场 Tian'anmen Square</li> <li>什刹海/胡同 Shichahai/Hutongs</li> </ul> <div class="absolute bottom-0 left-0 right-0 h-24 gradient-orange-bottom pointer-events-none"></div> </motion.div>
+             <motion.div class="bento-box lg:col-span-1 md:col-span-1" data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.2, "ease": "easeInOut" }'> <div class="flex items-center mb-4"> <i class="fas fa-palette text-2xl highlight-orange mr-3"></i> <div> <h2 class="chinese-subtitle">文化 沉浸</h2> <p class="english-annotation">Cultural Immersion</p> </div> </div> <p class="text-sm text-gray-300 mb-4">深入探索北京的艺术、历史与生活气息，包含博物馆、艺术区与特色街区。</p> <div class="flex space-x-2 mb-4"> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">艺术 ART</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">博物馆 MUSEUM</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">生活 LIFE</span> </div> <div class="line-graphic !border-orange-500"></div> <p class="text-sm font-semibold text-gray-200">特色体验:</p> <ul class="list-disc list-inside text-sm text-gray-400 space-y-1 mt-2"> <li>国家博物馆 National Museum</li> <li>798艺术区 798 Art Zone</li> <li>恭王府 Prince Gong's Mansion</li> <li>雍和宫 Lama Temple</li> <li>胡同探索 Hutong Exploration</li> <li>京剧/杂技 Peking Opera/Acrobatics (Optional)</li> </ul> <div class="absolute bottom-0 left-0 right-0 h-24 gradient-orange-bottom pointer-events-none"></div> </motion.div>
+            <motion.div class="bento-box lg:col-span-1 md:col-span-2 lg:col-span-1" data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.3, "ease": "easeInOut" }'> <div class="flex items-center mb-4"> <i class="fas fa-leaf text-2xl highlight-orange mr-3"></i> <div> <h2 class="chinese-subtitle">自然 闲适</h2> <p class="english-annotation">Nature & Relaxed Pace</p> </div> </div> <p class="text-sm text-gray-300 mb-4">结合经典景点与自然风光，节奏稍缓，包含公园漫步和相对人少的长城段。</p> <div class="flex space-x-2 mb-4"> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">公园 PARK</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">休闲 RELAX</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">风景 SCENERY</span> </div> <div class="line-graphic !border-orange-500"></div> <p class="text-sm font-semibold text-gray-200">放松选择:</p> <ul class="list-disc list-inside text-sm text-gray-400 space-y-1 mt-2"> <li>慕田峪长城 Mutianyu Great Wall</li> <li>颐和园 Summer Palace</li> <li>北海公园 Beihai Park</li> <li>香山/植物园 Fragrant Hills/Botanical Garden</li> <li>奥林匹克森林公园 Olympic Forest Park</li> <li>悠闲胡同漫步 Relaxing Hutong Walk</li> </ul> <div class="absolute bottom-0 left-0 right-0 h-24 gradient-orange-bottom pointer-events-none"></div> </motion.div>
 
-             <!-- Itinerary Option 2: Cultural -->
-            <motion.div class="bento-box lg:col-span-1 md:col-span-1"
-                 data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.2, "ease": "easeInOut" }'>
-                <div class="flex items-center mb-4"> <i class="fas fa-palette text-2xl highlight-orange mr-3"></i> <div> <h2 class="chinese-subtitle">文化 沉浸</h2> <p class="english-annotation">Cultural Immersion</p> </div> </div>
-                <p class="text-sm text-gray-300 mb-4">深入探索北京的艺术、历史与生活气息，包含博物馆、艺术区与特色街区。</p>
-                 <div class="flex space-x-2 mb-4"> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">艺术 ART</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">博物馆 MUSEUM</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">生活 LIFE</span> </div>
-                 <div class="line-graphic !border-orange-500"></div>
-                 <p class="text-sm font-semibold text-gray-200">特色体验:</p>
-                 <ul class="list-disc list-inside text-sm text-gray-400 space-y-1 mt-2"> <li>国家博物馆 National Museum</li> <li>798艺术区 798 Art Zone</li> <li>恭王府 Prince Gong's Mansion</li> <li>雍和宫 Lama Temple</li> <li>胡同探索 Hutong Exploration</li> <li>京剧/杂技 Peking Opera/Acrobatics (Optional)</li> </ul>
-                 <div class="absolute bottom-0 left-0 right-0 h-24 gradient-orange-bottom pointer-events-none"></div>
-            </motion.div>
-
-            <!-- Itinerary Option 3: Relaxed -->
-            <motion.div class="bento-box lg:col-span-1 md:col-span-2 lg:col-span-1"
-                 data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.3, "ease": "easeInOut" }'>
-                 <div class="flex items-center mb-4"> <i class="fas fa-leaf text-2xl highlight-orange mr-3"></i> <div> <h2 class="chinese-subtitle">自然 闲适</h2> <p class="english-annotation">Nature & Relaxed Pace</p> </div> </div>
-                <p class="text-sm text-gray-300 mb-4">结合经典景点与自然风光，节奏稍缓，包含公园漫步和相对人少的长城段。</p>
-                <div class="flex space-x-2 mb-4"> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">公园 PARK</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">休闲 RELAX</span> <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded border border-orange-700/50">风景 SCENERY</span> </div>
-                 <div class="line-graphic !border-orange-500"></div>
-                 <p class="text-sm font-semibold text-gray-200">放松选择:</p>
-                 <ul class="list-disc list-inside text-sm text-gray-400 space-y-1 mt-2"> <li>慕田峪长城 Mutianyu Great Wall</li> <li>颐和园 Summer Palace</li> <li>北海公园 Beihai Park</li> <li>香山/植物园 Fragrant Hills/Botanical Garden</li> <li>奥林匹克森林公园 Olympic Forest Park</li> <li>悠闲胡同漫步 Relaxing Hutong Walk</li> </ul>
-                 <div class="absolute bottom-0 left-0 right-0 h-24 gradient-orange-bottom pointer-events-none"></div>
-            </motion.div>
 
             <!-- Detailed Itinerary 1: Classic Highlights (Detailed & Updated w/ Food) -->
             <motion.div class="bento-box lg:col-span-3 md:col-span-2"
@@ -118,113 +87,72 @@
                 </div>
             </motion.div>
 
-             <!-- Remaining structure (Map, Intensity, Tips, Itinerary 2 & 3 headers) - Itinerary 2 & 3 daily details need similar food integration -->
-            <!-- Placeholder: Map Visualization -->
-            <motion.div class="bento-box lg:col-span-1 md:col-span-1 flex flex-col items-center justify-center"
-                 data-framer-init data-framer-initial='{ "opacity": 0, "scale": 0.8 }' data-framer-while-in-view='{ "opacity": 1, "scale": 1 }' data-framer-viewport='{ "once": true, "amount": 0.5 }' data-framer-transition='{ "duration": 0.5, "delay": 0.4, "ease": "backOut" }'>
-                 <i class="fas fa-map-marked-alt icon-large highlight-orange"></i>
-                 <h3 class="chinese-subtitle mb-2">探索 地图</h3>
-                 <p class="english-annotation mb-4">Explore Map</p>
-                 <p class="text-xs text-gray-500 text-center">（此处可嵌入简易地图或线路示意图）</p>
-                 <p class="text-xs text-gray-500 text-center">(Simple map or route visualization placeholder)</p>
-                 <div class="w-full h-32 mt-4 bg-gray-800 rounded flex items-center justify-center text-gray-600">
-                     <i class="fas fa-drafting-compass fa-2x"></i> <span class="ml-2">线路规划中...</span>
-                 </div>
-            </motion.div>
+            <!-- Map, Intensity, Tips boxes (same as before) -->
+            <motion.div class="bento-box lg:col-span-1 md:col-span-1 flex flex-col items-center justify-center" data-framer-init data-framer-initial='{ "opacity": 0, "scale": 0.8 }' data-framer-while-in-view='{ "opacity": 1, "scale": 1 }' data-framer-viewport='{ "once": true, "amount": 0.5 }' data-framer-transition='{ "duration": 0.5, "delay": 0.4, "ease": "backOut" }'> <i class="fas fa-map-marked-alt icon-large highlight-orange"></i> <h3 class="chinese-subtitle mb-2">探索 地图</h3> <p class="english-annotation mb-4">Explore Map</p> <p class="text-xs text-gray-500 text-center">（此处可嵌入简易地图或线路示意图）</p> <p class="text-xs text-gray-500 text-center">(Simple map or route visualization placeholder)</p> <div class="w-full h-32 mt-4 bg-gray-800 rounded flex items-center justify-center text-gray-600"> <i class="fas fa-drafting-compass fa-2x"></i> <span class="ml-2">线路规划中...</span> </div> </motion.div>
+            <motion.div class="bento-box lg:col-span-1 md:col-span-1" data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.5, "ease": "easeInOut" }'> <div class="flex items-center mb-4"> <i class="fas fa-tachometer-alt text-2xl highlight-orange mr-3"></i> <div> <h3 class="chinese-subtitle">行程 强度</h3> <p class="english-annotation">Itinerary Intensity</p> </div> </div> <p class="text-sm text-gray-300 mb-4">大致每日活动强度参考：</p> <div class="bar-chart"> <div class="bar" style="height: 50%;" title="Day 1: Low-Medium"></div> <div class="bar" style="height: 90%;" title="Day 2: High"></div> <div class="bar" style="height: 75%;" title="Day 3: Medium-High"></div> <div class="bar" style="height: 80%;" title="Day 4: Medium-High"></div> <div class="bar" style="height: 95%;" title="Day 5: Very High"></div> <div class="bar" style="height: 70%;" title="Day 6: Medium"></div> <div class="bar" style="height: 40%;" title="Day 7: Low"></div> </div> <p class="text-xs text-gray-500 text-center mt-2">（强度可视化示意）</p> <p class="text-xs text-gray-500 text-center">(Intensity visualization placeholder)</p> </motion.div>
+             <motion.div class="bento-box lg:col-span-1 md:col-span-2 lg:col-span-1" data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.6, "ease": "easeInOut" }'> <div class="flex items-center mb-4"> <i class="fas fa-info-circle text-2xl highlight-orange mr-3"></i> <div> <h3 class="chinese-subtitle">出行 贴士</h3> <p class="english-annotation">Travel Tips</p> </div> </div> <ul class="space-y-2 text-sm text-gray-300"> <li class="flex items-start"><i class="fas fa-ticket-alt activity-icon"></i>提前预订热门景点门票，尤其是故宫和长城。 Book popular tickets (Forbidden City, Great Wall) in advance.</li> <li class="flex items-start"><i class="fas fa-subway activity-icon"></i>善用便捷的地铁系统，办理交通卡或使用App支付。 Utilize the efficient subway system; get a transport card or use mobile payment.</li> <li class="flex items-start"><i class="fas fa-cloud-sun activity-icon"></i>6月天气较热，注意防晒补水。 June can be hot; use sunscreen and stay hydrated.</li> <li class="flex items-start"><i class="fas fa-shoe-prints activity-icon"></i>准备舒适的鞋子，部分行程步行较多。 Wear comfortable shoes as there's significant walking.</li> <li class="flex items-start"><i class="fas fa-wifi activity-icon"></i>网络与支付：提前准备好网络方案和支付方式。 Network & Payment: Prepare your internet access and payment methods.</li> <li class="flex items-start"><i class="fas fa-utensils activity-icon"></i>用餐高峰需等位，善用在线取号或预订功能。 Expect queues during peak dining hours; use online queuing/booking apps.</li></ul> </motion.div>
 
-            <!-- Placeholder: Intensity/Chart Visualization -->
-            <motion.div class="bento-box lg:col-span-1 md:col-span-1"
-                 data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.5, "ease": "easeInOut" }'>
-                 <div class="flex items-center mb-4"> <i class="fas fa-tachometer-alt text-2xl highlight-orange mr-3"></i> <div> <h3 class="chinese-subtitle">行程 强度</h3> <p class="english-annotation">Itinerary Intensity</p> </div> </div>
-                 <p class="text-sm text-gray-300 mb-4">大致每日活动强度参考：</p>
-                 <div class="bar-chart"> <div class="bar" style="height: 50%;" title="Day 1: Low-Medium"></div> <div class="bar" style="height: 90%;" title="Day 2: High"></div> <div class="bar" style="height: 75%;" title="Day 3: Medium-High"></div> <div class="bar" style="height: 80%;" title="Day 4: Medium-High"></div> <div class="bar" style="height: 95%;" title="Day 5: Very High"></div> <div class="bar" style="height: 70%;" title="Day 6: Medium"></div> <div class="bar" style="height: 40%;" title="Day 7: Low"></div> </div>
-                 <p class="text-xs text-gray-500 text-center mt-2">（强度可视化示意）</p>
-                 <p class="text-xs text-gray-500 text-center">(Intensity visualization placeholder)</p>
-            </motion.div>
 
-             <!-- Travel Tips Box -->
-            <motion.div class="bento-box lg:col-span-1 md:col-span-2 lg:col-span-1"
-                 data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.3 }' data-framer-transition='{ "duration": 0.5, "delay": 0.6, "ease": "easeInOut" }'>
-                <div class="flex items-center mb-4"> <i class="fas fa-info-circle text-2xl highlight-orange mr-3"></i> <div> <h3 class="chinese-subtitle">出行 贴士</h3> <p class="english-annotation">Travel Tips</p> </div> </div>
-                 <ul class="space-y-2 text-sm text-gray-300"> <li class="flex items-start"><i class="fas fa-ticket-alt activity-icon"></i>提前预订热门景点门票，尤其是故宫和长城。 Book popular tickets (Forbidden City, Great Wall) in advance.</li> <li class="flex items-start"><i class="fas fa-subway activity-icon"></i>善用便捷的地铁系统，办理交通卡或使用App支付。 Utilize the efficient subway system; get a transport card or use mobile payment.</li> <li class="flex items-start"><i class="fas fa-cloud-sun activity-icon"></i>6月天气较热，注意防晒补水。 June can be hot; use sunscreen and stay hydrated.</li> <li class="flex items-start"><i class="fas fa-shoe-prints activity-icon"></i>准备舒适的鞋子，部分行程步行较多。 Wear comfortable shoes as there's significant walking.</li> <li class="flex items-start"><i class="fas fa-wifi activity-icon"></i>网络与支付：提前准备好网络方案和支付方式。 Network & Payment: Prepare your internet access and payment methods.</li> <li class="flex items-start"><i class="fas fa-utensils activity-icon"></i>用餐高峰需等位，善用在线取号或预订功能。 Expect queues during peak dining hours; use online queuing/booking apps.</li></ul>
-            </motion.div>
+            <!-- Detailed Itinerary 2 Header (Fill details below) -->
+             <motion.div class="bento-box lg:col-span-3 md:col-span-2" data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.1 }' data-framer-transition='{ "duration": 0.6, "delay": 0.3, "ease": "easeInOut" }'> <div class="flex items-center mb-4"><i class="fas fa-book-reader text-2xl highlight-orange mr-3"></i><div><h3 class="chinese-subtitle">行程 ②: 文化沉浸 (详解含餐饮)</h3><p class="english-annotation">Itinerary ②: Cultural Immersion (Detailed w/ Dining)</p></div></div> <p class="text-sm text-gray-400 text-center p-8">（行程 ② 的详细每日安排和餐饮推荐将在此处填充，结构类似行程 ①）<br>(Detailed daily schedule and dining recommendations for Itinerary ② will be populated here, similar structure to Itinerary ①)</p> <!-- TODO: Fill Itinerary 2 details --> </motion.div>
 
-            <!-- Detailed Itinerary 2 Header (Add detailed content similar to Itinerary 1 below) -->
-             <motion.div class="bento-box lg:col-span-3 md:col-span-2"
-                data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.1 }' data-framer-transition='{ "duration": 0.6, "delay": 0.3, "ease": "easeInOut" }'>
-                <div class="flex items-center mb-4"><i class="fas fa-book-reader text-2xl highlight-orange mr-3"></i><div><h3 class="chinese-subtitle">行程 ②: 文化沉浸 (详解含餐饮)</h3><p class="english-annotation">Itinerary ②: Cultural Immersion (Detailed w/ Dining)</p></div></div>
-                 <p class="text-sm text-gray-400 text-center p-8">（行程 ② 的详细每日安排和餐饮推荐将在此处填充，结构类似行程 ①）<br>(Detailed daily schedule and dining recommendations for Itinerary ② will be populated here, similar structure to Itinerary ①)</p>
-                 <!-- TODO: Add detailed Day 1-7 content for Itinerary 2, including travel times, activity durations, and meal recommendations from the provided table -->
-            </motion.div>
-
-             <!-- Detailed Itinerary 3 Header (Add detailed content similar to Itinerary 1 below) -->
-             <motion.div class="bento-box lg:col-span-3 md:col-span-2"
-                data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.1 }' data-framer-transition='{ "duration": 0.6, "delay": 0.4, "ease": "easeInOut" }'>
-                 <div class="flex items-center mb-4"><i class="fas fa-tree text-2xl highlight-orange mr-3"></i><div><h3 class="chinese-subtitle">行程 ③: 自然闲适 (详解含餐饮)</h3><p class="english-annotation">Itinerary ③: Nature & Relaxed Pace (Detailed w/ Dining)</p></div></div>
-                 <p class="text-sm text-gray-400 text-center p-8">（行程 ③ 的详细每日安排和餐饮推荐将在此处填充，结构类似行程 ①）<br>(Detailed daily schedule and dining recommendations for Itinerary ③ will be populated here, similar structure to Itinerary ①)</p>
-                  <!-- TODO: Add detailed Day 1-7 content for Itinerary 3, including travel times, activity durations, and meal recommendations from the provided table -->
-             </motion.div>
+             <!-- Detailed Itinerary 3 Header (Fill details below) -->
+             <motion.div class="bento-box lg:col-span-3 md:col-span-2" data-framer-init data-framer-initial='{ "opacity": 0, "y": 30 }' data-framer-while-in-view='{ "opacity": 1, "y": 0 }' data-framer-viewport='{ "once": true, "amount": 0.1 }' data-framer-transition='{ "duration": 0.6, "delay": 0.4, "ease": "easeInOut" }'> <div class="flex items-center mb-4"><i class="fas fa-tree text-2xl highlight-orange mr-3"></i><div><h3 class="chinese-subtitle">行程 ③: 自然闲适 (详解含餐饮)</h3><p class="english-annotation">Itinerary ③: Nature & Relaxed Pace (Detailed w/ Dining)</p></div></div> <p class="text-sm text-gray-400 text-center p-8">（行程 ③ 的详细每日安排和餐饮推荐将在此处填充，结构类似行程 ①）<br>(Detailed daily schedule and dining recommendations for Itinerary ③ will be populated here, similar structure to Itinerary ①)</p> <!-- TODO: Fill Itinerary 3 details --> </motion.div>
 
 
         </div> <!-- Bento Grid End -->
 
     </div>
 
-    <!-- Framer Motion Activation Script -->
-     <script type="module">
-      // IMPORTANT: Ensure this script runs *after* the DOM is loaded
-      // Use window.motion if loading UMD bundle directly
-      const motion = window.motion;
-      const stagger = window.motionStagger; // Assuming stagger is available globally too, adjust if needed
-      const animate = window.motionAnimate; // Assuming animate is available globally too
+    <!-- Framer Motion Activation Script (Corrected) -->
+    <script type="module">
+      // Use the imported ES Module version
+      import { motion, stagger, animate } from "https://cdnjs.cloudflare.com/ajax/libs/framer-motion/11.0.8/motion.es.min.js";
 
       if (motion && stagger && animate) {
-          // Simple activation for elements with data-framer attributes
+          // Activation logic for data-framer-* attributes (same as before)
           document.querySelectorAll('[data-framer-init]').forEach(element => {
             const initial = JSON.parse(element.dataset.framerInitial || '{}');
             const whileInView = JSON.parse(element.dataset.framerWhileInView || '{}');
             const viewport = JSON.parse(element.dataset.framerViewport || '{}');
             const transition = JSON.parse(element.dataset.framerTransition || '{}');
 
-            const motionElement = motion(element);
-            motionElement.set(initial); // Set initial state
+            // Set initial state directly using animate
+            animate(element, initial, { duration: 0 });
 
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         animate(element, whileInView, transition);
                          if (viewport.once) {
-                            observer.unobserve(element); // Stop observing if viewport.once is true
+                            observer.unobserve(element);
                          }
                     } else {
-                         // Optional: Reset to initial if you want animation every time it enters view
-                         // motionElement.set(initial);
+                         // Optional: Reset to initial if you want animation every time
+                         // animate(element, initial, { duration: 0 });
                     }
                 });
-            }, { threshold: viewport.amount || 0.1 }); // Use amount from viewport or default
+            }, { threshold: viewport.amount || 0.1 });
 
             observer.observe(element);
           });
 
-          // Animate the bars
-           const bars = document.querySelectorAll('.bar');
-           if (bars.length > 0) {
+          // Animate the bars (same logic as before)
+          const bars = document.querySelectorAll('.bar');
+          if (bars.length > 0) {
                const chartContainer = document.querySelector('.bar-chart');
                if(chartContainer){
                     const observer = new IntersectionObserver(entries => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
-                                // Store target heights first
                                 const targetHeights = Array.from(bars).map(bar => bar.style.height || "0%");
-                                // Set initial height to 0
                                 bars.forEach(bar => bar.style.height = '0%');
-                                // Animate to target heights
                                 animate(
                                     bars,
                                     { height: targetHeights },
                                     { duration: 1.5, delay: stagger(0.1, { startDelay: 0.2 }), ease: "easeOut" }
                                 );
-                                observer.unobserve(entry.target); // Animate only once
+                                observer.unobserve(entry.target);
                             }
                         });
                     }, { threshold: 0.5 });
@@ -232,7 +160,7 @@
                }
            }
       } else {
-          console.error("Framer Motion library not loaded correctly.");
+          console.error("Framer Motion library not loaded correctly via import.");
       }
     </script>
 

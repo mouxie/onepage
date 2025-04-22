@@ -176,26 +176,65 @@
 </head>
 <body class="p-4 md:p-8">
 
-    <script>
-        const { motion, useScroll, useTransform } = FramerMotion;
+   <script>
+    // Check if framerMotion is loaded
+    if (typeof framerMotion !== 'undefined') {
+        // Access properties correctly
+        const { motion, useScroll, useTransform } = framerMotion;
+        console.log("Framer Motion loaded successfully.");
 
+        // --- The AnimatedSection function below is for React-like environments ---
+        // --- and won't directly apply animations to the <motion.div> tags in pure HTML ---
+        /*
         function AnimatedSection({ children }) {
-            // Simple fade-in animation when element scrolls into view
-            return React.createElement(
+            // This setup is more suited for React.
+            // In pure JS, you'd select elements and use motion() or animate() API.
+            return React.createElement( // This would require React library
                 motion.div,
                 {
                     initial: { opacity: 0, y: 50 },
                     whileInView: { opacity: 1, y: 0 },
-                    viewport: { once: true, amount: 0.2 }, // Trigger animation when 20% is visible
+                    viewport: { once: true, amount: 0.2 },
                     transition: { duration: 0.6, ease: "easeOut" }
                 },
                 children
             );
         }
+        */
 
-        // We will wrap sections with this component later via JS manipulation
-        // Or ideally, use React/Vue for proper component structure
-    </script>
+        // --- Simplified approach for pure JS: Select elements and animate ---
+        // This requires more code to replicate whileInView behavior manually
+        // For now, we just fix the ReferenceError. The whileInView in HTML won't work.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.motion-div');
+            sections.forEach(section => {
+                 // Example: Add a simple class on scroll (requires CSS for animation)
+                 // More complex Framer Motion animations here would use the 'motion' or 'animate' functions.
+                 // This part needs further development for true Framer Motion effects in pure JS.
+                 const observer = new IntersectionObserver((entries) => {
+                     entries.forEach(entry => {
+                         if (entry.isIntersecting) {
+                             entry.target.style.opacity = 1;
+                             entry.target.style.transform = 'translateY(0px)';
+                             observer.unobserve(entry.target); // Optional: stop observing once animated
+                         }
+                     });
+                 }, { threshold: 0.2 }); // Trigger when 20% visible
+
+                 // Apply initial styles via CSS or JS
+                 section.style.opacity = 0;
+                 section.style.transform = 'translateY(50px)';
+                 section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+
+                 observer.observe(section);
+            });
+        });
+
+    } else {
+        console.error("Framer Motion library not found. Check CDN link.");
+    }
+</script>
 
     <!-- Hero Section -->
     <section class="text-center my-16 md:my-24">

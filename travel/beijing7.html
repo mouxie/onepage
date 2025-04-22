@@ -1,0 +1,69 @@
+ /* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem; /* Further reduce padding */
+    }
+
+    .header h1 {
+        font-size: 2.5rem; /* Further reduce */
+    }
+    .header .highlight {
+        font-size: 3.5rem; /* Further reduce */
+    }
+    .header .subtitle-en {
+        font-size: 1rem;
+    }
+
+    .bento-grid {
+        gap: 0.8rem; /* Further reduce gap */
+        /* Ensure single column on very small screens if needed */
+         grid-template-columns: 1fr; /* Force single column strictly */
+    }
+
+    .bento-box {
+        padding: 1.2rem; /* Adjust padding */
+    }
+
+     .bento-box.span-2 {
+          grid-column: span 1; /* Ensure stacking on mobile */
+      }
+
+    .bento-box h2 {
+        font-size: 1.5rem;
+    }
+    .bento-box h3 {
+        font-size: 1.2rem;
+    }
+     .bento-box h4 {
+         font-size: 0.9rem;
+     }
+
+    .bento-box p, .bento-box li {
+        font-size: 0.85rem; /* Adjust base text size */
+    }
+
+    .bento-box li {
+        gap: 0.5rem; /* Reduce gap between icon and text */
+        margin-bottom: 1.2rem; /* Slightly more space between items */
+    }
+
+    .bento-box li i {
+        /* Icon size can remain or adjust */
+         margin-top: 0.15em;
+         width: 18px; /* Can adjust if needed */
+    }
+
+    /* Core change: Stack content within list item */
+    .bento-box li .li-content strong { /* Target strong within the content div */
+        display: block; /* Time takes its own line */
+        color: var(--highlight-color); /* Make time stand out */
+        margin-bottom: 0.3rem; /* Space below time */
+    }
+    /* Description text will naturally follow the block-level strong */
+
+    .bento-box li .li-content .small-en { /* Target travel details within the content div */
+        display: block; /* Already block, good */
+        margin-top: 0.5rem; /* Space above travel details */
+        font-size: 0.75rem; /* Make travel details slightly smaller */
+    }
+}

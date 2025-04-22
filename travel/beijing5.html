@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京7日经典全景深度文化之旅 | Beijing 7-Day Classic Tour</title>
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Framer Motion CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@10.16.4/dist/framer-motion.umd.min.js"></script>
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #000000;
+            color: #E5E7EB; /* text-gray-200 */
+            overflow-x: hidden;
+        }
+        .bento-box {
+            background-color: #111827; /* gray-900 */
+            border-radius: 1rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            border: 1px solid #374151; /* border-gray-700 */
+            position: relative;
+            overflow: hidden; /* To contain potential pseudo-elements */
+        }
+        .highlight {
+            color: #F97316; /* orange-500 */
+        }
+        .highlight-bg {
+            background-color: #F97316; /* orange-500 */
+        }
+        .highlight-border {
+            border-color: #F97316; /* orange-500 */
+        }
+        /* Subtle orange glow effect example (optional) */
+        .bento-box.glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: radial-gradient(circle at top center, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+             transition: opacity 0.3s ease;
+        }
+         .bento-box:hover.glow::before {
+             opacity: 0.8;
+         }
+
+        /* Simplified line icon styling */
+        .line-icon {
+            stroke: #F97316; /* orange-500 */
+            stroke-width: 1.5;
+            fill: none;
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Large Title Styling */
+        .main-title {
+            font-size: clamp(2.5rem, 6vw, 5rem); /* Responsive large font */
+            line-height: 1.1;
+        }
+         .day-title {
+             font-size: clamp(1.8rem, 4vw, 3rem);
+             line-height: 1.1;
+         }
+         .sub-eng {
+             font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+             letter-spacing: 0.05em;
+             text-transform: uppercase;
+             color: #9CA3AF; /* gray-400 */
+         }
+    </style>
+</head>
+<body class="font-sans">
+
+    <div id="app" class="container mx-auto px-4 py-8 md:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+
+            <!-- Header Block -->
+            <motion.div class="bento-box md:col-span-2 lg:col-span-3 glow"
+                :initial="{ opacity: 0, y: 30 }"
+                :while-in-view="{ opacity: 1, y: 0 }"
+                :transition="{ duration: 0.5, delay: 0.1 }"
+                :viewport="{ once: true }">
+                <div class="flex flex-col items-center text-center">
+                     <i class="fas fa-dragon text-6xl md:text-8xl highlight mb-4"></i>
+                    <h1 class="main-title font-bold text-white mb-2">
+                        <span class="highlight">北京</span> 7日经典全景深度文化之旅
+                    </h1>
+                    <p class="sub-eng">Beijing 7-Day Classic Panorama & Deep Culture Tour</p>
+                    <p class="text-gray-300 mt-2 text-lg">2025年6月6日 - 6月12日</p>
+                    <p class="sub-eng">June 6th - June 12th, 2025</p>
+                </div>
+            </motion.div>
+
+            <!-- Quick Info Block -->
+            <motion.div class="bento-box lg:row-span-2"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.2 }"
+                 :viewport="{ once: true }">
+                <h2 class="text-2xl font-bold text-white mb-4">核心信息 <span class="sub-eng block">Key Info</span></h2>
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-plane-arrival fa-fw highlight text-xl"></i>
+                        <div>
+                            <p class="font-semibold text-white">抵达 Arrival</p>
+                            <p class="text-sm text-gray-300">6月6日 07:15 PEK</p>
+                            <p class="text-xs text-gray-400">商务车接机 / Private Transfer</p>
+                        </div>
+                    </div>
+                     <div class="flex items-center space-x-3">
+                        <i class="fas fa-hotel fa-fw highlight text-xl"></i>
+                        <div>
+                            <p class="font-semibold text-white">住宿 Hotel</p>
+                            <p class="text-sm text-gray-300">东城区灯市口地铁站旁</p>
+                            <p class="text-xs text-gray-400">Near Dengshikou Metro (Line 5)</p>
+                        </div>
+                    </div>
+                     <div class="flex items-center space-x-3">
+                        <i class="fas fa-plane-departure fa-fw highlight text-xl"></i>
+                        <div>
+                            <p class="font-semibold text-white">离开 Departure</p>
+                            <p class="text-sm text-gray-300">6月12日</p>
+                            <p class="text-xs text-gray-400">公共交通至PEK / Public Transit</p>
+                        </div>
+                    </div>
+                     <div class="flex items-center space-x-3">
+                        <i class="fas fa-utensils fa-fw highlight text-xl"></i>
+                        <div>
+                            <p class="font-semibold text-white">用餐 Meal Times</p>
+                            <p class="text-sm text-gray-300">早40m / 午1.5h / 晚1h50m</p>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+
+            <!-- Day 1 Block -->
+            <motion.div class="bento-box md:col-span-1 lg:col-span-2 glow"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.3 }"
+                 :viewport="{ once: true }">
+                <div class="flex justify-between items-start mb-3">
+                     <h2 class="day-title font-bold text-white"><span class="highlight">Day 1</span> 星期五</h2>
+                     <i class="fas fa-city text-4xl highlight opacity-80"></i>
+                </div>
+                <p class="sub-eng mb-4">Arrival & Southern Central Axis</p>
+                <div class="space-y-2 text-sm">
+                    <p><i class="far fa-clock fa-fw highlight"></i> 07:15 抵达PEK, 专车接送至酒店寄存行李</p>
+                    <p><i class="fas fa-utensils fa-fw highlight"></i> 10:30 早餐 (40m)</p>
+                    <p><i class="fas fa-landmark fa-fw highlight"></i> 11:50 **天安门广场** (1h)</p>
+                    <p><i class="fas fa-utensils fa-fw highlight"></i> 12:50 午餐 (1.5h) @ 前门/大栅栏 (推荐: 四季民福, 卤煮)</p>
+                    <p><i class="fas fa-landmark fa-fw highlight"></i> 14:50 **天坛公园** (2.5h)</p>
+                    <p><i class="fas fa-bed fa-fw highlight"></i> 17:50 酒店Check-in</p>
+                    <p><i class="fas fa-utensils fa-fw highlight"></i> 19:30 晚餐 (1h50m) @ 王府井 (推荐: 花家怡园, 小大董)</p>
+                    <p><i class="fas fa-walking fa-fw highlight"></i> 晚间: **王府井步行街**</p>
+                    <p class="text-xs text-gray-400 mt-2"><i class="fas fa-subway fa-fw"></i> 主要地铁: 1号线, 5号线, 8号线</p>
+                </div>
+            </motion.div>
+
+            <!-- Day 2 Block -->
+            <motion.div class="bento-box md:col-span-1 lg:col-span-2 glow"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.2 }"
+                 :viewport="{ once: true }">
+                 <div class="flex justify-between items-start mb-3">
+                    <h2 class="day-title font-bold text-white"><span class="highlight">Day 2</span> 星期六</h2>
+                    <i class="fas fa-place-of-worship text-4xl highlight opacity-80"></i>
+                 </div>
+                 <p class="sub-eng mb-4">Forbidden City & Royal Gardens</p>
+                 <div class="space-y-2 text-sm">
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 08:00 早餐 (40m)</p>
+                     <p><i class="fas fa-landmark fa-fw highlight"></i> 09:10 **故宫博物院** (4.5h) <span class="text-orange-400 text-xs font-semibold"> *预约! Booking!</span></p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 13:40 午餐 (1.5h) @ 故宫内或神武门外</p>
+                     <p><i class="fas fa-mountain fa-fw highlight"></i> 15:10 **景山公园** (1.5h) - 俯瞰故宫</p>
+                     <p><i class="fas fa-water fa-fw highlight"></i> 17:10 **北海公园** (1h50m)</p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 19:00 晚餐 (1h50m) @ 后海 (推荐: 烤肉季, 南门涮肉)</p>
+                     <p><i class="fas fa-moon fa-fw highlight"></i> 晚间: **什刹海** 漫步</p>
+                     <p class="text-xs text-gray-400 mt-2"><i class="fas fa-subway fa-fw"></i> 主要地铁: 1号线, 5号线, 6号线, 8号线</p>
+                 </div>
+            </motion.div>
+
+             <!-- Important Notes Block -->
+            <motion.div class="bento-box lg:row-span-2"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.3 }"
+                 :viewport="{ once: true }">
+                <h2 class="text-2xl font-bold text-white mb-4">重要提示 <span class="sub-eng block">Important Notes</span></h2>
+                 <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-ticket-alt fa-fw highlight text-xl mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white">提前预约! Book Ahead!</p>
+                            <p class="text-sm text-gray-300">故宫/国博/长城等需实名预约</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-calendar-times fa-fw highlight text-xl mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white">周一闭馆 Monday Closures</p>
+                            <p class="text-sm text-gray-300">多数博物馆 (行程已避开)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-sun fa-fw highlight text-xl mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white">六月天气 June Weather</p>
+                            <p class="text-sm text-gray-300">渐热，注意防晒补水</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-shoe-prints fa-fw highlight text-xl mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white">体力 Pacing</p>
+                            <p class="text-sm text-gray-300">行程饱满，可按需调整</p>
+                        </div>
+                    </div>
+                      <div class="flex items-start space-x-3">
+                        <i class="fab fa-alipay fa-fw highlight text-xl mt-1"></i>
+                         <i class="fab fa-weixin fa-fw highlight text-xl mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white">支付 Payment</p>
+                            <p class="text-sm text-gray-300">支付宝/微信支付为主</p>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+
+            <!-- Day 3 Block -->
+            <motion.div class="bento-box md:col-span-2 lg:col-span-1 glow"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.4 }"
+                 :viewport="{ once: true }">
+                 <div class="flex justify-between items-start mb-3">
+                     <h2 class="day-title font-bold text-white"><span class="highlight">Day 3</span> 星期日</h2>
+                     <svg class="line-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 10L5.66667 16L8.33333 10L11 16L13.6667 10L16.3333 16L19 10L21 12M3 10V4M3 10H2M8.33333 10H5.66667M8.33333 10L6 4M8.33333 10H11M13.6667 10H11M13.6667 10L12 4M13.6667 10H16.3333M19 10H16.3333M19 10L17 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                 </div>
+                  <p class="sub-eng mb-4">Great Wall Day Trip</p>
+                 <div class="space-y-2 text-sm">
+                     <p><i class="fas fa-bus fa-fw highlight"></i> 08:10 前往 **慕田峪长城** (推荐: 直通车/包车)</p>
+                     <p><i class="fas fa-landmark fa-fw highlight"></i> 10:30 游览长城 (4h) <span class="text-orange-400 text-xs font-semibold"> *可能需预约</span></p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 14:30 午餐 (1.5h) @ 景区外餐厅</p>
+                     <p><i class="fas fa-car fa-fw highlight"></i> 16:00 返回酒店</p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 19:00 晚餐 (1h50m) @ 酒店附近</p>
+                     <p class="text-xs text-gray-400 mt-2"><i class="fas fa-route fa-fw"></i> 交通方式决定效率</p>
+                 </div>
+            </motion.div>
+
+             <!-- Day 4 Block -->
+            <motion.div class="bento-box glow"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.2 }"
+                 :viewport="{ once: true }">
+                 <div class="flex justify-between items-start mb-3">
+                    <h2 class="day-title font-bold text-white"><span class="highlight">Day 4</span> 星期一</h2>
+                    <i class="fas fa-ship text-4xl highlight opacity-80"></i>
+                 </div>
+                 <p class="sub-eng mb-4">Summer Palace & University Area</p>
+                 <div class="space-y-2 text-sm">
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 08:30 早餐 (40m)</p>
+                     <p><i class="fas fa-landmark fa-fw highlight"></i> 10:20 **颐和园** (4h)</p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 14:20 午餐 (1.5h) @ 颐和园外 (推荐: 那家小馆)</p>
+                     <p><i class="fas fa-university fa-fw highlight"></i> 15:50 **北大/清华** 外观 (2h) <span class="text-orange-400 text-xs font-semibold"> *入内需预约查询</span></p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 19:30 晚餐 (1h50m)</p>
+                     <p class="text-xs text-gray-400 mt-2"><i class="fas fa-subway fa-fw"></i> 主要地铁: 4号线, 5号线, 10号线</p>
+                 </div>
+            </motion.div>
+
+            <!-- Day 5 Block -->
+            <motion.div class="bento-box glow"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.3 }"
+                 :viewport="{ once: true }">
+                 <div class="flex justify-between items-start mb-3">
+                     <h2 class="day-title font-bold text-white"><span class="highlight">Day 5</span> 星期二</h2>
+                      <i class="fas fa-book-open text-4xl highlight opacity-80"></i>
+                 </div>
+                 <p class="sub-eng mb-4">Museum & Temples</p>
+                 <div class="space-y-2 text-sm">
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 08:30 早餐 (40m)</p>
+                     <p><i class="fas fa-landmark fa-fw highlight"></i> 09:40 **国家博物馆** (3.5h) <span class="text-orange-400 text-xs font-semibold"> *预约! Booking!</span></p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 13:10 午餐 (1.5h) @ 馆内或王府井</p>
+                     <p><i class="fas fa-place-of-worship fa-fw highlight"></i> 15:10 **雍和宫** (1.5h)</p>
+                     <p><i class="fas fa-landmark fa-fw highlight"></i> 16:40 **孔庙国子监** (1h20m)</p>
+                     <p><i class="fas fa-walking fa-fw highlight"></i> 18:00 **五道营胡同** 漫步</p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 19:00 晚餐 (1h50m) @ 五道营/簋街 (推荐: Susu, 花家怡园)</p>
+                      <p class="text-xs text-gray-400 mt-2"><i class="fas fa-subway fa-fw"></i> 主要地铁: 1号线, 5号线</p>
+                 </div>
+            </motion.div>
+
+             <!-- Day 6 Block -->
+             <motion.div class="bento-box glow"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.4 }"
+                 :viewport="{ once: true }">
+                 <div class="flex justify-between items-start mb-3">
+                    <h2 class="day-title font-bold text-white"><span class="highlight">Day 6</span> 星期三</h2>
+                     <i class="fas fa-palette text-4xl highlight opacity-80"></i>
+                 </div>
+                  <p class="sub-eng mb-4">Art Zone & Fashion Hub</p>
+                 <div class="space-y-2 text-sm">
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 09:00 早餐 (40m)</p>
+                     <p><i class="fas fa-landmark fa-fw highlight"></i> 10:50 **798艺术区** (3.5h)</p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 14:20 午餐 (1.5h) @ 798内</p>
+                     <p><i class="fas fa-shopping-bag fa-fw highlight"></i> 16:50 **三里屯太古里** (2h10m)</p>
+                     <p><i class="fas fa-utensils fa-fw highlight"></i> 19:00 晚餐 (1h50m) @ 三里屯 (推荐: Bottega, Home Plate)</p>
+                      <p class="text-xs text-gray-400 mt-2"><i class="fas fa-taxi fa-fw"></i> 推荐打车或公交结合地铁</p>
+                 </div>
+            </motion.div>
+
+            <!-- Day 7 Block -->
+             <motion.div class="bento-box md:col-span-2 lg:col-span-3 glow"
+                 :initial="{ opacity: 0, y: 30 }"
+                 :while-in-view="{ opacity: 1, y: 0 }"
+                 :transition="{ duration: 0.5, delay: 0.5 }"
+                 :viewport="{ once: true }">
+                  <div class="flex justify-between items-start mb-3">
+                    <h2 class="day-title font-bold text-white"><span class="highlight">Day 7</span> 星期四</h2>
+                     <i class="fas fa-door-open text-4xl highlight opacity-80"></i>
+                 </div>
+                  <p class="sub-eng mb-4">Hutong Discovery & Departure</p>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="space-y-2">
+                        <p><i class="fas fa-utensils fa-fw highlight"></i> 08:30 早餐 (40m), 退房寄存行李</p>
+                        <p><i class="fas fa-walking fa-fw highlight"></i> 09:40 **南锣鼓巷 & 周边胡同** (2h20m)</p>
+                        <p><i class="fas fa-utensils fa-fw highlight"></i> 12:00 午餐 (1.5h) @ 南锣/鼓楼 (推荐: 铃木食堂, 馅老满)</p>
+                        <p><i class="fas fa-landmark fa-fw highlight"></i> 13:30 **恭王府** (1.5h)</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p><i class="fas fa-shopping-bag fa-fw highlight"></i> 15:00 返回酒店取行李</p>
+                        <p><i class="fas fa-subway fa-fw highlight"></i> 15:30 前往机场 (机场快轨)</p>
+                         <p><i class="fas fa-plane-departure fa-fw highlight"></i> 17:00 抵达PEK (预留充足时间)</p>
+                        <p><i class="fas fa-utensils fa-fw highlight"></i> 17:00 晚餐 (1h50m) @ 机场</p>
+                         <p><i class="fas fa-flag-checkered fa-fw highlight"></i> 结束旅程</p>
+                    </div>
+                  </div>
+            </motion.div>
+
+        </div>
+    </div>
+
+    <!-- Vue 3 Script for Framer Motion Integration -->
+    <script type="module">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+        // No specific Vue logic needed for basic Framer Motion attributes,
+        // but this sets up Vue in case more complex interactions are added.
+        // Framer Motion's 'motion.div' automatically works with initial/whileInView etc.
+        const app = createApp({
+            // No data or methods needed for this simple setup
+        })
+
+        // Make motion components available globally if needed (optional)
+        // app.config.globalProperties.$motion = motion;
+
+        // Mount the app
+        app.mount('#app')
+
+        // Basic Framer Motion usage via attributes is handled by the library itself.
+        // For more complex scroll-linked animations or interactions, you'd add JS here.
+        console.log("Beijing Itinerary Page Loaded with Framer Motion.")
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聊天分析报告 2025-05-02</title>
+  <!-- 核心样式 (来自 样式.html) -->
+  <style>
+    /* --- Start of CSS from 样式.html --- */
+    ol,
+    ul,
+    menu {
+      list-style: none;
+    }
+    .card {
+      position: relative;
+      /* 基础样式 */
+      font-family: BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      color: #24292e;
+      background-color: #fff;
+      font-size: 16px;
+      word-wrap: break-word;
+	  min-width: 700px;
+      position: relative;
+    }
+    /* 标题样式 */
+    .card h1,
+    .card h2,
+    .card h3,
+    .card h4,
+    .card h5,
+    .card h6 {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .card h1 {
+      font-size: 2em;
+    }
+
+    .card h2 {
+      font-size: 1.5em;
+    }
+
+    .card h3 {
+      font-size: 1.25em;
+    }
+
+    .card h4 {
+      font-size: 1em;
+    }
+
+    .card h5 {
+      font-size: 0.875em;
+    }
+
+    .card h6 {
+      font-size: 0.85em;
+      color: #6a737d;
+    }
+
+    /* 段落和文本样式 */
+    .card p {
+      margin-top: 0;
+    }
+
+    .card a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .card strong {
+      font-weight: 600;
+    }
+
+    .card em {
+      font-style: italic;
+    }
+
+    .card del {
+      text-decoration: line-through;
+    }
+    /* 表格样式 - 通用 */
+    .card-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+
+    .card-content th {
+      font-weight: 600;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .card-content td {
+      padding: 10px;
+      line-height: 1.5;
+    }
+
+    .card-content tr {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+
+    /* 代码块样式 - 通用 */
+    .card-content pre {
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .card-content code:not(pre code) {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.9em;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background-color: #eaecef;
+    }
+
+    /* 引用块样式 - 通用 */
+    .card-content blockquote {
+      border-left: 3px solid #8e8e93;
+      margin: 20px 0;
+      padding: 10px 20px;
+      position: relative;
+      font-style: italic;
+    }
+
+    /* 有列表样式 - 通用 */
+    .card-content ol {
+      counter-reset: item;
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    /* 无序列表样式 - 通用 */
+    .card-content ul {
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    .card-content ul li {
+      position: relative;
+      list-style: none;
+      margin: 16px 0;
+      line-height: 1.7;
+    }
+
+    /* 图片样式 - 通用 */
+    .card-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    /* 水平线样式 - 通用 */
+    .card-content hr {
+      margin: 24px 0;
+      border: 0;
+      height: 1px;
+      background-color: #eaecef;
+    }
+    /* 段落样式 - 通用 */
+    .card-content {
+      font-size: 16px;
+    }
+    .card-content p {
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    /* 段落样式 - 通用 */
+    .card-content .card-content-inner > p {
+      margin: 16px 0;
+    }
+
+    .card mark {
+      background-color: rgba(248, 206, 64, 0.3);
+      color: inherit;
+      padding: 2px 4px;
+      border-radius: 3px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .card mark::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: rgba(248, 206, 64, 0.7);
+      border-radius: 1px;
+    }
+
+    mjx-container svg {
+      display: inline !important;
+    }
+
+    .markdown-body .contains-task-list .task-list-item::before {
+      display: none;
+    }
+    .markdown-body .contains-task-list .task-list-item {
+      list-style-type: none; /* Ensure bullets/numbers are hidden */
+      padding-left: 24px; /* Indent to make space for checkbox */
+      position: relative; /* For positioning the checkbox */
+    }
+    .markdown-body input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 2px solid #888;
+      border-radius: 2px;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 5px; /* Adjust vertical position */
+      left: 0;
+      background-color: #fff;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .markdown-body input[type="checkbox"]:checked {
+      background-color: #1677ff;
+      border-color: #1677ff;
+      background-position: 1px 2px;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      background-image: url(data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACLSURBVHgB7ZPBDYAgDEX/SI7AJjIKGziCozCKIzBChRiSHgoIlHjxJb3BexoA+GEQ0RYnxDmgDZNnPLQQ5BmDWSpyh1nSF66U7yTjShvOOFf65RVyzxaFWmREvgmLxUi3nG10rciw/E2kIrfooRAhFXlnxGKGRsRCg0LEQhMWSYdtsAJ6blHzdX/GDSY+GhmjX+BiAAAAAElFTkSuQmCC);
+    }
+
+    /* Add this for proper task list item structure */
+    .markdown-body ul li.task-list-item {
+        list-style-type: none !important; /* Force override */
+    }
+
+
+    .code__header {
+      margin-top: -8px;
+      display: grid;
+      height: 34px;
+      align-items: center;
+      grid-gap: 12px;
+      grid-template-columns: 48px 1fr 48px;
+    }
+    .code-title {
+      text-align: center;
+    }
+    .code__tools {
+      display: flex;
+      gap: 6px;
+    }
+    .code__circle {
+      display: block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+    .red {
+      background-color: #ff605c;
+    }
+
+    .yellow {
+      background-color: #ffbd44;
+    }
+
+    .green {
+      background-color: #00ca4e;
+    }
+
+    .markdown-body pre .line {
+      display: block;
+    }
+
+    .markdown-body pre.showLineNumbers code .line::before {
+      content: attr(line);
+      width: 1rem;
+      margin-right: 1.5rem;
+      display: inline-block;
+      text-align: right;
+      color: rgba(115, 138, 148, 0.4);
+    }
+
+    .code-line.inserted {
+      background-color: rgba(16, 185, 129, 0.2); /* Set inserted line (+) color */
+    }
+
+    .code-line.deleted {
+      background-color: rgba(239, 68, 68, 0.2); /* Set deleted line (-) color */
+    }
+
+    .highlighted {
+      background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
+    }
+
+    .wavy-underline {
+      position: relative;
+    }
+    .wavy-underline > .wavy-text {
+      position: relative; /* 确保文本有相对定位 */
+      z-index: 1; /* 确保文本在下划线上方 */
+    }
+    .wavy-underline > .wavy-line {
+      width: 100%;
+      height: 6px;
+      background-color: rgb(248, 206, 64);
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      bottom: 0; /* 保持在底部 */
+      left: 0; /* 确保从左侧开始 */
+      z-index: 0; /* 确保在文本下方 */
+    }
+
+    /* 小红书封面样式 - 通用 */
+    .card-cover {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      font-family: "PingFang SC", sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .cover-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .cover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.6)
+      );
+      pointer-events: none;
+    }
+
+    .cover-content {
+      position: relative;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .cover-title {
+      margin: 0 0 16px 0;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .cover-description {
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cover-tag {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .cover-date {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* 覆盖式封面样式 - 内容覆盖在图片上 */
+    .card-cover-overlay .cover-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: white;
+      padding: 30px;
+    }
+
+    /* 分离式封面样式 - 内容在图片下方 */
+    .card-cover-separate {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-cover-separate .cover-image-container {
+      border-radius: 12px 12px 0 0;
+    }
+
+    .card-cover-separate .cover-content {
+      border-radius: 0 0 12px 12px;
+    }
+
+    /* 无图片模式 - 通用样式 */
+    .card-cover-no-image {
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-cover-no-image .cover-content {
+      background: none;
+      position: static;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card-cover-no-image .cover-title {
+      margin-bottom: 20px;
+    }
+
+    .card-cover-no-image .cover-footer {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card-cover-no-image .cover-tags {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .card-cover-no-image .cover-date {
+      margin-top: 5px;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .cover-title {
+        font-size: 24px;
+      }
+
+      .cover-description {
+        font-size: 14px;
+      }
+    }
+
+    /* 颜色变量定义 */
+    :root {
+      /* 基础颜色 */
+      --pop-primary: #ff2e63;
+      --pop-secondary: #51bafa;
+      --pop-bg: #fde041;
+      --pop-text: #252a34;
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23d3b000'/%3E%3C/svg%3E");
+      --pop-white: #fff;
+      --pop-code-bg: #252a34;
+
+      /* 装饰元素颜色 */
+      --pop-accent1: var(--pop-primary);
+      --pop-accent2: var(--pop-secondary);
+      --pop-accent3: rgb(255, 98, 90);
+      --pop-border: var(--pop-text);
+      --pop-shadow: rgba(37, 42, 52, 0.8);
+
+      /* RGB versions for rgba() - Calculate these based on actual var values if needed */
+      --pop-primary-rgb: 255, 46, 99;
+      --pop-accent2-rgb: 81, 186, 250;
+      --pop-accent3-rgb: 255, 98, 90; /* Added for consistency */
+
+    }
+
+    /* 小红书粉蓝主题 */
+    .card-pop-art.pink-blue-mode {
+      --pop-primary: #ff4e79;
+      --pop-secondary: #7fd1ae;
+      --pop-bg: #a6dcef;
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%238ac6d0'/%3E%3C/svg%3E");
+
+      --pop-accent1: #ff4e79;
+      --pop-accent2: #7fd1ae;
+      --pop-accent3: #ffd666;
+
+      /* Update RGB if needed */
+       --pop-primary-rgb: 255, 78, 121;
+       --pop-accent2-rgb: 127, 209, 174;
+       --pop-accent3-rgb: 255, 214, 102; /* Added for consistency */
+    }
+
+    /* 小红书薄荷糖主题 */
+    .card-pop-art.mint-mode {
+      --pop-primary: #7fd1ae;
+      --pop-secondary: #ff4e79;
+      --pop-bg: #e0f7fa; /* 改为更浅的薄荷蓝背景 */
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23b2ebf2'/%3E%3C/svg%3E");
+      --pop-accent1: #7fd1ae;
+      --pop-accent2: #ff4e79;
+      --pop-accent3: #51bafa;
+      --pop-border: #4db6ac; /* 添加薄荷绿边框色 */
+      --pop-shadow: rgba(77, 182, 172, 0.3); /* 调整阴影颜色 */
+
+       /* Update RGB if needed */
+       --pop-primary-rgb: 127, 209, 174;
+       --pop-accent2-rgb: 255, 78, 121;
+       --pop-accent3-rgb: 81, 186, 250; /* Added for consistency */
+    }
+
+    /* 紫色星空主题 */
+    .card-pop-art.purple-mode {
+      --pop-primary: #ff4e79; /* Keeping primary for consistency or adjust as needed, e.g., #9c27b0 */
+      --pop-secondary: #ffab40;
+      --pop-bg: #3a1f75; /* 调整为较亮的紫色背景 */
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23a87fff'/%3E%3C/svg%3E"); /* 更亮的点 */
+      --pop-accent1: #9c27b0;
+      --pop-accent2: #ffab40;
+      --pop-accent3: #64b5f6;
+      --pop-border: #673ab7; /* 紫色边框 */
+      --pop-shadow: rgba(156, 39, 176, 0.4); /* 紫色阴影 */
+      --pop-text: #f8f9fa; /* Light text for dark background */
+      --pop-white: #f8f9fa; /* 调整白色 */
+      --pop-code-bg: #311b92; /* 深紫色代码背景 */
+
+      /* Update RGB if needed */
+      --pop-primary-rgb: 156, 39, 176; /* Using accent1 as primary visually */
+      --pop-accent2-rgb: 255, 171, 64;
+      --pop-accent3-rgb: 100, 181, 246; /* Added for consistency */
+    }
+
+    /* 波普艺术风格 */
+    /* 卡片内容样式 */
+    .card-pop-art .wavy-underline > .wavy-line {
+      background-color: var(--pop-primary);
+      height: 4px;
+      bottom: -2px;
+    }
+
+    .card-pop-art {
+      background-color: var(--pop-bg);
+      background-image: var(--pop-dots);
+      background-size: 24px 24px;
+      background-position: 12px 12px;
+      color: var(--pop-text);
+      font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
+      padding: 30px;
+      position: relative;
+      font-size: 16px;
+      border: none; /* Override basic card border if any */
+      box-shadow: none; /* Override basic card shadow if any */
+    }
+
+    /* 添加波普艺术装饰元素 */
+    .card-pop-art::before {
+      content: "";
+      position: absolute;
+      top: 0px; /* Adjusted from -10px to align better */
+      right: 0px; /* Adjusted from -10px */
+      width: 80px;
+      height: 80px;
+      /* Simplified SVG example for pop effect */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='%2351bafa' stroke='%23252a34' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23252a34'%3EPOP!%3C/text%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 60px 60px; /* Slightly smaller */
+      background-position: top right;
+      transform: translate(20px, -20px) rotate(15deg); /* Position outside and rotate */
+      z-index: 1;
+    }
+
+    .card-pop-art::after {
+       content: "";
+       position: absolute;
+       bottom: -15px; /* Position slightly outside */
+       left: -15px; /* Position slightly outside */
+       width: 100px; /* Example size */
+       height: 100px; /* Example size */
+       /* Simplified star SVG */
+       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='%23ff2e63' stroke='%23252a34' stroke-width='3'/%3E%3C/svg%3E");
+       background-repeat: no-repeat;
+       background-size: 70px 70px; /* Control size */
+       background-position: bottom left;
+       transform: rotate(-10deg); /* Add rotation */
+       z-index: 1;
+    }
+
+
+    .card-pop-art .card-content {
+      position: relative;
+      z-index: 2; /* Ensure content is above decorations */
+      padding: 20px; /* Adjust padding */
+      border: 3px solid var(--pop-border);
+      height: 100%;
+      background: var(--pop-white);
+      box-shadow: 8px 8px 0 var(--pop-shadow); /* Adjusted shadow */
+      border-radius: 4px; /* Optional: slight rounding */
+    }
+
+    /* Make sure inner content doesn't overflow weirdly */
+    .card-pop-art .card-content-inner {
+        overflow: hidden; /* Prevent content spilling */
+    }
+
+
+    /* 标题样式 */
+    .card-pop-art h1 strong {
+      color: var(--pop-primary);
+      background-color: var(--pop-white);
+      padding: 0 5px;
+      border: 3px solid var(--pop-border);
+      display: inline-block;
+      transform: rotate(-2deg);
+      box-shadow: 2px 2px 0px var(--pop-shadow);
+    }
+
+    .card-pop-art h1 {
+      font-size: 2.2em; /* Larger */
+      font-weight: 800;
+      color: var(--pop-text);
+      margin-top: 10px; /* Less margin top inside card */
+      margin-bottom: 25px; /* More margin bottom */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 3px 3px 0 var(--pop-primary);
+      position: relative;
+      padding-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .card-pop-art h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(
+        -45deg, /* Changed angle */
+        var(--pop-primary),
+        var(--pop-primary) 8px, /* Smaller segments */
+        var(--pop-accent2) 8px, /* Use accent color */
+        var(--pop-accent2) 16px
+      );
+       border-radius: 3px;
+    }
+
+    .card-pop-art h2 {
+      font-size: 1.8em; /* Adjusted size */
+      font-weight: 700;
+      color: var(--pop-text);
+      margin-top: 24px;
+      margin-bottom: 16px;
+      background-color: var(--pop-accent2);
+      padding: 5px 12px; /* Adjust padding */
+      display: inline-block; /* To contain background */
+      transform: rotate(-2deg);
+      box-shadow: 3px 3px 0px var(--pop-shadow);
+       border: 2px solid var(--pop-border);
+    }
+
+    .card-pop-art h3 {
+      font-size: 1.5em; /* Adjusted size */
+      font-weight: 700;
+      color: var(--pop-white); /* White text */
+      margin-top: 20px;
+      margin-bottom: 12px;
+      background-color: var(--pop-accent3); /* Use accent color */
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      border: 2px solid var(--pop-border);
+       transform: skew(-5deg); /* Add skew */
+    }
+
+    /* 段落样式 */
+    .card-pop-art p {
+      line-height: 1.7;
+      margin: 16px 0;
+      color: var(--pop-text);
+       font-size: 1.05em; /* Slightly larger paragraph text */
+    }
+
+    /* Removed background/border from direct p children of card-pop-art */
+    /* .card-pop-art > p { ... } */
+
+    /* 列表样式 */
+    .card-pop-art ul {
+      background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque */
+      padding: 15px 15px 15px 30px; /* Adjust padding */
+      border: 2px dashed var(--pop-border); /* Dashed border */
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 4px 4px 0px var(--pop-accent2);
+    }
+
+    .card-pop-art ul li {
+      position: relative;
+      padding-left: 28px; /* More space for marker */
+      margin: 12px 0; /* Adjust spacing */
+      line-height: 1.6;
+    }
+
+    .card-pop-art ul li::before {
+      content: "💥"; /* Pop/Explosion emoji */
+      position: absolute;
+      top: -2px;
+      left: 0px;
+      /* color: var(--pop-primary); */ /* Color is inherent in emoji */
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .card-pop-art ol {
+      counter-reset: item;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px 15px 15px 40px; /* More left padding */
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      margin: 20px 0;
+      list-style-type: none; /* Ensure default numbers are off */
+      box-shadow: 4px 4px 0px var(--pop-accent3);
+    }
+
+    .card-pop-art ol li {
+      position: relative;
+      padding-left: 35px; /* Space for custom counter */
+      margin: 12px 0;
+      counter-increment: item;
+      line-height: 1.6;
+    }
+
+    .card-pop-art ol li::before {
+      content: counter(item); /* Use the counter */
+      position: absolute;
+      left: 0;
+      top: -2px; /* Align better */
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      font-weight: 700;
+      width: 28px; /* Slightly larger */
+      height: 28px; /* Slightly larger */
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px; /* Match height */
+      border: 2px solid var(--pop-border);
+      font-size: 14px; /* Adjust font size */
+       transform: rotate(-5deg); /* Tilt */
+    }
+
+    /* Task list specific style within pop-art */
+    .card-pop-art .task-list-item {
+        padding-left: 30px; /* Ensure space for checkbox */
+        margin-left: 0; /* Override default list indent if necessary */
+    }
+    .card-pop-art .task-list-item input[type="checkbox"] {
+        top: 6px; /* Adjust checkbox position */
+        border-width: 3px; /* Thicker border */
+        border-color: var(--pop-border);
+        border-radius: 0; /* Square checkboxes */
+        transform: rotate(3deg); /* Slight tilt */
+    }
+    .card-pop-art .task-list-item input[type="checkbox"]:checked {
+        background-color: var(--pop-primary);
+        border-color: var(--pop-border);
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white"%3E%3Cpath d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06L6 11.19l7.22-7.22a.75.75 0 0 1 1.06 0z"/%3E%3C/svg%3E'); /* White checkmark */
+        background-size: 70%;
+        background-position: center;
+    }
+
+
+    /* 引用样式 */
+    .card-pop-art blockquote {
+      padding: 20px; /* More padding */
+      border-left: none; /* Remove side border */
+      margin: 25px 0;
+      color: var(--pop-text);
+      font-style: italic;
+      font-weight: 600;
+      background-color: rgba(var(--pop-accent2-rgb), 0.2); /* Use accent color */
+      border-radius: 8px;
+      position: relative;
+      border: 3px solid var(--pop-border);
+      box-shadow: 5px 5px 0 var(--pop-primary);
+      transform: rotate(1deg); /* Slight rotation */
+    }
+
+    .card-pop-art blockquote::before {
+      content: "❝"; /* Open quote */
+      position: absolute;
+      top: -15px; /* Position above */
+      left: 10px;
+      font-size: 50px; /* Adjust size */
+      color: var(--pop-primary);
+      font-family: Georgia, serif;
+      line-height: 1;
+      opacity: 0.8;
+    }
+     .card-pop-art blockquote::after {
+      content: "❞"; /* Close quote */
+      position: absolute;
+      bottom: -20px; /* Position below */
+      right: 15px;
+      font-size: 50px; /* Adjust size */
+      color: var(--pop-primary);
+      font-family: Georgia, serif;
+      line-height: 1;
+      opacity: 0.8;
+    }
+
+    /* 代码块样式 */
+    .card-pop-art pre {
+      background-color: var(--pop-code-bg);
+      border-radius: 0; /* Sharp corners */
+      padding: 20px;
+      font-family: "Courier New", Courier, monospace; /* Monospace font */
+      font-size: 14px;
+      overflow-x: auto;
+      color: #f0f0f0; /* Lighter text */
+      border: 3px solid var(--pop-border);
+      box-shadow: 6px 6px 0 var(--pop-accent2);
+      margin: 20px 0;
+      position: relative;
+    }
+     /* Optional: Add scanlines effect */
+     .card-pop-art pre::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+        background-size: 100% 4px;
+        pointer-events: none;
+        opacity: 0.5;
+     }
+
+
+    .card-pop-art code:not(pre code) {
+      background-color: rgba(var(--pop-primary-rgb), 0.15); /* Light primary bg */
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      color: var(--pop-primary); /* Primary color text */
+      border: 1px solid var(--pop-primary);
+      font-weight: bold;
+    }
+
+    /* 表格样式 */
+    .card-pop-art table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      margin: 25px 0;
+      background-color: var(--pop-white);
+      border: 4px solid var(--pop-border); /* Thicker border */
+      border-radius: 0px; /* Sharp corners */
+      overflow: hidden;
+      box-shadow: 6px 6px 0 var(--pop-primary);
+      transform: rotate(-1deg); /* Slight tilt */
+    }
+
+    .card-pop-art th {
+      background-color: var(--pop-border); /* Use border color for header */
+      color: var(--pop-white);
+      padding: 12px 15px;
+      text-align: center; /* Center align header */
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+       border-bottom: 4px solid var(--pop-border); /* Match table border */
+    }
+
+    .card-pop-art td {
+      border-bottom: 2px dashed var(--pop-border); /* Dashed row separator */
+      padding: 12px 15px; /* Adjust padding */
+      position: relative;
+      text-align: center; /* Center align cells */
+    }
+
+    .card-pop-art tr:last-child td {
+        border-bottom: none; /* Remove border from last row */
+    }
+
+    .card-pop-art tr:nth-child(odd) td {
+      background-color: rgba(var(--pop-accent2-rgb), 0.15); /* Lighter accent bg for odd rows */
+    }
+     .card-pop-art tr:nth-child(even) td {
+      background-color: rgba(var(--pop-accent3-rgb), 0.1); /* Lighter accent bg for even rows */
+    }
+
+
+    /* 水平线样式 */
+    .card-pop-art hr {
+      border: 0;
+      height: 8px; /* Thicker */
+      background: repeating-linear-gradient(
+        45deg,
+        var(--pop-primary),
+        var(--pop-primary) 12px,
+        var(--pop-accent2) 12px,
+        var(--pop-accent2) 24px
+      );
+      margin: 30px 0;
+      border-radius: 4px;
+      border-top: 2px solid var(--pop-border);
+      border-bottom: 2px solid var(--pop-border);
+    }
+
+    /* 图片样式 */
+    .card-pop-art img {
+      max-width: 100%;
+      border: 5px solid var(--pop-border);
+      border-radius: 0; /* Sharp corners */
+      box-shadow: 8px 8px 0 var(--pop-primary);
+      transform: rotate(-2deg); /* Slightly more rotation */
+      margin: 25px auto; /* Adjust margin */
+      display: block;
+       filter: sepia(0.2) contrast(1.1); /* Add subtle filter */
+    }
+
+    /* 高亮标记 */
+    .card-pop-art mark {
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      padding: 3px 6px;
+      border-radius: 0px; /* Sharp corners */
+      font-weight: 700;
+      box-shadow: 2px 2px 0 var(--pop-text);
+       /* Add zigzag bottom border */
+       border-bottom: 4px solid transparent;
+        background-image: linear-gradient(45deg, var(--pop-text) 25%, transparent 25%), linear-gradient(-45deg, var(--pop-text) 25%, transparent 25%);
+        background-position: 0 100%;
+        background-repeat: repeat-x;
+        background-size: 8px 4px; /* Adjust size of zigzag */
+    }
+
+    .card-pop-art mark::after {
+      display: none;
+    }
+
+    /* 链接样式 */
+    .card-pop-art a {
+      color: var(--pop-primary);
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 3px dashed var(--pop-border); /* Dashed underline */
+      padding: 0 3px 2px 3px; /* Adjust padding */
+      transition: all 0.2s ease;
+      position: relative;
+      background: none; /* Ensure no background interference */
+    }
+
+    .card-pop-art a:hover {
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      border-bottom-color: transparent; /* Hide border on hover */
+      border-radius: 4px;
+      padding: 2px 5px; /* Adjust padding on hover */
+      box-shadow: 2px 2px 0px var(--pop-shadow);
+    }
+
+
+    /* 添加波普艺术特有的语音气泡效果 */
+    .card-pop-art .speech-bubble {
+      position: relative;
+      background: var(--pop-white);
+      border-radius: 15px; /* More rounded */
+      padding: 20px;
+      margin: 25px 0 35px 0; /* More margin bottom for tail */
+      border: 3px solid var(--pop-border);
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 6px 6px 0 var(--pop-primary);
+       transform: rotate(1deg); /* Slight tilt */
+    }
+
+    .card-pop-art .speech-bubble::before {
+      content: "";
+      position: absolute;
+      bottom: -23px; /* Adjust position based on border */
+      left: 30px; /* Position tail */
+      transform: translateX(0) rotate(15deg); /* Rotate tail */
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-top-color: var(--pop-border); /* Border color for outer tail */
+       border-bottom: 0;
+    }
+
+    .card-pop-art .speech-bubble::after {
+       content: "";
+       position: absolute;
+       bottom: -16px; /* Position inside border */
+       left: 30px; /* Match before element */
+       transform: translateX(0) rotate(15deg); /* Match rotation */
+       width: 0;
+       height: 0;
+       border: 12px solid transparent; /* Slightly smaller */
+       border-top-color: var(--pop-white); /* Background color for inner tail */
+       border-bottom: 0;
+    }
+    /* --- End of CSS from 样式.html --- */
+  </style>
+  <!-- Add JS here if needed for dynamic features like syntax highlighting (Prism.js) or MathJax -->
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-07H1R6TT0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-07H1R6TT0P');
+</script>
+<body>
+  <!-- 
+    Expected Output Structure: 
+    The Markdown content will be placed inside the 'card-content-inner' div. 
+    The outer divs provide the necessary classes for the styles.
+    A theme class (e.g., pink-blue-mode) might be added to the 'card' div based on input hints.
+  -->
+  <div class="card markdown-body card-pop-art"> 
+    <!-- Optional: Add theme class here e.g., <div class="card markdown-body card-pop-art pink-blue-mode"> -->
+    <!-- Optional: Card Header Section (if needed, based on Markdown structure or hints) -->
+    <!-- <section class="card-header">...</section> -->
+    
+    <section class="card-content">
+      <section class="card-content-inner">
+        <h1>聊天分析报告 2025-05-02</h1>
+        <h2>基础统计</h2>
+        <ul>
+          <li>时间范围：2025-05-02 00:00:56 至 2025-05-02 23:35:16 (SG时区)</li>
+          <li>消息总量：约 400+ 条（基于页数估算，含 25 张有效图片/截图）</li>
+          <li>参与人数：35 人</li>
+        </ul>
+        <h2>焦点议题</h2>
+        <h3>本日热点话题：Top 3</h3>
+        <ol>
+          <li>
+            <p><strong>金融 | OCBC 账户附加利息策略（Unit Trust 投资）</strong>（热度：★★★★★）</p>
+            <ul>
+              <li>
+                <p><strong>关键策略 (SOP)：</strong></p>
+                <ul>
+                  <li><strong>触发条件:</strong> 希望在 OCBC 储蓄账户（如 OCBC 360）基础上获得额外 1.5% p.a. 的奖励利息。</li>
+                  <li>
+                    <p><strong>执行路径:</strong></p>
+                    <ol>
+                      <li>通过 OCBC 网上银行或 App，在 Unit Trust (UT) 投资模块操作。</li>
+                      <li>购买至少 S$20,000 的合格 Unit Trust 产品。需注意手续费（提及为 0.88%），确保投资额扣除手续费后仍满足条件或购买略高于 S$20k 的金额（如 S$20,200）。[推测] 建议选择波动性较低的基金（如货币市场基金或短期债券基金，避免股票型基金）。<strong>薅资本主义 毛</strong> 建议选择 "不太动的 unit trust"。</li>
+                      <li>在<strong>同一个日历月</strong>内，持有该 Unit Trust 至少 14 天。用户 <strong>赚点钱不易</strong> 和 <strong>薅资本主义 毛</strong> 确认需当月持有14天，建议在每月15号前购买以确保满足条件。</li>
+                      <li>满足条件后，1.5% 的奖励利息将在<strong>下一个月</strong>存入账户。</li>
+                      <li>持有满 14 天（或确认满足条件）后，可根据市场情况选择卖出 Unit Trust。<strong>薅资本主义 毛</strong> 确认卖出不收手续费。</li>
+                    </ol>
+                  </li>
+                  <li><strong>预期效果:</strong> 在满足条件的月份，对应账户余额可享受额外 1.5% p.a. 利息，用户 <strong>赚点钱不易</strong> 提及 OCBC 360 每月可因此多得 S$150+。费用（约 S$176）预计可在 1-2 个月内通过额外利息抵消。</li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>风险提示:</strong></p>
+                <ul>
+                  <li>Unit Trust 净值会随市场波动，即使是低风险基金也存在短期亏损可能（用户讨论提及 +/-15% 的可能性）。</li>
+                  <li>购买时需支付一次性手续费。</li>
+                  <li>操作需精确计算持有天数，确保在同一日历月内满足14天要求。</li>
+                  <li>此策略的有效性依赖于 OCBC 的现行促销条款，可能随时变更。</li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>优化建议:</strong></p>
+                <ol>
+                  <li><strong>产品选择:</strong> 优先选择 Fullerton SGD Cash Fund 或 LionGlobal SGD Money Market Fund 等低风险货币市场基金，以降低本金波动风险。</li>
+                  <li><strong>时间管理:</strong> 设置日历提醒，确保在每月10号左右购买，并在持有14天后（约25号）评估是否卖出，避免遗忘。</li>
+                  <li><strong>成本核算:</strong> 详细记录买入成本（含手续费）、卖出净值及获得的额外利息，定期评估策略的净收益。</li>
+                </ol>
+              </li>
+              <li><strong>讨论氛围:</strong> 积极探讨，细节求证，参与者互相分享经验与计算结果，但对潜在风险表示担忧。</li>
+              <li><strong>议题演进:</strong> <strong>赚点钱不易</strong> 准备购买 → 询问手续费与最低金额 → <strong>薅资本主义 毛</strong> 等人解答细节（持有期、手续费、操作方式）→ <strong>四个煎蛋</strong> 等人询问风险 → 推荐 UT 类别 → 确认策略可行性。</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>金融 | HSBC EGA (Everyday Global Account) 5月活动规则解读</strong> （热度：★★★★☆）</p>
+            <ul>
+              <li>
+                <p><strong>关键策略 (SOP)：</strong></p>
+                <ul>
+                  <li><strong>触发条件:</strong> 最大化 HSBC EGA 账户利息，特别是获取与 "wealth holding" 相关的最高利率档次（提及 3.7%）。</li>
+                  <li>
+                    <p><strong>执行路径:</strong> (根据讨论，规则复杂且存在不确定性，需与 RM 确认)</p>
+                    <ol>
+                      <li>[推测] 可能需要主动报名参加每月活动（<strong>有空薅羊毛</strong> 提及四月报名后自动失效，需重新评估五月情况）。</li>
+                      <li>核心要求是满足 "account with wealth holding" 条件。根据 <strong>薅羊绒</strong> 援引的 T&C 和 <strong>四个煎蛋</strong> 的提问，这涉及购买并持有合格的 HSBC 财富管理产品。</li>
+                      <li>合格产品：Unit Trust (UT)、股票、债券、结构性产品（<strong>薅羊绒</strong> 确认）。<strong>不包括</strong> 外汇 (FX) 和双元货币投资 (Dual Currency Plus)。</li>
+                      <li>
+                        <p><strong>待确认关键点 (由 <strong>四个煎蛋</strong> 向 RM 提出):</strong></p>
+                        <ul>
+                          <li>具体需要购买哪种产品？(UT 被认为是可行选项)</li>
+                          <li>最低购买金额是多少？(<strong>接 bug 或超级 promotion 商务舱机票</strong> 猜测 S$1)</li>
+                          <li>需要持有产品多长时间？卖出后如何计算？(如持有1天即卖出是否合格？)</li>
+                          <li>是否需要每个月都买入才能保持资格？</li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </li>
+                  <li><strong>预期效果:</strong> 达到宣传的最高利率（如 3.7%），显著高于基础利率或无财富持有条件的利率（3%）。</li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>风险提示:</strong></p>
+                <ul>
+                  <li>活动规则复杂，银行 T&C 可能随时调整（<strong>42 号</strong> 指出问题可能提升下月 TNC 质量）。</li>
+                  <li>投资于财富管理产品本身存在市场风险，价值可能下跌。</li>
+                  <li>若需每月买入，操作繁琐且可能产生额外交易成本或微小损失。</li>
+                  <li>依赖 RM 的解释，可能存在沟通偏差。</li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>优化建议:</strong></p>
+                <ol>
+                  <li><strong>书面确认:</strong> 强烈建议通过邮件方式与 RM 沟通，获取关于财富持有条件的清晰书面回复，避免口头误解。</li>
+                  <li><strong>简化产品:</strong> 若确认需购买，选择风险最低、手续费最低的合格产品，如 Fullerton Money Market Fund（若 HSBC 提供且合格）。</li>
+                  <li><strong>效益分析:</strong> 计算预期增加的利息与购买财富产品可能产生的成本/风险，判断是否值得投入精力。对比 StashAway Simple 或 MariInvest 等现金管理工具的收益率。</li>
+                </ol>
+              </li>
+              <li><strong>讨论氛围:</strong> 困惑与求证为主，用户积极分享信息并向经验丰富的用户（<strong>四个煎蛋</strong>）寻求指导，等待 RM 的最终确认。</li>
+              <li><strong>议题演进:</strong> 分享 HSBC 5月活动 → 发现利率变化与 "wealth holding" 关联 → <strong>四个煎蛋</strong> 提炼核心问题 → <strong>薅羊绒</strong> 查找 T&C → 讨论合格产品 → 等待 <strong>四个煎蛋</strong> 与 RM 确认 → 对比其他银行/产品。</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>生活 | Grab 司机行为与投诉</strong> （热度：★★★☆☆）</p>
+            <ul>
+              <li>
+                <p><strong>关键策略 (SOP):</strong></p>
+                <ul>
+                  <li>
+                    <p><strong>问题描述:</strong> 用户 <strong>绒毛球</strong>, <strong>别让 跑了</strong>, <strong>berber</strong>, <strong>阳光彩虹小白羊</strong>, <strong>进群学习</strong> 等多人反映遇到 Grab 司机的不良行为：</p>
+                    <ul>
+                      <li>开到附近后取消订单（<strong>绒毛球</strong>）。</li>
+                      <li>车辆越开越远，迫使用户取消（<strong>别让 跑了</strong>）。</li>
+                      <li>故意在附近等待，赚取等候费（<strong>绒毛球</strong>）。</li>
+                      <li>司机面前开过却按 "noshow"（<strong>berber</strong>）。</li>
+                      <li>到达后因行李多而取消（<strong>绒毛球</strong> [推测原因]）。</li>
+                      <li>车辆未到，但3分钟等待计时已开始（<strong>进群学习</strong>）。</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p><strong>应对措施:</strong></p>
+                    <ol>
+                      <li><strong>证据保留:</strong> 遇到问题时，立即截屏 GPS 定位图、司机信息、车辆状态及聊天记录（<strong>绒毛球</strong>, <strong>进群学习</strong>）。</li>
+                      <li><strong>及时投诉:</strong> 通过 Grab App 内的帮助中心或客服渠道发起投诉，附上截图证据（<strong>绒毛球</strong>, <strong>阳光彩虹小白羊</strong>, <strong>进群学习</strong>）。</li>
+                      <li><strong>要求赔偿:</strong> 如被错误收取费用（如取消费、等候费），或获得代金券作为补偿（<strong>阳光彩虹小白羊</strong> 获赔 S$5 券）。</li>
+                    </ol>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>风险提示:</strong></p>
+                <ul>
+                  <li>投诉处理结果不一，有时可能无法获得满意答复。</li>
+                  <li>遇到不良司机影响出行体验和时间。</li>
+                </ul>
+              </li>
+              <li>
+                <p><strong>优化建议:</strong></p>
+                <ol>
+                  <li><strong>主动沟通:</strong> 如遇司机行为异常（如偏离路线），尝试通过 App 内聊天或电话联系司机确认情况。</li>
+                  <li><strong>使用替代平台:</strong> 如频繁遇到问题，考虑使用其他网约车平台（如 Gojek, Tada, Ryde）作为备选。</li>
+                  <li><strong>了解规则:</strong> 熟悉 Grab 的乘客与司机行为规范及收费规则，有助于在投诉时清晰陈述。</li>
+                </ol>
+              </li>
+              <li><strong>讨论氛围:</strong> 普遍表示不满与气愤，分享各自遭遇，交流投诉经验。</li>
+              <li><strong>议题演进:</strong> <strong>阳光彩虹小白羊</strong> 分享女司机拒载视频 → 引发多人共鸣 → 分享各自遇到的 Grab 司机问题 → 讨论投诉方法与结果。</li>
+            </ul>
+          </li>
+        </ol>
+        <h3>其他值得关注议题</h3>
+        <ul>
+          <li><strong>金融 | SSB (Singapore Savings Bonds) 利率讨论:</strong> 用户关注 SSB 利率走低趋势（<strong>春天来了</strong>，<strong>别让 跑了</strong>），讨论是否赶在利率进一步下跌前买入。<strong>四个煎蛋</strong> 提及曾建议大家买入高利率 SSB。涉及 SSB 额度（S$200k）、赎回机制（随时，T+1月）和利息支付（半年一次）。</li>
+          <li><strong>金融 | 定期存款 (Fixed Deposit) 对比:</strong> 用户分享和比较不同银行的 FD 利率 (Maybank 3年 2.85% [已结束], BOC 美元定存 4.2%, ICBC vs BOC 服务对比)。<strong>Mr. 茶</strong> 的截图提供了 5 月份各大银行最新定存利率概览。</li>
+          <li><strong>金融 | 美元/新元 &amp; 人民币/新元 汇率:</strong> 用户关注汇率波动（<strong>范星星</strong> 分享 SGD/CNY 破纪录截图），讨论汇率对投资（美元定存风险 - <strong>就用这名字了</strong>）和消费的影响。</li>
+          <li><strong>生活 | 购物优惠:</strong> <strong>四个煎蛋</strong> 分享 FairPrice 泰国香米 5kg 五折优惠 (S$7.55)，引发多人购买兴趣和讨论（<strong>就用这名字了</strong>, <strong>宝宝</strong>, <strong>洪老师-MEMO_脑力学院</strong>）。<strong>阳光彩虹小白羊</strong> 分享 Cold Storage $4 off $30 优惠券。</li>
+          <li><strong>生活 | 银行服务体验:</strong> 用户吐槽 BOC 和 UOB 银行排队时间长、柜员态度（高冷、机械 - <strong>有空薅羊毛</strong>, <strong>范星星</strong>），对比 ICBC 服务相对较好（<strong>有空薅羊毛</strong>, <strong>赚点钱不易</strong>）。</li>
+        </ul>
+        <h3>多媒体解析</h3>
+        <ul>
+          <li><strong>Page 2 (地图):</strong> 新加坡 2025 年大选选区划分图及各政党标志。关联 <strong>北纬 1 度</strong> 的政治讨论。</li>
+          <li><strong>Page 3 (截图):</strong> <strong>四个煎蛋</strong> 分享的小红书帖子截图，关于 HSBC 5 月活动 (3-3.7% 利率)。引发了 HSBC EGA 策略讨论。</li>
+          <li><strong>Page 5 (截图):</strong> 接 Page 3 的小红书截图下半部分，详细列出 HSBC EGA 不同情况下的利率计算 Case A/B/C。</li>
+          <li><strong>Page 9 (表格):</strong> <strong>薅资本主义 毛</strong> 分享的《联合早报》图表，对比昇菘及各国超市（家乐福、Tesco、高鑫零售等）的三年平均表现（毛利率、营运毛利率、净利率、股本回报率）。引发 <strong>集毛成球</strong> 对 Aldi/Lidl 的兴趣。</li>
+          <li><strong>Page 18 (截图):</strong> <strong>赚点钱不易</strong> 分享的 OCBC Unit Trust 产品截图 (LionGlobal Singapore Fixed Income Investment A SGD)。用于 OCBC UT 策略讨论。</li>
+          <li><strong>Page 25 (截图):</strong> <strong>阳光彩虹小白羊</strong> 分享的视频截图，关于女司机拒载乘客的神奇操作。引发 Grab 司机行为讨论。</li>
+          <li><strong>Page 31 (截图):</strong> <strong>接 bug 或超级 promotion 商务舱机票</strong> 分享的《联合早报》新闻截图，关于外部需求恶化、下半年经济增长或进一步走软。</li>
+          <li><strong>Page 33 (截图):</strong> <strong>薅资本主义 毛</strong> 分享的淘宝 5.5 双节日历截图，预告 U 惠。</li>
+          <li><strong>Page 35 (截图):</strong> <strong>四个煎蛋</strong> 分享的 Warabimochi Kamakura Drinks 优惠截图 (S$3)。</li>
+          <li><strong>Page 39 (图片):</strong> <strong>媛儿 Susan</strong> 分享的 BOC 美元及人民币定期存款利率表。</li>
+          <li><strong>Page 41 (截图):</strong> <strong>有空薅羊毛</strong> 提及 ICBC 服务时撤回了一条消息。</li>
+          <li><strong>Page 45 (截图):</strong> <strong>有空薅羊毛</strong> 分享的银行 App 截图，显示 SGD 定期存款利率（可能是 BOC 或 ICBC）。</li>
+          <li><strong>Page 48 (图片):</strong> <strong>薅资本主义 毛</strong> 分享的超市照片，显示 FairPrice Link 会员优惠 (米)。关联 FairPrice 米价讨论。</li>
+          <li><strong>Page 52/53/54 (截图):</strong> <strong>范星星</strong> 分享的小红书账号“你的某某某”截图，关于女佣与雇主的故事。</li>
+          <li><strong>Page 61 (截图):</strong> <strong>接 bug 或超级 promotion 商务舱机票</strong> 分享的 <strong>Mr. 茶</strong> 小红书帖子截图，总结了新加坡各大银行 5 月最新 FD 利率。</li>
+          <li><strong>Page 63/64 (图片):</strong> <strong>春天来了</strong> 分享的超市蓝莓照片，个头很大。</li>
+          <li><strong>Page 66 (截图):</strong> <strong>接 bug 或超级 promotion 商务舱机票</strong> 分享的 Maybank2u 网站截图，展示不同储蓄账户类型。</li>
+          <li><strong>Page 68 (截图):</strong> <strong>洪老师-MEMO_脑力学院</strong> 分享的 Maybank 通知截图，关于自 2025 年 4 月 25 日起不再提供 36 个月定存。</li>
+          <li><strong>Page 70 (截图):</strong> <strong>四个煎蛋</strong> 分享的小红书帖子截图，关于 SSB。</li>
+          <li><strong>Page 72 (截图):</strong> <strong>接 bug 或超级 promotion 商务舱机票</strong> 引用 <strong>四个煎蛋</strong> 的 4 个问题截图。</li>
+          <li><strong>Page 75 (截图):</strong> <strong>接 bug 或超级 promotion 商务舱机票</strong> 使用 ChatGPT 整理询问 HSBC RM 问题的截图。</li>
+          <li><strong>Page 78 (图片):</strong> <strong>42 号</strong> 分享的 Tokenomics 相关图片 (Mikami Yua)。</li>
+          <li><strong>Page 81 (截图):</strong> <strong>接 bug 或超级 promotion 商务舱机票</strong> 分享的 DBS Multiplier Account 工作原理截图。</li>
+          <li><strong>Page 85 (截图):</strong> <strong>春天来了</strong> 分享的 DBS iSAVvy Savings Account 利率表 (April 2025 - June 2025)。</li>
+          <li><strong>Page 87 (截图):</strong> <strong>范星星</strong> 分享的货币转换 App 截图，显示 SGD/CNY 汇率走势。</li>
+          <li><strong>Page 88 (截图):</strong> <strong>阳光彩虹小白羊</strong> 分享的 Cold Storage $4 off $30 优惠券截图。</li>
+          <li><strong>Page 91 (截图):</strong> <strong>升级捡羊毛</strong> 分享的 SCB e$aver Savings Account 促销截图 (至 May 31 2025, 2.50% p.a.)。</li>
+          <li><strong>Page 93 (截图):</strong> <strong>洪老师-MEMO_脑力学院</strong> 分享的小红书帖子截图（来自 <strong>新加坡立洋｜爱居：leonchengly</strong>），总结 5 月份各大银行定存利率。</li>
+          <li><strong>Page 94 (截图):</strong> <strong>接 bug 或超级 promotion 商务舱机票</strong> 分享的《联合早报》新闻截图，关于联储局若加快减息步伐，本地利率下半年料再调低。</li>
+          <li><strong>Page 97 (截图):</strong> Google 搜索结果截图，显示 SGD to RMB 汇率 5.62。</li>
+          <li><strong>Page 99 (图片):</strong> <strong>四个煎蛋</strong> 分享的购买的 FairPrice 泰国香米照片。</li>
+          <li><strong>Page 102 (图片):</strong> <strong>新巴</strong> 分享的 Bukit Gombak 社区宣传册封面。</li>
+          <li><strong>Page 104 (截图):</strong> <strong>洪老师-MEMO_脑力学院</strong> 分享的钱江视频截图，关于美术生用草莓筐搭瀑布。</li>
+        </ul>
+        <h2>附录</h2>
+        <ul>
+          <li>
+            <p><strong>术语词典:</strong></p>
+            <ul>
+              <li><strong>SSB:</strong> Singapore Savings Bond (新加坡储蓄债券)</li>
+              <li><strong>UT:</strong> Unit Trust (单位信托基金)</li>
+              <li><strong>FD:</strong> Fixed Deposit (定期存款)</li>
+              <li><strong>RM:</strong> Relationship Manager (客户经理)</li>
+              <li><strong>T&amp;C:</strong> Terms and Conditions (条款与条件)</li>
+              <li><strong>EGA:</strong> Everyday Global Account (HSBC 账户类型)</li>
+              <li><strong>OCBC 360:</strong> OCBC 360 Account (华侨银行账户类型)</li>
+              <li><strong>DBS Multiplier:</strong> DBS Multiplier Account (星展银行账户类型)</li>
+              <li><strong>UOB One:</strong> UOB One Account (大华银行账户类型)</li>
+              <li><strong>Stash:</strong> 指 StashAway Simple 等现金管理账户 [推测]</li>
+              <li><strong>TBill:</strong> Treasury Bill (短期国库券)</li>
+              <li><strong>Grab:</strong> 本地主流网约车及支付平台</li>
+              <li><strong>NTUC:</strong> NTUC FairPrice (本地连锁超市)</li>
+              <li><strong>BOC:</strong> Bank of China (中国银行)</li>
+              <li><strong>ICBC:</strong> Industrial and Commercial Bank of China (中国工商银行)</li>
+              <li><strong>Maybank:</strong> 马来亚银行</li>
+              <li><strong>CIMB:</strong> 联昌国际银行</li>
+              <li><strong>SCB / SC:</strong> Standard Chartered Bank (渣打银行)</li>
+              <li><strong>AXS:</strong> 新加坡账单支付平台</li>
+              <li><strong>Condo:</strong> 公寓 (此处指物业费)</li>
+              <li><strong>羊毛:</strong> 比喻小额优惠、福利或省钱机会</li>
+              <li><strong>PV***6JM:</strong> 用户 <strong>鄂尔多多 moo</strong> 的优惠码/邀请码 (部分打码)</li>
+              <li><strong>QQDDEBCH:</strong> 用户 <strong>trust 申请码 QQDDEBCH</strong> 的 Trust Bank 申请码 (需确认是否需打码，暂保留)</li>
+              <li><strong>EVMRV5A5:</strong> 用户 <strong>羊毛哇- trust 码 EVMRV5A5</strong> 的 Trust Bank 申请码 (需确认是否需打码，暂保留)</li>
+            </ul>
+          </li>
+        </ul>
+        <p><em>免责声明: 本报告基于提供的聊天记录进行分析。所有金融产品信息和策略建议仅供参考，不构成任何投资建议。用户应自行进行尽职调查，并根据自身风险承受能力做出决策。银行活动条款与细则可能随时变更，请以银行官方公告为准。</em></p>
+      </section>
+    </section>
+    
+    <!-- Optional: Card Footer Section (if needed) -->
+    <!-- <section class="card-footer">...</section> -->
+  </div>
+  
+  <!-- Functional scripts (example, if syntax highlighting is desired) -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script> -->
+  <!-- Link Prism CSS theme if needed -->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" /> -->
+
+</body>
+</html>

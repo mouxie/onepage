@@ -505,10 +505,8 @@
 
       /* RGB versions for rgba() - Calculate these based on actual var values if needed */
       --pop-primary-rgb: 255, 46, 99;
-      --pop-secondary-rgb: 81, 186, 250;
-      --pop-accent2-rgb: 81, 186, 250; /* Added explicit RGB for accent2 */
-      --pop-accent3-rgb: 255, 98, 90;   /* Added explicit RGB for accent3 */
-
+      --pop-accent2-rgb: 81, 186, 250;
+      --pop-accent3-rgb: 255, 98, 90;
 
     }
 
@@ -525,9 +523,8 @@
 
       /* Update RGB if needed */
        --pop-primary-rgb: 255, 78, 121;
-       --pop-secondary-rgb: 127, 209, 174; /* Added for consistency */
        --pop-accent2-rgb: 127, 209, 174;
-       --pop-accent3-rgb: 255, 214, 102; /* Added explicit RGB for accent3 */
+       --pop-accent3-rgb: 255, 214, 102;
     }
 
     /* 小红书薄荷糖主题 */
@@ -544,9 +541,8 @@
 
        /* Update RGB if needed */
        --pop-primary-rgb: 127, 209, 174;
-       --pop-secondary-rgb: 255, 78, 121; /* Added for consistency */
        --pop-accent2-rgb: 255, 78, 121;
-       --pop-accent3-rgb: 81, 186, 250;  /* Added explicit RGB for accent3 */
+       --pop-accent3-rgb: 81, 186, 250;
     }
 
     /* 紫色星空主题 */
@@ -566,9 +562,8 @@
 
       /* Update RGB if needed */
       --pop-primary-rgb: 156, 39, 176; /* Using accent1 as primary visually */
-      --pop-secondary-rgb: 255, 171, 64; /* Added for consistency */
       --pop-accent2-rgb: 255, 171, 64;
-      --pop-accent3-rgb: 100, 181, 246; /* Added explicit RGB for accent3 */
+      --pop-accent3-rgb: 100, 181, 246;
     }
 
     /* 波普艺术风格 */
@@ -602,7 +597,7 @@
       width: 80px;
       height: 80px;
       /* Simplified SVG example for pop effect */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='%2351bafa' stroke='%23252a34' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23252a34'%3EPOP!%3C/text%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='var(--pop-secondary)' stroke='var(--pop-border)' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='var(--pop-border)'%3EPOP!%3C/text%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-size: 60px 60px; /* Slightly smaller */
       background-position: top right;
@@ -618,7 +613,7 @@
        width: 100px; /* Example size */
        height: 100px; /* Example size */
        /* Simplified star SVG */
-       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='%23ff2e63' stroke='%23252a34' stroke-width='3'/%3E%3C/svg%3E");
+       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='var(--pop-primary)' stroke='var(--pop-border)' stroke-width='3'/%3E%3C/svg%3E");
        background-repeat: no-repeat;
        background-size: 70px 70px; /* Control size */
        background-position: bottom left;
@@ -1057,104 +1052,135 @@
   gtag('config', 'G-07H1R6TT0P');
 </script>
 <body>
-  <!-- 
-    Expected Output Structure: 
-    The Markdown content will be placed inside the 'card-content-inner' div. 
-    The outer divs provide the necessary classes for the styles.
-    A theme class (e.g., pink-blue-mode) might be added to the 'card' div based on input hints.
-  -->
   <div class="card markdown-body card-pop-art"> 
-    <!-- Optional: Add theme class here e.g., <div class="card markdown-body card-pop-art pink-blue-mode"> -->
-    <!-- Optional: Card Header Section (if needed, based on Markdown structure or hints) -->
-    <!-- <section class="card-header">...</section> -->
-    
     <section class="card-content">
       <section class="card-content-inner">
         <h1>聊天分析报告 2025-05-04</h1>
         <h2>基础统计</h2>
         <ul>
-          <li>时间范围：2025-05-04 00:00:11 至 2025-05-04 17:19:45 (SG时区)</li>
-          <li>消息总量：约750+条（含80+张有效图片引用或截图）</li>
-          <li>参与人数：35+ 人 (部分名单：<strong>恒源祥</strong>、<strong>林大(薅羊毛初级选手)</strong>、<strong>薅秃噜</strong>、<strong>四个煎蛋 🍳</strong>、<strong>宝宝</strong>、<strong>羊毛快到碗里来</strong>、<strong>紫忤</strong>、<strong>42 号</strong>、<strong> Shania 骆骆</strong>、<strong>薅羊绒</strong>、<strong>盛夏零度</strong>、<strong>ZCY</strong>、<strong>剪刀手✌</strong>、<strong>快乐小羊</strong>、<strong>羊毛小白</strong>、<strong>北纬 1 度</strong>、<strong>新巴</strong>、<strong> berber</strong>、<strong>升级捡羊毛</strong>、<strong>范星星</strong>、<strong>薅鸟毛</strong>、<strong> 有空薅羊毛</strong>、<strong>专业寻找羊毛</strong>、<strong>cc</strong>、<strong>Nora 漫天羊毛</strong>、<strong>集毛成球</strong>、<strong>别让 跑了</strong>、<strong>洪老师-MEMO_脑力学院</strong>、<strong>韵琦</strong>、<strong>Observer</strong>、<strong>yuqian</strong>、<strong>绒毛球</strong>、<strong>倾青恋叶</strong>、<strong>Shepherd</strong>、<strong>一碗咖喱</strong>、<strong>赚点钱不易</strong>、<strong>羊毛卷</strong>、<strong>好名字可以让你的朋友更好地记住你</strong>、<strong>x4</strong>、<strong>接 bug 或超级 promotion 商务舱机票</strong>、<strong>鄂尔多多 moo: PVEXE6JM</strong>、<strong> 别跑</strong>、<strong>羊咩咩</strong>、<strong>大能猫</strong>、<strong>别割我了我疼</strong>、<strong>阳光彩虹小白羊 ️</strong>、<strong>薅资本主义 毛</strong>)</li>
+        <li>时间范围：2025-05-04 00:00:11 至 2025-05-04 23:56:29 (SG时区)</li>
+        <li>消息总量：约 900+ 条 (含 40+ 张有效图片/截图)</li>
+        <li>参与人数：约 38 人 (包括: <strong>恒源祥</strong>, <strong>林大(薅羊毛初级选手)</strong>, <strong>薅秃噜</strong>, <strong>四个煎蛋</strong>, <strong>宝宝</strong>, <strong>羊毛快到碗里来</strong>, <strong>薅秃噜</strong>, <strong>紫忤</strong>, <strong>42 号</strong>, <strong> Shania 骆骆 </strong>, <strong>薅羊绒</strong>, <strong>盛夏零度</strong>, <strong>ZCY</strong>, <strong>剪刀手</strong>, <strong>快乐小羊</strong>, <strong>北纬 1 度</strong>, <strong>新巴</strong>, <strong>羊毛小白</strong>, <strong>升级捡羊毛</strong>, <strong> berber</strong>, <strong>范星星</strong>, <strong>有空薅羊毛</strong>, <strong>cc</strong>, <strong>Nora 漫天羊毛</strong>, <strong>集毛成球</strong>, <strong>Observer</strong>, <strong>专业寻找羊毛</strong>, <strong>别让 跑了</strong>, <strong>一碗咖喱</strong>, <strong>洪老师-MEMO_脑力学院</strong>, <strong>韵琦</strong>, <strong>接 bug 或超级 promotion 商务舱机票</strong>, <strong>小羔羊</strong>, <strong>羊毛卷</strong>, <strong>赚点钱不易</strong>, <strong>鄂尔多多 moo: PVEXE6JM</strong>, <strong> 别跑</strong>, <strong>大能猫</strong>, <strong>羊咩咩</strong>, <strong>阳光彩虹小白羊</strong>, <strong>Shepherd</strong>, <strong>好名字可以让你的朋友更好地记住你</strong>, <strong>x4</strong>, <strong>yuqian</strong>, <strong>绒毛球</strong>, <strong>倾青恋叶</strong>, <strong>别割我了我疼</strong>, <strong>YY</strong>)</li>
         </ul>
         <h2>焦点议题</h2>
         <h3>本日热点话题</h3>
-        <p><strong>社会 | 新加坡大选 (GE2025模拟) 选情与政治生态分析</strong> (热度：★★★★★)</p>
+        <p><strong>社会 | 新加坡大选 (GE2025 模拟/讨论)</strong>（热度：★★★★★）</p>
         <ul>
-          <li><strong>核心讨论点</strong>:
-            <ol>
-              <li><strong>选区结果与分析</strong>: 实时跟进并讨论各选区（特别是惹兰加由 SMC、三巴旺西 SMC、淡滨尼 GRC、榜鹅 GRC）的选票结果。对人民行动党 (PAP) 与工人党 (WP) 的得票率进行比较分析，尤其关注险胜/险败的选区。</li>
-              <li><strong>GRC/SMC 制度</strong>: 深入探讨集选区 (Group Representation Constituency, GRC) 和单选区 (Single Member Constituency, SMC) 制度的利弊，包括其对少数族群代表性的保障作用 (<code>保证少数族群</code>)、对候选人质量的影响 (<code>搭车</code> 现象)、以及选区划分 (<code>画出去</code>、<code>重新画</code>) 的争议 (<code>gerrymandering</code> 暗示)。</li>
-              <li><strong>非选区议员 (NCMP)</strong>: 解释并计算非选区议员 (Non-Constituency MP) 的产生机制（保证至少12名反对党议员），预测 <strong>徐顺全</strong> (Chee Soon Juan, 新加坡民主党 SDP 主席) 因得票率不足而无法当选 NCMP，而 WP 将获得两个 NCMP 席位。</li>
-              <li><strong>候选人争议与评价</strong>:
-                <ul>
-                  <li><strong>黄志明 (Ng Chee Meng, NCM)</strong>: 成为讨论焦点。涉及其险胜惹兰加由、被指"傲慢"（"When you talk to ministers, you should stand up" / "You better stand up" 引述）、与洗钱案嫌犯 <strong>苏海金</strong> 的合照 (<code>瓜田李下</code>)、强大的背景（前三军总长、<strong>李显龙</strong>总理及 <strong>颜金勇</strong> 副总理等高层力挺）、以及家世（黄氏三兄弟均为将军）。讨论其是否 <code>躺赢</code>、依赖高层扶持 (<code>老李力保</code>, <code>pap 真的在全力托举他</code>)。</li>
-                  <li><strong>徐顺全 (Chee Soon Juan)</strong>: 多次提及，对其数十年坚持政治斗争表示钦佩 (<code>奋斗了一辈子</code>)，但对其败选表示惋惜，并讨论其竞选资金来源。</li>
-                  <li><strong>工人党 (WP)</strong>: 讨论其策略（如集中资源于东部）、候选人素质（如 <strong>林志蔚 Jamus Lim</strong>、<strong>蔡庆威 Gerald Giam</strong>、北大才女 <strong>佘雪玲 Eileen Chua</strong>）、以及某候选人涉嫌粗口短信泄露事件 (<code>没有那个短信泄漏 就赢了</code>) 对选情的影响。</li>
-                  <li><strong>其他候选人/政治人物</strong>: 如 <strong>傅丽珊 (Poh Li San)</strong>、<strong>杨莉明 (Josephine Teo)</strong>、<strong>陈川仁 (Tan Chuan-Jin)</strong>、<strong>费沙 (Faisal Manap)</strong> 等均有提及。</li>
-                </ul>
-              </li>
-              <li><strong>政治生态与权力结构</strong>: 讨论 PAP 内部权力交接 (<code>4g leader</code>)、军队背景人士在政坛的影响 (<code>军队系太多了</code>)、政治家族/精英网络 (<code>官官相护</code>, <code>贵族家庭</code>)、新移民选民对选情的影响 (<code>新移民务实，谁发鸡蛋信谁</code>, <code>真的靠新移民救了 ncm</code>)、以及对 <code>meritocracy</code> (唯才是用) 的质疑。</li>
-            </ol>
-          </li>
-          <li><strong>风险提示</strong>:
-            <ul>
-              <li>GRC制度可能掩盖个别候选人的不足，导致能力欠缺者也能当选。</li>
-              <li>政治人物的言行（如 NCM 的言论、WP 候选人的短信）可能对选情产生显著的负面影响。</li>
-              <li>选区划分的权力可能被用于巩固执政党优势 (<code>pap 制定规则 永远都是利于自己的 作弊</code>)。</li>
-              <li>对政治人物背景和关系的过度关注可能引发关于公平竞争和精英政治的疑虑。</li>
-            </ul>
-          </li>
-          <li><strong>优化建议</strong>: [推测]
-            <ol>
-              <li><strong>触发条件</strong>: 持续出现候选人争议和对 GRC 制度的批评。</li>
-              <li><strong>执行路径</strong>: PAP 应反思候选人选拔机制，确保 GRC 内所有候选人均具备高素质；选举局应提高选区划分的透明度和独立性；反对党需拓展经费来源和人才库以实现更广泛的竞争。</li>
-              <li><strong>预期效果</strong>: 提升选举的公平性和竞争性，增强选民对政治体系的信心。</li>
-            </ol>
-          </li>
-          <li><strong>讨论氛围</strong>: 整体激烈、高度关注、观点多元。对 PAP 的策略和部分候选人持批评态度者众，同时也有对反对党候选人（特别是徐顺全和 WP 部分成员）的同情与支持。大量使用 <code>[破涕为笑]</code>、<code>[捂脸]</code>、<code>[旺柴]</code> 等表情，反映了关注、无奈、调侃等复杂情绪。</li>
-          <li><strong>议题演进</strong>:
-            <p><code>早期猜测/铺垫</code> → <code>实时结果播报 (各选区)</code> → <code>惹兰加由/三巴旺西险情分析</code> → <code>NCMP 规则解读与预测</code> → <code>黄志明(NCM)背景/争议深挖</code> → <code>GRC/SMC制度批判</code> → <code>政治家族/精英网络讨论</code> → <code>WP策略与候选人分析</code> → <code>选举后反思与总结</code> → <code>穿插生活类话题 (Netflix, 过敏测试, Grab券)</code></p>
-          </li>
+        <li>
+        <p><strong>核心讨论</strong>: 本次聊天记录的核心围绕模拟的 2025 年新加坡大选结果及其影响展开，主要聚焦于人民行动党 (PAP) 与工人党 (WP) 之间的竞争，以及相关的选举制度和候选人表现。</p>
+        </li>
+        <li>
+        <p><strong>关键信息与策略解读</strong>:</p>
+        <ul>
+        <li><strong>选举结果分析</strong>: 详细讨论了多个选区的结果，特别是惹兰加由 (Jalan Kayu) SMC、三巴旺西 (Sembawang West) SMC、淡滨尼 (Tampines) GRC、榜鹅 (Punggol) GRC 和盛港 (Sengkang) GRC。
+        <ul>
+        <li><strong>惹兰加由 SMC</strong>: PAP 候选人黄志明 (Ng Chee Meng, NCM) 以微弱优势 (51.47% vs 48.53%) 险胜 WP 候选人。引发大量关于其个人能力、背景（军人家族）、过往争议（&quot;stand up&quot;事件、与洗钱团伙关联传闻）以及 LHL 总理强力支持的讨论。胜选被部分归因于新移民选票 [推测]。</li>
+        <li><strong>三巴旺西 SMC</strong>: PAP 候选人傅丽珊战胜新加坡民主党 (SDP) 秘书长徐顺全 (Chee Soon Juan, 46.81%)。</li>
+        <li><strong>淡滨尼 GRC</strong>: PAP 胜选 (52.02% vs 47.37%)，但 WP 得票率接近，触发 NCMP 资格。</li>
+        <li><strong>榜鹅 GRC</strong>: PAP 胜选 (55.17% vs 44.83%)，结果比预期更激烈。</li>
+        <li><strong>盛港 GRC</strong>: WP 维持胜选 (56.31%)。</li>
         </ul>
-        <h3>多媒体解析</h3>
+        </li>
+        <li><strong>非选区议员 (NCMP) 制度</strong>: 详细解释了 NCMP 规则（保证至少 12 名反对党议员），并确定本届 WP 将获得两个 NCMP 席位，由淡滨尼 GRC 和惹兰加由 SMC 的最高票落选者获得。徐顺全因得票率略低而无缘国会。</li>
+        <li><strong>集选区 (GRC) 制度</strong>: 讨论了 GRC 的初衷（少数族裔代表权）及其引发的争议，如被指责用于保护弱势候选人、选区划分策略（Gerrymandering）等。参与者讨论了缩小 GRC 规模或改革的可能性。</li>
+        <li><strong>候选人评估</strong>: 对多位候选人进行了评价，包括：
         <ul>
-          <li><strong>参与者</strong> <strong>四个煎蛋 🍳</strong> 等多人分享了大量与选举相关的图片/截图，主要内容包括：
-            <ul>
-              <li>各选区（Jalan Kayu SMC, Sembawang West SMC, Tampines GRC, Punggol GRC 等）的实时计票结果屏幕截图。</li>
-              <li>候选人信息图（如黄氏三兄弟背景图、候选人教育背景表）。</li>
-              <li>新闻报道截图（如关于黄志明险胜、徐顺全要求重新计票等）。</li>
-              <li>政治人物活动照片（如李显龙总理为黄志明站台、黄志明与苏海金合照）。</li>
-              <li>NCMP 解释图。</li>
-              <li>选举总体结果图表。</li>
-              <li>社交媒体评论截图。</li>
-            </ul>
-          </li>
-          <li><strong>关联话题</strong>: 所有图片均强关联<strong>新加坡大选 (GE2025模拟) 选情与政治生态分析</strong>这一核心话题。</li>
+        <li><strong>黄志明 (NCM)</strong>: 讨论最多，评价两极，对其能力、态度（傲慢）、家庭背景（兄弟均为将军）和政治前途（是否续任部长）有诸多质疑和批评。</li>
+        <li><strong>徐顺全</strong>: 对其长期的政治坚持表示敬佩，但对其未能进入国会表示惋惜。讨论了他的筹款方式（写书、筹款晚宴）。</li>
+        <li><strong>林志蔚 (Jamus Lim)</strong>: WP 议员，被普遍认为能力强、受欢迎。</li>
+        <li><strong>佘雪玲 (Eileen)</strong>: WP 新候选人（北大/延世 M.A., 前外交官），其高学历和选择加入反对党的勇气受到赞扬，被视为 WP 未来的希望。</li>
+        <li><strong>孙雪玲 (Sun Xueling)</strong>: PAP 议员/政务部长/市长，其表现和角色（榜鹅市镇会主席）被讨论。</li>
+        <li><strong>杨莉明 (Josephine Teo)</strong>: 多次被负面提及，似乎已成为群内一个梗。</li>
+        </ul>
+        </li>
+        <li><strong>政治策略与资源</strong>: 讨论了 PAP 的资源优势（媒体、基层组织 PA、财力物力）和策略（强力支持特定候选人、选区划分）。WP 则被认为策略集中（东部）、善于发掘人才，但在资源上处于劣势。WP &quot;粗口截图&quot; 事件在投票前夕爆出被认为是影响选情的策略性操作。</li>
+        <li><strong>选民心态</strong>: 讨论了不同群体（本地人 vs 新移民，中产 vs 底层）对政治人物和议题的看法差异。对 <code>meritocracy</code> 的质疑，以及对军队背景人士在政坛影响力的担忧。后港 (Hougang) 选区作为 WP 传统票仓的现象被深入探讨。</li>
+        </ul>
+        </li>
+        <li>
+        <p><strong>风险提示</strong>: 聊天内容涉及大量政治评论和个人观点，包含对政治人物的尖锐批评和未经证实的传闻（如 NCM 与洗钱团伙关联），需审慎看待。对选举制度的批评（如 GRC）反映了部分选民的担忧。</p>
+        </li>
+        <li>
+        <p><strong>优化建议 [AI 生成观点总结]</strong>:</p>
+        <ol>
+        <li><strong>制度透明度</strong>: 对 GRC 选区划分、NCMP 产生机制的持续讨论，显示公众对选举制度公平性和透明度的关注。</li>
+        <li><strong>候选人素质</strong>: 选民不仅关注候选人背景，更看重其能力、品格、沟通方式及基层服务投入。NCM 的险胜和 Eileen 受到的关注形成对比。</li>
+        <li><strong>政治接班</strong>: PAP 和 WP 都面临人才选拔和培养的挑战。如何吸引和擢升有能力、有民意基础的新人是关键。</li>
+        </ol>
+        </li>
+        <li>
+        <p><strong>讨论氛围</strong>: 整体氛围热烈、投入度高，持续时间长。观点交锋激烈，常带有批判性、讽刺性 (<code>[破涕为笑]</code>, <code>[捂脸]</code>)。对特定政治人物（尤其是 NCM）的不满情绪较为普遍。参与者表现出对新加坡政治生态的高度关注和深入思考。</p>
+        </li>
+        <li>
+        <p><strong>议题演进</strong>: 选举结果播报 → 惹兰加由 NCM 险胜分析 → NCM 背景/争议深挖 → GRC/NCMP 制度讨论 → 徐顺全/Eileen 等反对党人物分析 → PAP/WP 策略对比 → 选民心态/政治文化探讨 → (穿插少量生活消费信息)。</p>
+        </li>
+        </ul>
+        <h3>其他提及议题 (简报)</h3>
+        <ul>
+        <li>
+        <p><strong>生活消费</strong>:</p>
+        <ul>
+        <li><strong>Netflix</strong>: 提及价格上涨及账号共享规则 (需同 IP)。(热度: ★☆☆☆☆)</li>
+        <li><strong>Grab</strong>: 讨论周二积分/优惠是否还有。(热度: ★☆☆☆☆)</li>
+        <li><strong>餐饮</strong>: 分享 Jumbo Seafood 50% 优惠，讨论 Chengdu Bowl 餐厅及儿童免费餐活动。(热度: ★★☆☆☆)</li>
+        <li><strong>购物</strong>: 分享周末淘宝空运券，讨论 iJooz 充值优惠。(热度: ★★☆☆☆)</li>
+        <li><strong>金融</strong>: 提及 UOB One 账户利息发放时间，DBS Altitude 卡活动，Tiger BOSS 借记卡及 Ryde 推广。(热度: ★☆☆☆☆)</li>
+        </ul>
+        </li>
+        <li>
+        <p><strong>社会民生</strong>:</p>
+        <ul>
+        <li><strong>女佣转移</strong>: 讨论 Transfer 女佣是否需通过中介及 MOM 网站操作流程。(热度: ★☆☆☆☆)</li>
+        <li><strong>过敏原检测</strong>: 询问检测地点及挂号科室。(热度: ★☆☆☆☆)</li>
+        <li><strong>市长/议员薪酬</strong>: 分享并讨论了新加坡市长及议员的薪酬水平。(热度: ★★☆☆☆)</li>
+        <li><strong>巴菲特退休</strong>: 分享相关新闻链接。(热度: ★☆☆☆☆)</li>
+        </ul>
+        </li>
+        </ul>
+        <h3>多媒体解析 (示例)</h3>
+        <ul>
+        <li><strong>四个煎蛋</strong> 分享图片 (Page 10, 16, 40, 53, 55, 76, 81, 83, 99, 101, 105, 124, 141, 142, 151, 154, 155, 165, 166, 172, 174, 175, 180, 182, 186): 大量选举结果截图、新闻报道、候选人信息图、网络 Meme、地图、视频截图等，为政治讨论提供了核心依据和背景信息。</li>
+        <li><strong>新巴</strong> 分享图片 (Page 26, 28, 30, 32): 主要为黄志明及其兄弟的军队背景信息图，引发关于 nepotism 的讨论。</li>
+        <li><strong>yuqian</strong> 分享图片 (Page 194, 196, 197, 198, 199, 200, 201): 主要为成都碗 (Chengdu Bowl) 餐厅的促销海报、菜单和菜品照片。</li>
+        <li><strong>其他用户</strong> 也分享了新闻链接、截图等，如 <strong>集毛成球</strong> (Page 67-70, 127), <strong>范星星</strong> (Page 35, 171), <strong>快乐小羊</strong> (Page 17), <strong>berber</strong> (Page 193), <strong>阳光彩虹小白羊</strong> (Page 170), <strong>Shepherd</strong> (Page 111, 183), <strong>洪老师-MEMO_脑力学院</strong> (Page 136), <strong>42 号</strong> (Page 149, 188, 190, 192), <strong>cc</strong> (Page 152)。</li>
         </ul>
         <h2>附录</h2>
-        <h3>术语词典</h3>
         <ul>
-          <li>PAP: People's Action Party (人民行动党) - 新加坡执政党</li>
-          <li>WP: Workers' Party (工人党) - 新加坡主要反对党</li>
-          <li>SDP: Singapore Democratic Party (新加坡民主党)</li>
-          <li>GRC: Group Representation Constituency (集选区)</li>
-          <li>SMC: Single Member Constituency (单选区)</li>
-          <li>NCMP: Non-Constituency Member of Parliament (非选区议员)</li>
-          <li>MP: Member of Parliament (国会议员)</li>
-          <li>GE: General Election (大选)</li>
-          <li>Rally: (竞选)群众大会</li>
-          <li>Recount: 重新计票</li>
-          <li>Walkover: (候选人)不战而胜</li>
-          <li>CDC: Community Development Council (社区发展理事会)</li>
-          <li>NCM: Ng Chee Meng (黄志明) - 指代特定人物</li>
-          <li>LSL: Lee Hsien Loong (李显龙) - 指代特定人物</li>
+        <li><strong>术语词典 (部分)</strong>:
+        <ul>
+        <li><code>PAP</code>: People's Action Party (人民行动党)</li>
+        <li><code>WP</code>: Workers' Party (工人党)</li>
+        <li><code>GRC</code>: Group Representation Constituency (集选区)</li>
+        <li><code>SMC</code>: Single Member Constituency (单选区)</li>
+        <li><code>NCMP</code>: Non-constituency Member of Parliament (非选区议员)</li>
+        <li><code>Recount</code>: 重新计票</li>
+        <li><code>Jalan Kayu</code>: 惹兰加由 (选区名)</li>
+        <li><code>Tampines</code>: 淡滨尼 (选区名)</li>
+        <li><code>Punggol</code>: 榜鹅 (选区名)</li>
+        <li><code>Sengkang (SK)</code>: 盛港 (选区名)</li>
+        <li><code>Hougang</code>: 后港 (选区名)</li>
+        <li><code>AMK</code>: Ang Mo Kio (宏茂桥)</li>
+        <li><code>NCM</code>: Ng Chee Meng (黄志明)</li>
+        <li><code>LHL</code>: Lee Hsien Loong (李显龙)</li>
+        <li><code>PA</code>: People's Association (人民协会)</li>
+        <li><code>SAF</code>: Singapore Armed Forces (新加坡武装部队)</li>
+        <li><code>CPF</code>: Central Provident Fund (中央公积金)</li>
+        <li><code>MINDEF</code>: Ministry of Defence (国防部)</li>
+        <li><code>MOE</code>: Ministry of Education (教育部)</li>
+        <li><code>MOM</code>: Ministry of Manpower (人力部)</li>
+        <li><code>CDC</code>: Community Development Council (社区发展理事会)</li>
+        <li><code>[破涕为笑]</code>: 表情符号，常表示无奈、哭笑不得或自嘲。</li>
+        <li><code>[捂脸]</code>: 表情符号，常表示尴尬、无奈或不忍直视。</li>
+        <li><code>[旺柴]</code>: 表情符号，常表示幸灾乐祸、看热闹或事情有趣。</li>
+        <li><code>[呲牙]</code>: 表情符号，常表示开心、友好或略带调侃。</li>
+        <li><code>躺赢</code>: 形容不费力气就获胜。</li>
+        <li><code>勤走基层</code>: 指政治人物积极与选民互动，了解民情。</li>
         </ul>
+        </li>
+        </ul>
+        <p><strong>免责声明</strong>: 本报告基于提供的聊天记录生成，内容主要反映参与者的观点和讨论。涉及政治人物和事件的评价可能包含主观意见及未经证实的信息。税务及法律相关内容未在此次讨论中出现。</p>      
       </section>
     </section>
-    
-    <!-- Optional: Card Footer Section (if needed) -->
-    <!-- <section class="card-footer">...</section> -->
   </div>
   
   <!-- Functional scripts (example, if syntax highlighting is desired) -->

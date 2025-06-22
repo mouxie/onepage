@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聊天分析报告 2025-06-21</title>
+  <!-- 核心样式 (来自 样式.html) -->
+  <style>
+    /* --- Start of CSS from 样式.html --- */
+    ol,
+    ul,
+    menu {
+      list-style: none;
+    }
+    .card {
+      position: relative;
+      /* 基础样式 */
+      font-family: BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.75;
+      color: #24292e;
+      background-color: #fff;
+      font-size: 16px;
+      word-wrap: break-word;
+	  min-width: 700px;
+      position: relative;
+    }
+    /* 标题样式 */
+    .card h1,
+    .card h2,
+    .card h3,
+    .card h4,
+    .card h5,
+    .card h6 {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .card h1 {
+      font-size: 2em;
+    }
+
+    .card h2 {
+      font-size: 1.5em;
+    }
+
+    .card h3 {
+      font-size: 1.25em;
+    }
+
+    .card h4 {
+      font-size: 1em;
+    }
+
+    .card h5 {
+      font-size: 0.875em;
+    }
+
+    .card h6 {
+      font-size: 0.85em;
+      color: #6a737d;
+    }
+
+    /* 段落和文本样式 */
+    .card p {
+      margin-top: 0;
+    }
+
+    .card a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .card strong {
+      font-weight: 600;
+    }
+
+    .card em {
+      font-style: italic;
+    }
+
+    .card del {
+      text-decoration: line-through;
+    }
+    /* 表格样式 - 通用 */
+    .card-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+
+    .card-content th {
+      font-weight: 600;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .card-content td {
+      padding: 10px;
+      line-height: 1.5;
+    }
+
+    .card-content tr {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+
+    /* 代码块样式 - 通用 */
+    .card-content pre {
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .card-content code:not(pre code) {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.9em;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background-color: #eaecef;
+    }
+
+    /* 引用块样式 - 通用 */
+    .card-content blockquote {
+      border-left: 3px solid #8e8e93;
+      margin: 20px 0;
+      padding: 10px 20px;
+      position: relative;
+      font-style: italic;
+    }
+
+    /* 有列表样式 - 通用 */
+    .card-content ol {
+      counter-reset: item;
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    /* 无序列表样式 - 通用 */
+    .card-content ul {
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    .card-content ul li {
+      position: relative;
+      list-style: none;
+      margin: 16px 0;
+      line-height: 1.7;
+    }
+
+    /* 图片样式 - 通用 */
+    .card-content img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    /* 水平线样式 - 通用 */
+    .card-content hr {
+      margin: 24px 0;
+      border: 0;
+      height: 1px;
+      background-color: #eaecef;
+    }
+    /* 段落样式 - 通用 */
+    .card-content {
+      font-size: 16px;
+    }
+    .card-content p {
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    /* 段落样式 - 通用 */
+    .card-content .card-content-inner > p {
+      margin: 16px 0;
+    }
+
+    .card mark {
+      background-color: rgba(248, 206, 64, 0.3);
+      color: inherit;
+      padding: 2px 4px;
+      border-radius: 3px;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .card mark::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: rgba(248, 206, 64, 0.7);
+      border-radius: 1px;
+    }
+
+    mjx-container svg {
+      display: inline !important;
+    }
+
+    .markdown-body .contains-task-list .task-list-item::before {
+      display: none;
+    }
+    .markdown-body .contains-task-list .task-list-item {
+      list-style-type: none; /* Ensure bullets/numbers are hidden */
+      padding-left: 24px; /* Indent to make space for checkbox */
+      position: relative; /* For positioning the checkbox */
+    }
+    .markdown-body input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 2px solid #888;
+      border-radius: 2px;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 5px; /* Adjust vertical position */
+      left: 0;
+      background-color: #fff;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .markdown-body input[type="checkbox"]:checked {
+      background-color: #1677ff;
+      border-color: #1677ff;
+      background-position: 1px 2px;
+      background-repeat: no-repeat;
+      background-size: 80%;
+      background-image: url(data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAUCAYAAACXtf2DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACLSURBVHgB7ZPBDYAgDEX/SI7AJjIKGziCozCKIzBChRiSHgoIlHjxJb3BexoA+GEQ0RYnxDmgDZNnPLQQ5BmDWSpyh1nSF66U7yTjShvOOFf65RVyzxaFWmREvgmLxUi3nG10rciw/E2kIrfooRAhFXlnxGKGRsRCg0LEQhMWSYdtsAJ6blHzdX/GDSY+GhmjX+BiAAAAAElFTkSuQmCC);
+    }
+
+    /* Add this for proper task list item structure */
+    .markdown-body ul li.task-list-item {
+        list-style-type: none !important; /* Force override */
+    }
+
+
+    .code__header {
+      margin-top: -8px;
+      display: grid;
+      height: 34px;
+      align-items: center;
+      grid-gap: 12px;
+      grid-template-columns: 48px 1fr 48px;
+    }
+    .code-title {
+      text-align: center;
+    }
+    .code__tools {
+      display: flex;
+      gap: 6px;
+    }
+    .code__circle {
+      display: block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+    .red {
+      background-color: #ff605c;
+    }
+
+    .yellow {
+      background-color: #ffbd44;
+    }
+
+    .green {
+      background-color: #00ca4e;
+    }
+
+    .markdown-body pre .line {
+      display: block;
+    }
+
+    .markdown-body pre.showLineNumbers code .line::before {
+      content: attr(line);
+      width: 1rem;
+      margin-right: 1.5rem;
+      display: inline-block;
+      text-align: right;
+      color: rgba(115, 138, 148, 0.4);
+    }
+
+    .code-line.inserted {
+      background-color: rgba(16, 185, 129, 0.2); /* Set inserted line (+) color */
+    }
+
+    .code-line.deleted {
+      background-color: rgba(239, 68, 68, 0.2); /* Set deleted line (-) color */
+    }
+
+    .highlighted {
+      background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
+    }
+
+    .wavy-underline {
+      position: relative;
+    }
+    .wavy-underline > .wavy-text {
+      position: relative; /* 确保文本有相对定位 */
+      z-index: 1; /* 确保文本在下划线上方 */
+    }
+    .wavy-underline > .wavy-line {
+      width: 100%;
+      height: 6px;
+      background-color: rgb(248, 206, 64);
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      bottom: 0; /* 保持在底部 */
+      left: 0; /* 确保从左侧开始 */
+      z-index: 0; /* 确保在文本下方 */
+    }
+
+    /* 小红书封面样式 - 通用 */
+    .card-cover {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      font-family: "PingFang SC", sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .cover-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .cover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.6)
+      );
+      pointer-events: none;
+    }
+
+    .cover-content {
+      position: relative;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+    .cover-title {
+      margin: 0 0 16px 0;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .cover-description {
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .cover-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cover-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cover-tag {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .cover-date {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* 覆盖式封面样式 - 内容覆盖在图片上 */
+    .card-cover-overlay .cover-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: white;
+      padding: 30px;
+    }
+
+    /* 分离式封面样式 - 内容在图片下方 */
+    .card-cover-separate {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-cover-separate .cover-image-container {
+      border-radius: 12px 12px 0 0;
+    }
+
+    .card-cover-separate .cover-content {
+      border-radius: 0 0 12px 12px;
+    }
+
+    /* 无图片模式 - 通用样式 */
+    .card-cover-no-image {
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-cover-no-image .cover-content {
+      background: none;
+      position: static;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .card-cover-no-image .cover-title {
+      margin-bottom: 20px;
+    }
+
+    .card-cover-no-image .cover-footer {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card-cover-no-image .cover-tags {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .card-cover-no-image .cover-date {
+      margin-top: 5px;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .cover-title {
+        font-size: 24px;
+      }
+
+      .cover-description {
+        font-size: 14px;
+      }
+    }
+
+    /* 颜色变量定义 */
+    :root {
+      /* 基础颜色 */
+      --pop-primary: #ff2e63;
+      --pop-secondary: #51bafa;
+      --pop-bg: #fde041;
+      --pop-text: #252a34;
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23d3b000'/%3E%3C/svg%3E");
+      --pop-white: #fff;
+      --pop-code-bg: #252a34;
+
+      /* 装饰元素颜色 */
+      --pop-accent1: var(--pop-primary);
+      --pop-accent2: var(--pop-secondary);
+      --pop-accent3: rgb(255, 98, 90);
+      --pop-border: var(--pop-text);
+      --pop-shadow: rgba(37, 42, 52, 0.8);
+
+      /* RGB versions for rgba() - Calculate these based on actual var values if needed */
+      --pop-primary-rgb: 255, 46, 99;
+      --pop-accent2-rgb: 81, 186, 250;
+      --pop-accent3-rgb: 255, 98, 90;
+
+    }
+
+    /* 小红书粉蓝主题 */
+    .card-pop-art.pink-blue-mode {
+      --pop-primary: #ff4e79;
+      --pop-secondary: #7fd1ae;
+      --pop-bg: #a6dcef;
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%238ac6d0'/%3E%3C/svg%3E");
+
+      --pop-accent1: #ff4e79;
+      --pop-accent2: #7fd1ae;
+      --pop-accent3: #ffd666;
+
+      /* Update RGB if needed */
+       --pop-primary-rgb: 255, 78, 121;
+       --pop-accent2-rgb: 127, 209, 174;
+       --pop-accent3-rgb: 255, 214, 102; /* Added for completeness */
+    }
+
+    /* 小红书薄荷糖主题 */
+    .card-pop-art.mint-mode {
+      --pop-primary: #7fd1ae;
+      --pop-secondary: #ff4e79;
+      --pop-bg: #e0f7fa; /* 改为更浅的薄荷蓝背景 */
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23b2ebf2'/%3E%3C/svg%3E");
+      --pop-accent1: #7fd1ae;
+      --pop-accent2: #ff4e79;
+      --pop-accent3: #51bafa;
+      --pop-border: #4db6ac; /* 添加薄荷绿边框色 */
+      --pop-shadow: rgba(77, 182, 172, 0.3); /* 调整阴影颜色 */
+
+       /* Update RGB if needed */
+       --pop-primary-rgb: 127, 209, 174;
+       --pop-accent2-rgb: 255, 78, 121;
+       --pop-accent3-rgb: 81, 186, 250; /* Added for completeness */
+    }
+
+    /* 紫色星空主题 */
+    .card-pop-art.purple-mode {
+      --pop-primary: #ff4e79; /* Keeping primary for consistency or adjust as needed, e.g., #9c27b0 */
+      --pop-secondary: #ffab40;
+      --pop-bg: #3a1f75; /* 调整为较亮的紫色背景 */
+      --pop-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='2' cy='2' r='2' fill='%23a87fff'/%3E%3C/svg%3E"); /* 更亮的点 */
+      --pop-accent1: #9c27b0;
+      --pop-accent2: #ffab40;
+      --pop-accent3: #64b5f6;
+      --pop-border: #673ab7; /* 紫色边框 */
+      --pop-shadow: rgba(156, 39, 176, 0.4); /* 紫色阴影 */
+      --pop-text: #f8f9fa; /* Light text for dark background */
+      --pop-white: #f8f9fa; /* 调整白色 */
+      --pop-code-bg: #311b92; /* 深紫色代码背景 */
+
+      /* Update RGB if needed */
+      --pop-primary-rgb: 156, 39, 176; /* Using accent1 as primary visually */
+      --pop-accent2-rgb: 255, 171, 64;
+      --pop-accent3-rgb: 100, 181, 246; /* Added for completeness */
+    }
+
+    /* 波普艺术风格 */
+    /* 卡片内容样式 */
+    .card-pop-art .wavy-underline > .wavy-line {
+      background-color: var(--pop-primary);
+      height: 4px;
+      bottom: -2px;
+    }
+
+    .card-pop-art {
+      background-color: var(--pop-bg);
+      background-image: var(--pop-dots);
+      background-size: 24px 24px;
+      background-position: 12px 12px;
+      color: var(--pop-text);
+      font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", sans-serif;
+      padding: 30px;
+      position: relative;
+      font-size: 16px;
+      border: none; /* Override basic card border if any */
+      box-shadow: none; /* Override basic card shadow if any */
+    }
+
+    /* 添加波普艺术装饰元素 */
+    .card-pop-art::before {
+      content: "";
+      position: absolute;
+      top: 0px; /* Adjusted from -10px to align better */
+      right: 0px; /* Adjusted from -10px */
+      width: 80px;
+      height: 80px;
+      /* Simplified SVG example for pop effect */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Ccircle cx='40' cy='40' r='35' fill='%2351bafa' stroke='%23252a34' stroke-width='3'/%3E%3Ctext x='40' y='45' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23252a34'%3EPOP!%3C/text%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 60px 60px; /* Slightly smaller */
+      background-position: top right;
+      transform: translate(20px, -20px) rotate(15deg); /* Position outside and rotate */
+      z-index: 1;
+    }
+
+    .card-pop-art::after {
+       content: "";
+       position: absolute;
+       bottom: -15px; /* Position slightly outside */
+       left: -15px; /* Position slightly outside */
+       width: 100px; /* Example size */
+       height: 100px; /* Example size */
+       /* Simplified star SVG */
+       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L61.8 38.2 H98 L68.9 58.8 L80.7 91 L50 70.4 L19.3 91 L31.1 58.8 L2 38.2 H38.2 Z' fill='%23ff2e63' stroke='%23252a34' stroke-width='3'/%3E%3C/svg%3E");
+       background-repeat: no-repeat;
+       background-size: 70px 70px; /* Control size */
+       background-position: bottom left;
+       transform: rotate(-10deg); /* Add rotation */
+       z-index: 1;
+    }
+
+
+    .card-pop-art .card-content {
+      position: relative;
+      z-index: 2; /* Ensure content is above decorations */
+      padding: 20px; /* Adjust padding */
+      border: 3px solid var(--pop-border);
+      height: 100%;
+      background: var(--pop-white);
+      box-shadow: 8px 8px 0 var(--pop-shadow); /* Adjusted shadow */
+      border-radius: 4px; /* Optional: slight rounding */
+    }
+
+    /* Make sure inner content doesn't overflow weirdly */
+    .card-pop-art .card-content-inner {
+        overflow: hidden; /* Prevent content spilling */
+    }
+
+
+    /* 标题样式 */
+    .card-pop-art h1 strong {
+      color: var(--pop-primary);
+      background-color: var(--pop-white);
+      padding: 0 5px;
+      border: 3px solid var(--pop-border);
+      display: inline-block;
+      transform: rotate(-2deg);
+      box-shadow: 2px 2px 0px var(--pop-shadow);
+    }
+
+    .card-pop-art h1 {
+      font-size: 2.2em; /* Larger */
+      font-weight: 800;
+      color: var(--pop-text);
+      margin-top: 10px; /* Less margin top inside card */
+      margin-bottom: 25px; /* More margin bottom */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 3px 3px 0 var(--pop-primary);
+      position: relative;
+      padding-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .card-pop-art h1::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(
+        -45deg, /* Changed angle */
+        var(--pop-primary),
+        var(--pop-primary) 8px, /* Smaller segments */
+        var(--pop-accent2) 8px, /* Use accent color */
+        var(--pop-accent2) 16px
+      );
+       border-radius: 3px;
+    }
+
+    .card-pop-art h2 {
+      font-size: 1.8em; /* Adjusted size */
+      font-weight: 700;
+      color: var(--pop-text);
+      margin-top: 24px;
+      margin-bottom: 16px;
+      background-color: var(--pop-accent2);
+      padding: 5px 12px; /* Adjust padding */
+      display: inline-block; /* To contain background */
+      transform: rotate(-2deg);
+      box-shadow: 3px 3px 0px var(--pop-shadow);
+       border: 2px solid var(--pop-border);
+    }
+
+    .card-pop-art h3 {
+      font-size: 1.5em; /* Adjusted size */
+      font-weight: 700;
+      color: var(--pop-white); /* White text */
+      margin-top: 20px;
+      margin-bottom: 12px;
+      background-color: var(--pop-accent3); /* Use accent color */
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      border: 2px solid var(--pop-border);
+       transform: skew(-5deg); /* Add skew */
+    }
+
+    /* 段落样式 */
+    .card-pop-art p {
+      line-height: 1.7;
+      margin: 16px 0;
+      color: var(--pop-text);
+       font-size: 1.05em; /* Slightly larger paragraph text */
+    }
+
+    /* Removed background/border from direct p children of card-pop-art */
+    /* .card-pop-art > p { ... } */
+
+    /* 列表样式 */
+    .card-pop-art ul {
+      background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque */
+      padding: 15px 15px 15px 30px; /* Adjust padding */
+      border: 2px dashed var(--pop-border); /* Dashed border */
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 4px 4px 0px var(--pop-accent2);
+    }
+
+    .card-pop-art ul li {
+      position: relative;
+      padding-left: 28px; /* More space for marker */
+      margin: 12px 0; /* Adjust spacing */
+      line-height: 1.6;
+    }
+
+    .card-pop-art ul li::before {
+      content: "💥"; /* Pop/Explosion emoji */
+      position: absolute;
+      top: -2px;
+      left: 0px;
+      /* color: var(--pop-primary); */ /* Color is inherent in emoji */
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .card-pop-art ol {
+      counter-reset: item;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px 15px 15px 40px; /* More left padding */
+      border: 2px solid var(--pop-border);
+      border-radius: 8px;
+      margin: 20px 0;
+      list-style-type: none; /* Ensure default numbers are off */
+      box-shadow: 4px 4px 0px var(--pop-accent3);
+    }
+
+    .card-pop-art ol li {
+      position: relative;
+      padding-left: 35px; /* Space for custom counter */
+      margin: 12px 0;
+      counter-increment: item;
+      line-height: 1.6;
+    }
+
+    .card-pop-art ol li::before {
+      content: counter(item); /* Use the counter */
+      position: absolute;
+      left: 0;
+      top: -2px; /* Align better */
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      font-weight: 700;
+      width: 28px; /* Slightly larger */
+      height: 28px; /* Slightly larger */
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px; /* Match height */
+      border: 2px solid var(--pop-border);
+      font-size: 14px; /* Adjust font size */
+       transform: rotate(-5deg); /* Tilt */
+    }
+
+    /* Task list specific style within pop-art */
+    .card-pop-art .task-list-item {
+        padding-left: 30px; /* Ensure space for checkbox */
+        margin-left: 0; /* Override default list indent if necessary */
+    }
+    .card-pop-art .task-list-item input[type="checkbox"] {
+        top: 6px; /* Adjust checkbox position */
+        border-width: 3px; /* Thicker border */
+        border-color: var(--pop-border);
+        border-radius: 0; /* Square checkboxes */
+        transform: rotate(3deg); /* Slight tilt */
+    }
+    .card-pop-art .task-list-item input[type="checkbox"]:checked {
+        background-color: var(--pop-primary);
+        border-color: var(--pop-border);
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white"%3E%3Cpath d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06L6 11.19l7.22-7.22a.75.75 0 0 1 1.06 0z"/%3E%3C/svg%3E'); /* White checkmark */
+        background-size: 70%;
+        background-position: center;
+    }
+
+
+    /* 引用样式 */
+    .card-pop-art blockquote {
+      padding: 20px; /* More padding */
+      border-left: none; /* Remove side border */
+      margin: 25px 0;
+      color: var(--pop-text);
+      font-style: italic;
+      font-weight: 600;
+      background-color: rgba(var(--pop-accent2-rgb), 0.2); /* Use accent color */
+      border-radius: 8px;
+      position: relative;
+      border: 3px solid var(--pop-border);
+      box-shadow: 5px 5px 0 var(--pop-primary);
+      transform: rotate(1deg); /* Slight rotation */
+    }
+
+    .card-pop-art blockquote::before {
+      content: "❝"; /* Open quote */
+      position: absolute;
+      top: -15px; /* Position above */
+      left: 10px;
+      font-size: 50px; /* Adjust size */
+      color: var(--pop-primary);
+      font-family: Georgia, serif;
+      line-height: 1;
+      opacity: 0.8;
+    }
+     .card-pop-art blockquote::after {
+      content: "❞"; /* Close quote */
+      position: absolute;
+      bottom: -20px; /* Position below */
+      right: 15px;
+      font-size: 50px; /* Adjust size */
+      color: var(--pop-primary);
+      font-family: Georgia, serif;
+      line-height: 1;
+      opacity: 0.8;
+    }
+
+    /* 代码块样式 */
+    .card-pop-art pre {
+      background-color: var(--pop-code-bg);
+      border-radius: 0; /* Sharp corners */
+      padding: 20px;
+      font-family: "Courier New", Courier, monospace; /* Monospace font */
+      font-size: 14px;
+      overflow-x: auto;
+      color: #f0f0f0; /* Lighter text */
+      border: 3px solid var(--pop-border);
+      box-shadow: 6px 6px 0 var(--pop-accent2);
+      margin: 20px 0;
+      position: relative;
+    }
+     /* Optional: Add scanlines effect */
+     .card-pop-art pre::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+        background-size: 100% 4px;
+        pointer-events: none;
+        opacity: 0.5;
+     }
+
+
+    .card-pop-art code:not(pre code) {
+      background-color: rgba(var(--pop-primary-rgb), 0.15); /* Light primary bg */
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;
+      color: var(--pop-primary); /* Primary color text */
+      border: 1px solid var(--pop-primary);
+      font-weight: bold;
+    }
+
+    /* 表格样式 */
+    .card-pop-art table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      margin: 25px 0;
+      background-color: var(--pop-white);
+      border: 4px solid var(--pop-border); /* Thicker border */
+      border-radius: 0px; /* Sharp corners */
+      overflow: hidden;
+      box-shadow: 6px 6px 0 var(--pop-primary);
+      transform: rotate(-1deg); /* Slight tilt */
+    }
+
+    .card-pop-art th {
+      background-color: var(--pop-border); /* Use border color for header */
+      color: var(--pop-white);
+      padding: 12px 15px;
+      text-align: center; /* Center align header */
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+       border-bottom: 4px solid var(--pop-border); /* Match table border */
+    }
+
+    .card-pop-art td {
+      border-bottom: 2px dashed var(--pop-border); /* Dashed row separator */
+      padding: 12px 15px; /* Adjust padding */
+      position: relative;
+      text-align: center; /* Center align cells */
+    }
+
+    .card-pop-art tr:last-child td {
+        border-bottom: none; /* Remove border from last row */
+    }
+
+    .card-pop-art tr:nth-child(odd) td {
+      background-color: rgba(var(--pop-accent2-rgb), 0.15); /* Lighter accent bg for odd rows */
+    }
+     .card-pop-art tr:nth-child(even) td {
+      background-color: rgba(var(--pop-accent3-rgb), 0.1); /* Lighter accent bg for even rows */
+    }
+
+
+    /* 水平线样式 */
+    .card-pop-art hr {
+      border: 0;
+      height: 8px; /* Thicker */
+      background: repeating-linear-gradient(
+        45deg,
+        var(--pop-primary),
+        var(--pop-primary) 12px,
+        var(--pop-accent2) 12px,
+        var(--pop-accent2) 24px
+      );
+      margin: 30px 0;
+      border-radius: 4px;
+      border-top: 2px solid var(--pop-border);
+      border-bottom: 2px solid var(--pop-border);
+    }
+
+    /* 图片样式 */
+    .card-pop-art img {
+      max-width: 100%;
+      border: 5px solid var(--pop-border);
+      border-radius: 0; /* Sharp corners */
+      box-shadow: 8px 8px 0 var(--pop-primary);
+      transform: rotate(-2deg); /* Slightly more rotation */
+      margin: 25px auto; /* Adjust margin */
+      display: block;
+       filter: sepia(0.2) contrast(1.1); /* Add subtle filter */
+    }
+
+    /* 高亮标记 */
+    .card-pop-art mark {
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      padding: 3px 6px;
+      border-radius: 0px; /* Sharp corners */
+      font-weight: 700;
+      box-shadow: 2px 2px 0 var(--pop-text);
+       /* Add zigzag bottom border */
+       border-bottom: 4px solid transparent;
+        background-image: linear-gradient(45deg, var(--pop-text) 25%, transparent 25%), linear-gradient(-45deg, var(--pop-text) 25%, transparent 25%);
+        background-position: 0 100%;
+        background-repeat: repeat-x;
+        background-size: 8px 4px; /* Adjust size of zigzag */
+    }
+
+    .card-pop-art mark::after {
+      display: none;
+    }
+
+    /* 链接样式 */
+    .card-pop-art a {
+      color: var(--pop-primary);
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 3px dashed var(--pop-border); /* Dashed underline */
+      padding: 0 3px 2px 3px; /* Adjust padding */
+      transition: all 0.2s ease;
+      position: relative;
+      background: none; /* Ensure no background interference */
+    }
+
+    .card-pop-art a:hover {
+      background-color: var(--pop-primary);
+      color: var(--pop-white);
+      border-bottom-color: transparent; /* Hide border on hover */
+      border-radius: 4px;
+      padding: 2px 5px; /* Adjust padding on hover */
+      box-shadow: 2px 2px 0px var(--pop-shadow);
+    }
+
+
+    /* 添加波普艺术特有的语音气泡效果 */
+    .card-pop-art .speech-bubble {
+      position: relative;
+      background: var(--pop-white);
+      border-radius: 15px; /* More rounded */
+      padding: 20px;
+      margin: 25px 0 35px 0; /* More margin bottom for tail */
+      border: 3px solid var(--pop-border);
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 6px 6px 0 var(--pop-primary);
+       transform: rotate(1deg); /* Slight tilt */
+    }
+
+    .card-pop-art .speech-bubble::before {
+      content: "";
+      position: absolute;
+      bottom: -23px; /* Adjust position based on border */
+      left: 30px; /* Position tail */
+      transform: translateX(0) rotate(15deg); /* Rotate tail */
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-top-color: var(--pop-border); /* Border color for outer tail */
+       border-bottom: 0;
+    }
+
+    .card-pop-art .speech-bubble::after {
+       content: "";
+       position: absolute;
+       bottom: -16px; /* Position inside border */
+       left: 30px; /* Match before element */
+       transform: translateX(0) rotate(15deg); /* Match rotation */
+       width: 0;
+       height: 0;
+       border: 12px solid transparent; /* Slightly smaller */
+       border-top-color: var(--pop-white); /* Background color for inner tail */
+       border-bottom: 0;
+    }
+    /* --- End of CSS from 样式.html --- */
+  </style>
+  <!-- Add JS here if needed for dynamic features like syntax highlighting (Prism.js) or MathJax -->
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-07H1R6TT0P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-07H1R6TT0P');
+</script>
+<body>
+  <div class="card markdown-body card-pop-art"> 
+    <section class="card-content">
+      <section class="card-content-inner">
+        <h1>聊天分析报告 2025-06-21</h1>
+        <h2>基础统计</h2>
+        <ul>
+        <li>时间范围：2025-06-21 10:35:24 至 2025-06-21 23:30:25 (SG时区)</li>
+        <li>消息总量：约 140 条（含 7 张有效图片/视频占位符）</li>
+        <li>参与人数：23 人</li>
+        </ul>
+        <h2>焦点议题</h2>
+        <h3>本日热点话题 1</h3>
+        <p><strong>生活 | 健康与福利</strong>（热度：★★★★★）</p>
+        <ul>
+        <li><strong>话题名称</strong>: 新加坡就医、医疗保险索赔流程及病假 (MC) 使用策略</li>
+        <li><strong>关键信息提炼</strong>:
+        <ul>
+        <li><strong>医疗保险与预授权</strong>: 讨论了入院时个人保险与公司保险的选择，提及通过 eLOG (Electronic Letter of Guarantee) 系统，保险公司可授予医院授权额度，免除入院押金。提及 eFile 用于后续的索赔审批。<strong>x4</strong> 指出 pre-authorisation (预授权) 是为了评估账单合理性与保险赔付额度，私立医院常用，公立医院大额账单也可能使用。<strong>Nora 漫天羊毛</strong> 提及 letter of guarantee 也是类似概念。</li>
+        <li><strong>获取病假 (MC)</strong>: 参与者讨论了因感冒等小病获取 MC 的情况。<strong>一碗咖喱</strong> 为了避免麻烦强忍感冒。<strong>薅羊绒</strong> 建议小病看 GP (General Practitioner, 全科医生) 开药并获取 MC。<strong>四个煎蛋🍳</strong> 提到使用 WhiteCoat (远程医疗服务) 可在10分钟内获得 MC，药物30分钟内送达，非常便捷。</li>
+        <li><strong>MC 使用文化</strong>: <strong>范星星</strong> 提到有同事每年会将14天MC额度用完。<strong>四个煎蛋🍳</strong> 认为这是员工的right (权利)。<strong>集毛成球</strong> 提到政府机构若人均MC超3天需报告，可能涉及工作环境压力问题，女员工或有更多宽容。</li>
+        </ul>
+        </li>
+        <li><strong>关键策略 (以WhiteCoat获取MC为例)</strong>:
+        <ul>
+        <li><strong>触发条件</strong>: 身体不适，如感冒，需要病假证明。</li>
+        <li><strong>执行路径</strong>:
+        <ol>
+        <li>下载并注册 WhiteCoat 应用程序。</li>
+        <li>通过App进行远程视频问诊。</li>
+        <li>医生评估后开具电子版 MC (Medical Certificate, 病假单)。</li>
+        <li>如需药物，可选择送药上门服务 (部分用户反馈30分钟内送达)。</li>
+        </ol>
+        </li>
+        <li><strong>预期效果</strong>: 快速便捷获得MC及所需药物，无需出门前往诊所。</li>
+        </ul>
+        </li>
+        <li><strong>风险提示</strong>:
+        <ul>
+        <li>部分公司可能对远程开具的MC有特定政策，或对频繁获取MC的行为进行关注。</li>
+        <li>WhiteCoat 服务及药物配送可能产生费用，需确认保险是否覆盖或自费金额。</li>
+        <li><strong>一碗咖喱</strong> 提到其保险不包含&quot;白大褂&quot; (指WhiteCoat类服务)。</li>
+        </ul>
+        </li>
+        <li><strong>优化建议 (AI生成)</strong>:
+        <ol>
+        <li><strong>核实公司政策</strong>: 在使用远程医疗获取MC前，查阅公司内部关于MC来源的规定。</li>
+        <li><strong>保险覆盖查询</strong>: 事先了解个人或公司医疗保险对远程问诊及药物配送费用的报销范围。</li>
+        <li><strong>备用方案</strong>: 若公司不认可或保险不覆盖，仍需了解附近GP诊所作为备选。</li>
+        </ol>
+        </li>
+        <li><strong>讨论氛围</strong>: 实用信息共享，对便捷医疗服务表示肯定，夹杂对职场MC文化的幽默调侃。</li>
+        <li><strong>议题演进</strong>: 医院预授权 (eLOG) → 小病就医与MC → WhiteCoat便捷服务 → 公司MC文化。</li>
+        </ul>
+        <h3>本日热点话题 2</h3>
+        <p><strong>生活 | 文化娱乐</strong>（热度：★★★★☆）</p>
+        <ul>
+        <li><strong>话题名称</strong>: 新加坡国庆庆典 (NDP) 预演及体验分享</li>
+        <li><strong>关键信息提炼</strong>:
+        <ul>
+        <li><strong>观赏体验</strong>: <strong>trust 申请码 QQDDE<em>*</em>CH</strong> 和 <strong>春天来了</strong> 分享了观看国庆预演的经历。天气炎热，<strong>春天来了</strong> 提到6点多有参与者因中暑被轮椅推走。建议戴帽子、小风扇、穿着舒适。可以携带水和食物。</li>
+        <li><strong>门票获取</strong>: <strong>薅羊绒</strong> 表示幸运拿到票。<strong>羊毛哇- trust 码 EVMRV<em>*</em>A5</strong> 询问购票渠道。<strong>春天来了</strong> 回复国庆票不买卖，通过抽签、相关部门(军队/联络所/义工/表演者)派送。<strong>薅羊绒</strong> 确认几周前已开放申请，<strong>羊毛哇- trust 码 EVMRV<em>*</em>A5</strong> 表示已截止。</li>
+        <li><strong>表演内容</strong>: <strong>春天来了</strong> 认为表演水平一般，队形不整齐，但重在全民参与，各族裔、年龄层利用业余时间练习值得肯定。与国内专业表演的整齐划一不同。烟花在场内看会被遮挡，滨海湾水边效果更佳。</li>
+        <li><strong>入场时间</strong>: <strong>XY</strong> 询问入场时间。<strong>春天来了</strong> 分享其经历：4点半前到，5点多绕场近一小时才入场，入场后方队已站好，跳伞在排队时观看。</li>
+        </ul>
+        </li>
+        <li><strong>关键策略 (参与国庆庆典/预演)</strong>:
+        <ul>
+        <li><strong>触发条件</strong>: 对国庆庆典有兴趣并成功获取门票。</li>
+        <li><strong>执行路径</strong>:
+        <ol>
+        <li><strong>票务</strong>: 关注官方信息，及时参与门票抽签或通过合规渠道获取。</li>
+        <li><strong>准备</strong>: 查看天气预报，准备防晒用品 (帽子、防晒霜)、便携风扇、饮用水、小零食。穿着建议为红/白色。</li>
+        <li><strong>出行</strong>: 提前规划交通，考虑公共交通因人流管制可能调整。提早到场，预留充足安检和入场时间。</li>
+        </ol>
+        </li>
+        <li><strong>预期效果</strong>: 感受国庆氛围，观看阅兵、表演及烟花。</li>
+        </ul>
+        </li>
+        <li><strong>风险提示</strong>:
+        <ul>
+        <li>门票获取难度高，官方渠道是唯一途径，谨防诈骗。</li>
+        <li>现场人多拥挤，天气炎热，注意防暑降温和个人财物安全。</li>
+        <li>特定区域可能视野受限。</li>
+        </ul>
+        </li>
+        <li><strong>优化建议 (AI生成)</strong>:
+        <ol>
+        <li><strong>信息订阅</strong>: 提前订阅NDP官方通知渠道，以便第一时间获取票务及活动信息。</li>
+        <li><strong>备选观赏点</strong>: 若未抽中门票，可查询滨海湾周边公共区域观看烟花的地点及时间。</li>
+        <li><strong>轻装简行</strong>: 仅携带必需品，遵循现场安保规定，了解禁带物品清单。</li>
+        </ol>
+        </li>
+        <li><strong>讨论氛围</strong>: 热情高涨，经验分享与实用建议为主，略带对票务紧张的无奈。</li>
+        <li><strong>议题演进</strong>: 参与者分享炎热天气 → 装备与穿着建议 → 门票获取方式 → 表演评价 → 入场与观赏位置。</li>
+        </ul>
+        <h3>本日热点话题 3</h3>
+        <p><strong>生活 | 出行与消费</strong>（热度：★★★☆☆）</p>
+        <ul>
+        <li><strong>话题名称</strong>: 机场贵宾厅 (Lounge) 选择与体验</li>
+        <li><strong>关键信息提炼</strong>:
+        <ul>
+        <li><strong>贵宾厅讨论</strong>: <strong>鄂尔多多🏇</strong> 询问樟宜机场 T1 是否 SATS Premier Lounge (stas [推测]) 食物最佳，并提到自己凭 DBS (星展银行) 卡进入 lounge。<strong>Shepherd</strong> 询问是否为 Vantage 卡。</li>
+        <li><strong>使用体验</strong>: <strong>鄂尔多多🏇</strong> 反馈 lounge 内未找到三文鱼，只有 lasak (叻沙)，并被告知只能逗留三小时。<strong>四个煎蛋🍳</strong> 和 <strong>一碗咖喱</strong> 均表示一般不会被严格执行三小时限制，除非人满为患。<strong>一碗咖喱</strong> 表示自己通常逗留两小时内。</li>
+        <li><strong>&quot;bug&quot;或优惠机票</strong>: <strong>接 bug 或超级 promotion 商务舱机票</strong> 多次出现，暗示群内可能关注特价机票信息。</li>
+        </ul>
+        </li>
+        <li><strong>关键策略 (使用机场贵宾厅)</strong>:
+        <ul>
+        <li><strong>触发条件</strong>: 持有符合条件的信用卡 (如 DBS Vantage)、航空公司高级会员卡或购买了贵宾厅使用权。</li>
+        <li><strong>执行路径</strong>:
+        <ol>
+        <li>确认所持卡片/会籍对应的贵宾厅位置及使用条款 (如可逗留时长、是否可携伴)。</li>
+        <li>在机场找到相应贵宾厅，出示登机牌和相关凭证进入。</li>
+        <li>享用贵宾厅提供的餐饮、休息设施等服务。</li>
+        </ol>
+        </li>
+        <li><strong>预期效果</strong>: 在登机前获得更舒适的休息环境和餐饮服务。</li>
+        </ul>
+        </li>
+        <li><strong>风险提示</strong>:
+        <ul>
+        <li>贵宾厅食物种类可能随时调整，热门食品（如三文鱼）不一定保证供应。</li>
+        <li>高峰期可能人多，体验下降，或严格执行逗留时间限制。</li>
+        </ul>
+        </li>
+        <li><strong>优化建议 (AI生成)</strong>:
+        <ol>
+        <li><strong>行前确认</strong>: 出发前通过银行或贵宾厅官网查询最新的使用条款和开放时间。</li>
+        <li><strong>备选方案</strong>: 了解机场内其他餐饮或休息选择，以防贵宾厅不符合预期。</li>
+        <li><strong>错峰使用</strong>: 如行程允许，尽量避开航班高峰期使用贵宾厅。</li>
+        </ol>
+        </li>
+        <li><strong>讨论氛围</strong>: 经验交流，对特定服务和规则的疑问。</li>
+        <li><strong>议题演进</strong>: T1 Lounge推荐 → DBS卡权益 → Lounge食物与逗留时长 → &quot;bug&quot;机票信息暗示。</li>
+        </ul>
+        <h3>其他提及话题</h3>
+        <ul>
+        <li><strong>金融 (银行服务)</strong>: <strong>羊毛毡</strong> 讨论使用 UOB (United Overseas Bank, 大华银行) online banking assist 转物业费忘记填写门牌号，寻求解决方案。<strong>四个煎蛋🍳</strong> 建议直接邮件联系物业。</li>
+        <li><strong>生活 (消费攻略)</strong>: <strong>洪老师-MEMO_脑力学院</strong> 提到淘宝 (tb) 包邮券问题，<strong>yuqian</strong> 反馈12点抢券时遇到验证条。<strong>春天来了</strong> 分享了达海渔业公司免费送鱼的信息。</li>
+        <li><strong>社会 (时事新闻)</strong>: <strong>Shepherd</strong> 分享了“习近平同志在闽金融论述与实践启示”及“新加坡总理黄循财将访华”的新闻链接。</li>
+        </ul>
+        <h2>多媒体解析</h2>
+        <ul>
+        <li><strong>集毛成球</strong> (2025-06-21 11:56:55后): 分享图片【图片丢失】 - [推测] 可能与之前讨论的淘宝购物或UOB转账问题相关。</li>
+        <li><strong>四个煎蛋🍳</strong> (2025-06-21 18:42:29): 分享图片【图片丢失】 - [推测] 可能为表情包或与之前业绩沟通话题相关的趣味图片。</li>
+        <li><strong>trust 申请码 QQDDE<em>*</em>CH</strong> (2025-06-21 20:18:40前): 分享【视频】 - [推测] 内容为新加坡国庆预演相关片段。</li>
+        <li><strong>紫忤</strong> (2025-06-21 21:12:21前): 分享【视频】 - [推测] 内容为国庆预演的烟花表演片段。</li>
+        <li><strong>春天来了</strong> (2025-06-21 22:25:58后): 分享【视频号】 - 内容为“达海渔业公司已经免费送鱼很多年...” (关联 生活 | 消费攻略)。</li>
+        <li><strong>春天来了</strong> (2025-06-21 22:31:38后): 分享图片【图片丢失】 - [推测] 可能为国庆预演现场照片，结合上下文其刚分享完入场经历。</li>
+        <li><strong>鄂尔多多🏇</strong> (2025-06-21 23:20:02前): 分享图片【图片丢失】及【表情包】 - [推测] 可能与机场贵宾厅体验或旅行相关。</li>
+        </ul>
+        <h2>附录</h2>
+        <ul>
+        <li><strong>术语词典 (部分)</strong>:
+        <ul>
+        <li>MC: Medical Certificate (病假证明)</li>
+        <li>GP: General Practitioner (全科医生)</li>
+        <li>eLOG: Electronic Letter of Guarantee (电子担保函，用于医疗预授权)</li>
+        <li>eFile: 电子文件系统 (用于医疗索赔)</li>
+        <li>pre-authorisation: 预授权 (医疗程序或费用)</li>
+        <li>IP: Integrated Shield Plan (一种新加坡医疗保险计划)</li>
+        <li>WhiteCoat: 新加坡远程医疗服务平台名称</li>
+        <li>UOB: United Overseas Bank (大华银行)</li>
+        <li>TB: Taobao (淘宝)</li>
+        <li>NDP: National Day Parade (新加坡国庆庆典)</li>
+        <li>MBS: Marina Bay Sands (滨海湾金沙)</li>
+        <li>T1: Terminal 1 (樟宜机场1号航站楼)</li>
+        <li>SATS / stas: Singapore Airport Terminal Services / SATS Premier Lounge (新加坡机场地面服务公司/其运营的贵宾厅) [stas为推测全称]</li>
+        <li>DBS: Development Bank of Singapore (星展银行)</li>
+        <li>lounge: 机场贵宾厅</li>
+        <li>WFH: Work From Home (居家办公)</li>
+        </ul>
+        </li>
+        <li><strong>参与者昵称 (部分高亮)</strong>:
+        <ul>
+        <li><strong>Shepherd</strong>, <strong>x4</strong>, <strong>一碗咖喱</strong>, <strong>羊毛哇- trust 码 EVMRV<em>*</em>A5</strong>, <strong>Nora 漫天羊毛</strong>, <strong>薅羊绒</strong>, <strong>四个煎蛋🍳</strong>, <strong>范星星</strong>, <strong>羊毛毡</strong>, <strong>小羔羊</strong>, <strong>洪老师-MEMO_脑力学院</strong>, <strong>集毛成球</strong>, <strong>yuqian</strong>, <strong>绒毛球🗣️</strong>, <strong>好名字可以让你的朋友更好地记住你</strong>, <strong>接 bug 或超级 promotion 商务舱机票</strong>, <strong>Zzz...</strong>, <strong>别让🎀跑了</strong>, <strong>trust 申请码 QQDDE<em>*</em>CH</strong>, <strong>春天来了</strong>, <strong>紫忤</strong>, <strong>鄂尔多多🏇</strong>, <strong>XY</strong></li>
+        </ul>
+        </li>
+        </ul>
+        <hr>
+        <p><em>免责声明：本报告基于提供的聊天记录进行分析。部分结论为[推测]，尤其涉及丢失的多媒体内容。信息仅供参考，不构成任何专业建议。</em></p>
+      </section>
+    </section>
+  </div>
+</body>
+</html>
